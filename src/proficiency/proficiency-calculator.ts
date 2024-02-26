@@ -1,10 +1,47 @@
-import { html, shell, signal } from 'lithen-fns'
+import { css, html, shell, signal } from 'lithen-fns'
 import { commonLayout } from '../common/layouts'
+import { proficienciesTitleList } from './proficiencies-title-list'
+import { backButton } from '../common/buttons'
+import { combatTechniques } from './skills-display'
 
-const proficiencyInDisplay = signal('TitleList')
-const skillsContents = new Map()
-  .set('TitleList', proficienciesTitleList)
-  .set('CombatTechniques', CombatTechniques)
+export const proficiencyInDisplay = signal('title-list')
+export const skillsContents = new Map()
+  .set('title-list', proficienciesTitleList)
+  .set('combat-techniques', combatTechniques)
+
+const proficiencyContainerStyles = css`
+  &.proficiency-container {
+    display: flex;
+    padding: 12px 0;
+    gap: 12px;
+
+    .skills {
+      flex: 2;
+
+      & h3 {
+        font-size: 1.5rem;
+      }
+
+      .skills-display {
+        height: 450px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-top: 12px;
+        padding: 14px 16px;
+        background-color: var(--content-bg);
+        border-radius: 4px;
+      }
+    }
+
+    .result {
+      flex: 1;
+
+      & h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+`
 
 export function proficiencyCalculator() {
   return commonLayout(html`
@@ -13,26 +50,20 @@ export function proficiencyCalculator() {
         <h2>Calculadora de Perícias</h2>
       </header>
 
-      <section class="proficiency-container">
+      <section css=${proficiencyContainerStyles} class="proficiency-container">
         <div class="skills">
           <h3>Habilidades</h3>
 
           <div class="skills-display">
-            ${shell(proficiencyInDisplay, value => {
-              if (value !== 'TitleList') {
-                return html`
-                  <button on-click=${() => proficiencyInDisplay.set('TitleList')}>
-                    <
-                  </button>
-                `
-              }
-            })}
-
-            ${shell(proficiencyInDisplay, value => {
+            ${shell(() => {
+              const value = proficiencyInDisplay.get()
               const content = skillsContents.get(value)
 
               if (!content) {
                 return html`
+                  ${backButton({
+                    onClick: () => proficiencyInDisplay.set('title-list')
+                  })}
                   <p>Conteúdo em Desenvolvimento</p>
                 `
               }
@@ -47,63 +78,4 @@ export function proficiencyCalculator() {
       </section>
     </div>
   `)
-}
-
-export function proficienciesTitleList() {
-  const proficiencyTitles = {
-    CombatTechniques: 'Técnicas de Combate',
-    HuntTechniques: 'Técnicas de Caça (Beta)',
-    ArcaneTraditions: 'Tradições Arcanas',
-    ClerialTraditions: 'Tradições Clericais',
-    CunningTechniques: 'Técnicas Ardilosas',
-    MerchantTactis: 'Táticas de Mercante',
-    AlchemyPractices: 'Práticas da Alquimia',
-    RunicPractices: 'Práticas Rúnicas (Beta)',
-    MusicalPractices: 'Práticas Musicais (Beta)'
-  }
-
-  return html`
-    <ul class="proficiencies-title-list">
-      ${Object
-          .entries(proficiencyTitles)
-          .map(([target, title]) => {
-            return proficiencyTitle(title, target)
-          })
-      }
-    </ul>
-  `
-}
-
-export function proficiencyTitle(title: string, target: string) {
-  const handleClick = () => proficiencyInDisplay.set(target)
-
-  return html`
-    <li class="proficiency-title" on-click=${handleClick}>
-      <img src="/images/test.png" width="30" />
-      <span>${title}</span>
-    </li>
-  `
-}
-
-export function CombatTechniques() {
-  return html`
-    <h4>Nível 1</h4>
-    <div>
-      <h4>Escudeiro</h4>
-      <p>Passiva</p>
-      <p>
-        Sua experiencia como escudeiro te garantiu alguns diversos
-        conhecimentos e com isso as seguintes perícias:
-      </p>
-      <details>
-        <summary>Perícias</summary>
-        <ul>
-          <li>- História 1</li>
-          <li>- Atletismo 1</li>
-          <li>- Percepção 1</li>
-          <li>- Combate Corpo a Corpo 1</li>
-        </ul>
-      </details>
-    </div>
-  `
 }

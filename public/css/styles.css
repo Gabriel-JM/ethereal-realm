@@ -1,3 +1,9 @@
+/*
+  Fonts: 
+    Caudex for titles
+    Annapurna SIL for major texts
+*/
+
 * {
   box-sizing: border-box;
   min-width: 0;
@@ -13,26 +19,26 @@
   --black-70: #222;
   --black-65: #282828;
   --black-60: #333;
+  --black-50: #444;
 
   --white-80: #eee;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  font-family: caudex, sans-serif;
+  font-family: Caudex, sans-serif;
   background-color: var(--bg-color);
   color: var(--font-color);
 }
 
 .dark {
-  --bg-color: var(--black-90);
+  --bg-color: var(--black-80);
   --font-color: var(--white-80);
 
   --content-bg: var(--black-65);
-}
-
-/*Header*/
-.main-header {
-  padding: 8px 10px;
 }
 
 /* Common Layout*/
@@ -41,59 +47,45 @@ body {
   padding: 12px;
 }
 
-/* Proficiencies */
-.proficiency-container {
-  display: flex;
-  padding: 12px 0;
-  gap: 12px;
-
-  .skills {
-    flex: 2;
-
-    & h3 {
-      font-size: 1.5rem;
-    }
-
-    .skills-display {
-      margin-top: 12px;
-      padding: 10px;
-      background-color: var(--content-bg);
-      border-radius: 4px;
-    }
-  }
-
-  .result {
-    flex: 1;
-
-    & h3 {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-.proficiencies-title-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.proficiency-title {
-  width: 49%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Buttons */
+.back-button {
+  width: 38px;
+  height: 38px;
+  color: currentColor;
+  border: 0;
+  border-radius: 50px;
+  background-color: var(--black-50);
   cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background-color: var(--black-75);
-  transition: all 150ms;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  &:hover {
-    background-color: var(--black-80);
+  &:active {
+    background-color: var(--black-70);
   }
-  
-  & span {
-    font-size: 1.2rem;
+}
+
+/* Skill Cards */
+.skill-card {
+  background-color: var(--black-60);
+  padding: 12px 16px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px var(--black-80);
+
+  .title {
+    font-size: 1.3rem;
     font-weight: bold;
+  }
+
+  .type {
+    font-weight: bold;
+
+    &.passive {
+      color: #549446;
+    }
+  }
+
+  .description {
+    margin-top: 8px;
   }
 }
