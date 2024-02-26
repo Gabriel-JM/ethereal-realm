@@ -13,11 +13,11 @@ export function proficiencyCalculator() {
         <h2>Calculadora de Perícias</h2>
       </header>
 
-      <section>
-        <div>
+      <section class="proficiency-container">
+        <div class="skills">
           <h3>Habilidades</h3>
 
-          <div>
+          <div class="skills-display">
             ${shell(proficiencyInDisplay, value => {
               if (value !== 'TitleList') {
                 return html`
@@ -41,7 +41,7 @@ export function proficiencyCalculator() {
             })}
           </div>
         </div>
-        <div>
+        <div class="result">
           <h3>Resultado</h3>
         </div>
       </section>
@@ -63,7 +63,7 @@ export function proficienciesTitleList() {
   }
 
   return html`
-    <ul>
+    <ul class="proficiencies-title-list">
       ${Object
           .entries(proficiencyTitles)
           .map(([target, title]) => {
@@ -75,9 +75,12 @@ export function proficienciesTitleList() {
 }
 
 export function proficiencyTitle(title: string, target: string) {
+  const handleClick = () => proficiencyInDisplay.set(target)
+
   return html`
-    <li on-click=${() => proficiencyInDisplay.set(target)}>
-      ${title}
+    <li class="proficiency-title" on-click=${handleClick}>
+      <img src="/images/test.png" width="30" />
+      <span>${title}</span>
     </li>
   `
 }
