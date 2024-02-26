@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+:root {
+  --black-90: #111;
+  --black-70: #444;
+
+  --white-80: #eee;
+}
+
+body {
+  font-family: caudex, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+.dark {
+  --bg-color: var(--black-90);
+  --font-color: var(--white-80);
+}
