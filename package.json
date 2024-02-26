@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check": "ncu"
   },
   "devDependencies": {
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "npm-check-updates": "^16.14.15",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
   },
   "dependencies": {
-    "lithen-fns": "^3.0.0"
+    "lithen-fns": "^4.0.0"
   }
 }
