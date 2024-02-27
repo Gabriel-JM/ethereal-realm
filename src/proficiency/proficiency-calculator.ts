@@ -1,13 +1,9 @@
 import { css, html, shell, signal } from 'lithen-fns'
 import { commonLayout } from '../common/layouts'
 import { proficienciesTitleList } from './proficiencies-title-list'
-import { backButton } from '../common/buttons'
-import { combatTechniques } from './skills-display'
+import { skillSegmentPage } from './skills-display'
 
 export const proficiencyInDisplay = signal('title-list')
-export const skillsContents = new Map()
-  .set('title-list', proficienciesTitleList)
-  .set('combat-techniques', combatTechniques)
 
 const proficiencyContainerStyles = css`
   &.proficiency-container {
@@ -56,19 +52,13 @@ export function proficiencyCalculator() {
 
           <div class="skills-display">
             ${shell(() => {
-              const value = proficiencyInDisplay.get()
-              const content = skillsContents.get(value)
+              const current = proficiencyInDisplay.get()
 
-              if (!content) {
-                return html`
-                  ${backButton({
-                    onClick: () => proficiencyInDisplay.set('title-list')
-                  })}
-                  <p>Conteúdo em Desenvolvimento</p>
-                `
+              if (current === 'title-list') {
+                return proficienciesTitleList()
               }
 
-              return content()
+              return skillSegmentPage(current)
             })}
           </div>
         </div>

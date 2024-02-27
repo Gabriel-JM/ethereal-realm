@@ -16,7 +16,7 @@ const proficienciesTitleStyles = css`
     cursor: pointer;
     padding: 6px 12px;
     border-radius: 6px;
-    background-color: var(--black-75);
+    background-color: var(--black-70);
     transition: all 150ms;
 
     &:hover {

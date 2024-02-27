@@ -14,6 +14,7 @@
 
 :root {
   --black-90: #050505;
+  --black-85: #0d0d0d;
   --black-80: #111;
   --black-75: #181818;
   --black-70: #222;
@@ -35,10 +36,10 @@ body {
 }
 
 .dark {
-  --bg-color: var(--black-80);
+  --bg-color: var(--black-85);
   --font-color: var(--white-80);
 
-  --content-bg: var(--black-65);
+  --content-bg: var(--black-75);
 }
 
 /* Common Layout*/
@@ -67,7 +68,7 @@ body {
 
 /* Skill Cards */
 .skill-card {
-  background-color: var(--black-60);
+  background-color: var(--black-65);
   padding: 12px 16px;
   border-radius: 4px;
   box-shadow: 0 1px 2px var(--black-80);

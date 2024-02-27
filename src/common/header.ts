@@ -11,7 +11,7 @@ const headerStyles = css`
 export function header() {
   return html`
     <header css=${headerStyles}>
-      <h1>Ethereal</h1>
+      <h1>Ethereal Realm</h1>
     </header>
   `
 }

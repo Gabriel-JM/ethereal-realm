@@ -1,78 +1,74 @@
-import { css, html } from 'lithen-fns'
+import { css, html, raw, shell, signal } from 'lithen-fns'
 import { backButton } from '../../common/buttons'
 import { proficiencyInDisplay } from '..'
+import { requestSkillSegment } from '../../data/request-data'
 
-// const skillLine = {
-//   id: 'combat-tecniques',
-//   title: 'Técnicas de Combate',
-//   levels: [
-//     {
-//       requeriments: 'Nível de Personagem 1',
-//       skills: [
-//         {
-//           title: 'Escudeiro',
-//           type: 'passive' as const,
-//           description: [
-//             'Sua experiencia como escudeiro te garantiu alguns diversos conhecimentos',
-//             ' e com isso as seguintes perícias:'
-//           ].join(),
-//           proficiencies: [
-//             {
-//               name: 'História',
-//               value: 1
-//             },
-//             {
-//               name: 'Atletismo',
-//               value: 1
-//             },
-//             {
-//               name: 'Percepção',
-//               value: 1
-//             },
-//             {
-//               name: 'Combate Corpo a Corpo',
-//               value: 1
-//             }
-//           ]
-//         }
-//       ]
-//     }
-//   ]
-// }
-
-const skillData = {
-  title: 'Escudeiro',
-  type: 'passive' as const,
-  description: [
-    'Sua experiencia como escudeiro te garantiu alguns diversos conhecimentos',
-    ' e com isso as seguintes perícias:'
-  ].join(),
-  proficiencies: [
-    {
-      name: 'História',
-      value: 1
-    },
-    {
-      name: 'Atletismo',
-      value: 1
-    },
-    {
-      name: 'Percepção',
-      value: 1
-    },
-    {
-      name: 'Combate Corpo a Corpo',
-      value: 1
-    }
-  ]
+export type SkillSegment = {
+  id: string
+  title: string
+  levels: Array<{
+    requeriments: string
+    skills: Skill[]
+  }>
 }
 
-export function combatTechniques() {
-  return html`
-    ${skillsDisplayTitle('Técnicas de Combate', 'combat-techniques')}
+export type Skill = {
+  id: string
+  title: string
+  type: 'passive' | 'active' | 'resting'
+  properties?: SkillProperties
+  description: string
+  benefits?: SkillBenefit
+}
 
-    <h4>Nível 1</h4>
-    ${skillCard(skillData)}
+export type SkillProperties = {
+  requirements?: string
+  cost?: string
+  buildTime?: string
+}
+
+export type SkillBenefit = SkillBenefitText | SkillBenefitList
+
+export type SkillBenefitText = {
+  type: 'text'
+  value: string
+}
+
+export type SkillBenefitList = {
+  type: 'list'
+  title?: string
+  value: Array<SkillBenefit | {
+    name: string
+    value: number
+  }>
+}
+
+
+export function skillSegmentPage(skillSegmentId: string) {
+  const skillSegment = signal<SkillSegment | null>(null)
+  requestSkillSegment(skillSegmentId)
+    .then(data => skillSegment.set(data))
+
+  return html`
+    <div>
+      ${shell(() => {
+        const segmentData = skillSegment.get()
+        if (!segmentData) {
+          return 'Loading...'
+        }
+
+        return html`
+          ${skillsDisplayTitle(segmentData.title, skillSegmentId)}
+
+          ${segmentData.levels.map((level, index) => {
+            return html`
+              <h4>Nível ${index + 1}</h4>
+              ${level.skills.map(skillCard)}
+            `
+          })}
+        `
+      })}
+    </div>
   `
 }
 
@@ -108,37 +104,66 @@ export function skillsDisplayTitle(title: string, image: string) {
   `
 }
 
-type SkillCardProps = {
-  title: string
-  type: 'passive' | 'active' | 'rest'
-  description: string,
-  proficiencies?: Array<{
-    name: string
-    value: number
-  }>
-}
+type SkillCardProps = Skill
 
-export function skillCard(data: SkillCardProps) {
+export function skillCard(data: SkillCardProps) {  
   return html`
     <div class="skill-card">
       <h4 class="title">${data.title}</h4>
       <p class="type ${data.type}">Passiva</p>
       <p class="description">
-        ${data.description}
+        ${raw(data.description)}
       </p>
 
-      ${data.proficiencies && html`
-        <details>
-          <summary>Perícias</summary>
-          <ul>
-            ${data.proficiencies.map(proficiency => {
-              return html`
-                <li>- ${proficiency.name} ${proficiency.value}</li>
-              `
-            })}
-          </ul>
-        </details>
-      `}
+      ${skillBenefits(data.benefits)}
     </div>
+  `
+}
+
+function skillBenefits(benefits?: SkillBenefit) {
+  if (!benefits) return
+
+  if (benefits.type === 'text') {
+    return html`
+      <p>
+        <strong>Benefício:</strong>
+        <span>${benefits.value}</span>
+      </p>
+    `
+  }
+
+  return html`
+    <details>
+      <summary>${benefits.title ?? 'Benefícios'}</summary>
+      <ul>
+        ${benefits.value.map(benefit => {
+          if ('name' in benefit) {
+            return html`
+              <li>${benefit.name} ${benefit.value}</li>
+            `
+          }
+
+          if (benefit.type === 'list') {
+            return html`
+              <li>
+                <span>${benefit.title}</span>
+                <ul>
+                  ${benefit.value.map(sub => {
+                    const subBenefit = sub as { name: string, value: number }
+                    return html`
+                      <li>${subBenefit.name} ${sub.value}</li>
+                    `
+                  })}
+                </ul>
+              </li>
+            `
+          }
+
+          return html`
+            <li>${raw(benefit.value)}</li>
+          `
+        })}
+      </ul>
+    </details>
   `
 }
