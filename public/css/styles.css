@@ -1,7 +1,7 @@
 /*
   Fonts: 
     Caudex for titles
-    Annapurna SIL for major texts
+    Sintony for major texts
 */
 
 * {
@@ -30,7 +30,7 @@ html, body {
 }
 
 body {
-  font-family: Caudex, sans-serif;
+  font-family: 'Sintony', sans-serif;
   background-color: var(--bg-color);
   color: var(--font-color);
 }
