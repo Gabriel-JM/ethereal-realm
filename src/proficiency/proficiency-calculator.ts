@@ -1,7 +1,7 @@
 import { css, html, shell, signal } from 'lithen-fns'
 import { commonLayout } from '../common/layouts'
 import { proficienciesTitleList } from './proficiencies-title-list'
-import { skillSegmentPage } from './skills-display'
+import { skillSegment } from './skills-display'
 
 export const proficiencyInDisplay = signal('title-list')
 
@@ -58,7 +58,7 @@ export function proficiencyCalculator() {
                 return proficienciesTitleList()
               }
 
-              return skillSegmentPage(current)
+              return skillSegment(current)
             })}
           </div>
         </div>

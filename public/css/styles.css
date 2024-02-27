@@ -66,6 +66,15 @@ body {
   }
 }
 
+/* Default Lists */
+.list {
+  padding-left: 20px;
+
+  & li {
+    list-style: disc;
+  }
+}
+
 /* Skill Cards */
 .skill-card {
   background-color: var(--black-65);
@@ -79,7 +88,7 @@ body {
   }
 
   .type {
-    font-weight: bold;
+    font-weight: bolder;
 
     &.passive {
       color: #549446;
@@ -88,5 +97,17 @@ body {
 
   .description {
     margin-top: 8px;
+  }
+
+  .benefits-details {
+    background-color: var(--black-70);
+    margin-top: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    & summary {
+      font-weight: bolder;
+    }
   }
 }

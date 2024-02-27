@@ -1,1 +1,1 @@
-export * from './combat-techniques'
+export * from './skill-segment'
