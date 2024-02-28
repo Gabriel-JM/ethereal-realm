@@ -28,3 +28,10 @@ export const proficiencies = <Proficiency[]> [
   sobrevivencia,
   tratarAnimais
 ]
+
+export * from './ability'
+export * from './combat'
+export * from './conjuration'
+export * from './knowledge'
+export * from './moviment'
+export * from './social'

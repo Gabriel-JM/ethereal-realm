@@ -1,14 +1,9 @@
-import { css, html, shell, signal } from 'lithen-fns'
+import { css, html } from 'lithen-fns'
 import { backButton } from '../../common/buttons'
 import { proficiencyInDisplay } from '..'
-import { requestSkillSegment } from '../../data/request-data'
+import { SkillSegmentsStore } from '../../data/request-data'
 import { skillCard } from './skill-card'
-import { SkillSegment } from '../../types'
-
-type RequestStatus<T = unknown> = {
-  loading: boolean
-  data: T
-}
+import { SkillSegmentsIds } from '../../types'
 
 const skillSegmentStyles = css`
   .level-title-container {
@@ -27,55 +22,40 @@ const skillSegmentStyles = css`
   }
 `
 
-export function skillSegment(skillSegmentId: string) {
-  const skillSegmentReq = signal<RequestStatus<SkillSegment | null>>({
-    loading: true,
-    data: null
-  })
-  requestSkillSegment(skillSegmentId)
-    .then(data => skillSegmentReq.set({ loading: false, data }))
+export function skillSegment(skillSegmentId: SkillSegmentsIds) {
+  const segment = SkillSegmentsStore.getById(skillSegmentId)
+
+  if (!segment) {
+    return html`
+      <div css=${skillSegmentStyles}>
+        ${backButton({
+          onClick: () => proficiencyInDisplay.set('title-list')
+        })}
+
+        <p>Conteúdo em Desenvolvimento!</p>
+      </div>
+    `
+  }
 
   return html`
     <div css=${skillSegmentStyles}>
-      ${shell(() => {
-        const segmentData = skillSegmentReq.get()
+      ${skillsDisplayTitle(segment.title, skillSegmentId)}
 
-        if (segmentData.loading) {
-          return 'Loading...'
-        }
-
-        const { data } = skillSegmentReq.get()
-
-        if (!data) {
-          return html`
-            ${backButton({
-              onClick: () => proficiencyInDisplay.set('title-list')
-            })}
-
-            <p>Conteúdo em Desenvolvimento!</p>
-          `
-        }
-
+      ${segment.levels.map((level, index) => {
         return html`
-          ${skillsDisplayTitle(data.title, skillSegmentId)}
+          <div class="level-title-container">
+            <h4 class="level-title">
+              Nível ${index + 1}
+            </h4>
+            <p>
+              <strong>Requer: </strong>
+              ${level.requirements}
+            </p>
+          </div>
 
-          ${data.levels.map((level, index) => {
-            return html`
-              <div class="level-title-container">
-                <h4 class="level-title">
-                  Nível ${index + 1}
-                </h4>
-                <p>
-                  <strong>Requer: </strong>
-                  ${level.requirements}
-                </p>
-              </div>
-
-              <ul class="skill-card-list">
-                ${level.skills.map(skillCard)}
-              </ul>
-            `
-          })}
+          <ul class="skill-card-list">
+            ${level.skills.map(skillCard)}
+          </ul>
         `
       })}
     </div>

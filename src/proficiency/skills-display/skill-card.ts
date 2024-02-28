@@ -1,6 +1,7 @@
 import './skill-card.css'
 import { html, raw } from 'lithen-fns'
-import { Skill, SkillBenefit } from '../../types'
+import { ProficiencyReference, Skill, SkillBenefit } from '../../types'
+import { ProficienciesStore } from '../../data/request-data'
 
 export type SkillCardProps = Skill
 
@@ -35,10 +36,8 @@ function skillBenefits(benefits?: SkillBenefit) {
       <summary>${benefits.title ?? 'Benefícios'}</summary>
       <ul class="list">
         ${benefits.value.map(benefit => {
-          if ('name' in benefit) {
-            return html`
-              <li>${benefit.name} ${benefit.value}</li>
-            `
+          if ('id' in benefit) {
+            return proficiencyValue(benefit)
           }
 
           if (benefit.type === 'list') {
@@ -47,10 +46,8 @@ function skillBenefits(benefits?: SkillBenefit) {
                 <span>${benefit.title}</span>
                 <ul class="list">
                   ${benefit.value.map(sub => {
-                    const subBenefit = sub as { name: string, value: number }
-                    return html`
-                      <li>${subBenefit.name} ${sub.value}</li>
-                    `
+                    const subBenefit = sub as ProficiencyReference
+                    return proficiencyValue(subBenefit)
                   })}
                 </ul>
               </li>
@@ -63,5 +60,13 @@ function skillBenefits(benefits?: SkillBenefit) {
         })}
       </ul>
     </details>
+  `
+}
+
+function proficiencyValue(ref: ProficiencyReference) {
+  const proficiency = ProficienciesStore.getById(ref.id)
+
+  return html`
+    <li>${proficiency.name} ${ref.value}</li>
   `
 }

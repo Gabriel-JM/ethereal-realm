@@ -1,4 +1,5 @@
 import { Skill } from '../../../../src/types'
+import { agilidade, combateCorpoACorpo } from '../../../proficiencies'
 import { join } from '../../../utils'
 
 export const treinamentoMagoBatalha = <Skill> {
@@ -18,11 +19,11 @@ export const treinamentoMagoBatalha = <Skill> {
     title: 'Perícias',
     value: [
       {
-        name: 'Combate Corpo a Corpo',
+        id: combateCorpoACorpo.id,
         value: 1
       },
       {
-        name: 'Agilidade',
+        id: agilidade.id,
         value: 1
       }
     ]

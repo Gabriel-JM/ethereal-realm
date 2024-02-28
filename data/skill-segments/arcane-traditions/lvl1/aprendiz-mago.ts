@@ -1,5 +1,6 @@
 import { join } from '../../../utils'
 import { Skill } from '../../../../src/types'
+import { arcanismo, historia, investigacao, percepcao } from '../../../proficiencies'
 
 export const aprendizMago = <Skill> {
   id: 'artr_1',
@@ -32,19 +33,19 @@ export const aprendizMago = <Skill> {
         title: 'Perícias',
         value: [
           {
-            name: 'Arcanismo',
+            id: arcanismo.id,
             value: 1
           },
           {
-            name: 'Investigação',
+            id: investigacao.id,
             value: 1
           },
           {
-            name: 'Percepção',
+            id: percepcao.id,
             value: 1
           },
           {
-            name: 'História',
+            id: historia.id,
             value: 1
           }
         ]

@@ -1,5 +1,6 @@
-import { Skill } from '../../../types/skill.ts'
-import { join } from '../../../utils/join.ts'
+import { Skill } from '../../../../src/types'
+import { agilidade, combateADistancia, combateCorpoACorpo, furtividade, percepcao } from '../../../proficiencies'
+import { join } from '../../../utils'
 
 export const aspiranteAssassino = <Skill> {
   id: 'cute_1',
@@ -14,23 +15,23 @@ export const aspiranteAssassino = <Skill> {
     title: 'Perícias',
     value: [
       {
-        name: 'Furtividade',
+        id: furtividade.id,
         value: 1
       },
       {
-        name: 'Combate Corpo a Corpo',
+        id: combateCorpoACorpo.id,
         value: 1
       },
       {
-        name: 'Combate a Distância',
+        id: combateADistancia.id,
         value: 1
       },
       {
-        name: 'Agilidade',
+        id: agilidade.id,
         value: 1
       },
       {
-        name: 'Percepção',
+        id: percepcao.id,
         value: 1
       }
     ]

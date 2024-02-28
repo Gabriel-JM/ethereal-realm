@@ -8,6 +8,11 @@ export type Proficiency = {
   description: string
 }
 
+export type ProficiencyReference = {
+  id: string
+  value: number
+}
+
 export type ProficiencyCategories = (
   'combat'
   | 'moviment'

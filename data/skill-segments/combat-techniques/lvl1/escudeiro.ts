@@ -1,4 +1,5 @@
 import { Skill } from '../../../../src/types'
+import { atletismo, combateCorpoACorpo, historia, percepcao } from '../../../proficiencies'
 import { join } from '../../../utils'
 
 export const escudeiro = <Skill> {
@@ -14,19 +15,19 @@ export const escudeiro = <Skill> {
     title: 'Perícias',
     value: [
       {
-        name: 'História',
+        id: historia.id,
         value: 1
       },
       {
-        name: 'Atletismo',
+        id: atletismo.id,
         value: 1
       },
       {
-        name: 'Percepção',
+        id: percepcao.id,
         value: 1
       },
       {
-        name: 'Combate Corpo a Corpo',
+        id: combateCorpoACorpo.id,
         value: 1
       }
     ]

@@ -1,5 +1,7 @@
+import { ProficiencyReference } from '.'
+
 export type SkillSegment = {
-  id: string
+  id: SkillSegmentsIds
   title: string
   levels: Array<{
     requirements: string
@@ -7,14 +9,28 @@ export type SkillSegment = {
   }>
 }
 
+export type SkillSegmentsIds = (
+  'combat-techniques'
+  | 'hunt-tactics'
+  | 'arcane-traditions'
+  | 'clerical-traditions'
+  | 'cunning-techniques'
+  | 'merchant-tactics'
+  | 'alchemy-practices'
+  | 'runic-practices'
+  | 'musical-practices'
+)
+
 export type Skill = {
   id: string
   title: string
-  type: 'passive' | 'active' | 'resting'
+  type: SkillTypes
   properties?: SkillProperties
   description: string
   benefits?: SkillBenefit
 }
+
+export type SkillTypes = 'passive' | 'active' | 'resting'
 
 export type SkillProperties = {
   requirements?: string
@@ -32,8 +48,5 @@ export type SkillBenefitText = {
 export type SkillBenefitList = {
   type: 'list'
   title?: string
-  value: Array<SkillBenefit | {
-    name: string
-    value: number
-  }>
+  value: Array<SkillBenefit | ProficiencyReference>
 }
