@@ -12,11 +12,10 @@ export async function requestSkillSegment(id: string) {
     return cache
   }
   
-  const response = await fetch(
-    `https://raw.githubusercontent.com/Gabriel-JM/ethereal-db/master/db/skills-segments/${id}.json`
-  )
+  const response = await fetch(`/data/${id}.json`)
+  const contentType = response.headers.get('content-type')
   
-  if (response.status === 404) {
+  if (contentType !== 'application/json') {
     return null
   }
 
