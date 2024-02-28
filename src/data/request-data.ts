@@ -15,7 +15,7 @@ export async function requestSkillSegment(id: string) {
   const response = await fetch(`/data/${id}.json`)
   const contentType = response.headers.get('content-type')
   
-  if (contentType !== 'application/json') {
+  if (!contentType?.startsWith('application/json')) {
     return null
   }
 
