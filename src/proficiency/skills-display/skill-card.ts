@@ -1,5 +1,5 @@
 import { html, raw } from 'lithen-fns'
-import { Skill, SkillBenefit } from '.'
+import { Skill, SkillBenefit } from '../../types'
 
 export type SkillCardProps = Skill
 

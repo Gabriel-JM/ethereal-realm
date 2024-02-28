@@ -3,46 +3,7 @@ import { backButton } from '../../common/buttons'
 import { proficiencyInDisplay } from '..'
 import { requestSkillSegment } from '../../data/request-data'
 import { skillCard } from './skill-card'
-
-export type SkillSegment = {
-  id: string
-  title: string
-  levels: Array<{
-    requeriments: string
-    skills: Skill[]
-  }>
-}
-
-export type Skill = {
-  id: string
-  title: string
-  type: 'passive' | 'active' | 'resting'
-  properties?: SkillProperties
-  description: string
-  benefits?: SkillBenefit
-}
-
-export type SkillProperties = {
-  requirements?: string
-  cost?: string
-  buildTime?: string
-}
-
-export type SkillBenefit = SkillBenefitText | SkillBenefitList
-
-export type SkillBenefitText = {
-  type: 'text'
-  value: string
-}
-
-export type SkillBenefitList = {
-  type: 'list'
-  title?: string
-  value: Array<SkillBenefit | {
-    name: string
-    value: number
-  }>
-}
+import { SkillSegment } from '../../types'
 
 type RequestStatus<T = unknown> = {
   loading: boolean
@@ -106,7 +67,7 @@ export function skillSegment(skillSegmentId: string) {
                 </h4>
                 <p>
                   <strong>Requer: </strong>
-                  ${level.requeriments}
+                  ${level.requirements}
                 </p>
               </div>
 
