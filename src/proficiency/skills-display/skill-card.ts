@@ -1,3 +1,4 @@
+import './skill-card.css'
 import { html, raw } from 'lithen-fns'
 import { Skill, SkillBenefit } from '../../types'
 

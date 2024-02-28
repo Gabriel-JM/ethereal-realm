@@ -17,6 +17,7 @@ const proficienciesTitleStyles = css`
     padding: 6px 12px;
     border-radius: 6px;
     background-color: var(--black-70);
+    box-shadow: 0 2px 3px var(--black-80);
     transition: all 150ms;
 
     &:hover {
