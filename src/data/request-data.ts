@@ -71,3 +71,5 @@ export class ProficienciesStore {
     return proficiency!
   }
 }
+
+export const ProficiencyCalcStore = new Map<string, number>()

@@ -1,18 +1,31 @@
 import './skill-card.css'
-import { html, raw } from 'lithen-fns'
+import { html, raw, ref } from 'lithen-fns'
 import { ProficiencyReference, Skill, SkillBenefit } from '../../types'
 import { ProficienciesStore } from '../../data/request-data'
+import { checkIcon } from '../../common/icons'
 
 export type SkillCardProps = Skill
 
-export function skillCard(data: SkillCardProps) {  
+export function skillCard(data: SkillCardProps) {
+  const cardRef = ref<HTMLDivElement>()
+
+  function toggleSelectCard() {
+    cardRef.el?.classList.toggle('selected')
+  }
+
   return html`
-    <div class="skill-card">
-      <h4 class="title">${data.title}</h4>
-      <p class="type ${data.type}">Passiva</p>
-      <p class="description">
-        ${raw(data.description)}
-      </p>
+    <div ref=${cardRef} class="skill-card">
+      <div class="check">
+        ${checkIcon()}
+      </div>
+
+      <div class="main-content" on-click=${toggleSelectCard}>
+        <h4 class="title">${data.title}</h4>
+        <p class="type ${data.type}">Passiva</p>
+        <p class="description">
+          ${raw(data.description)}
+        </p>
+      </div>
 
       ${skillBenefits(data.benefits)}
     </div>

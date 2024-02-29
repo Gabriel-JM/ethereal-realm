@@ -1,8 +1,42 @@
 .skill-card {
+  position: relative;
   background-color: var(--black-65);
   padding: 12px 16px;
   border-radius: 4px;
+  border: 2px solid var(--black-65);
   box-shadow: 0 2px 3px var(--black-80);
+  transition: all 150ms;
+
+  & .check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: var(--blue-80);
+    top: -12px;
+    left: -12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50px;
+    scale: 0;
+    transition: all 250ms;
+
+    & svg {
+      width: 22px;
+    }
+  }
+
+  &.selected {
+    border-color: var(--blue-80);
+
+    & .check {
+      scale: 1;
+    }
+  }
+
+  .main-content {
+    cursor: pointer;
+  }
 
   .title {
     font-size: 1.3rem;
