@@ -25,7 +25,6 @@ const proficiencyContainerStyles = css`
         overflow-x: hidden;
         overflow-y: auto;
         margin-top: 12px;
-        padding: 14px 16px;
         background-color: var(--content-bg);
         border-radius: 4px;
       }

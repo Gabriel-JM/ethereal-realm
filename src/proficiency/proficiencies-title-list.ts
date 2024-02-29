@@ -6,6 +6,7 @@ const proficienciesTitleStyles = css`
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    padding: 14px 16px;
   }
 
   .proficiency-title {
