@@ -3,18 +3,33 @@ import { html, raw, ref } from 'lithen-fns'
 import { ProficiencyReference, Skill, SkillBenefit } from '../../types'
 import { ProficienciesStore } from '../../data/request-data'
 import { checkIcon } from '../../common/icons'
+import { selectedSkills } from '../calc-result/proficiency-calc-result'
 
 export type SkillCardProps = Skill
 
 export function skillCard(data: SkillCardProps) {
   const cardRef = ref<HTMLDivElement>()
+  const isSelected = selectedSkills.data()
+    .find(item => item.skillId === data.id)
 
   function toggleSelectCard() {
-    cardRef.el?.classList.toggle('selected')
+    const isSelected = cardRef.el?.classList.toggle('selected')
+    
+    if (isSelected) {
+      selectedSkills.set(
+        value => [...value, { skillId: data.id }]
+      )
+      return
+    }
+
+    selectedSkills.set(value => {
+      return value
+        .filter(item => item.skillId !== data.id)
+    })
   }
 
   return html`
-    <div ref=${cardRef} class="skill-card">
+    <div ref=${cardRef} class="skill-card ${isSelected && 'selected'}">
       <div class="check">
         ${checkIcon()}
       </div>

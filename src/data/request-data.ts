@@ -63,6 +63,30 @@ export class SkillSegmentsStore {
   }
 }
 
+export class SkillsStore {
+  static prefixes = {
+    cote: 'combat-techniques',
+    artr: 'arcane-traditions',
+    cute: 'cunning-techniques'
+  }
+
+  static getById(id: string) {
+    const [prefix] = id.split('_')
+    const skillSegmentId = Reflect.get(this.prefixes, prefix)
+    const skillSegment = SkillSegmentsStore.getById(skillSegmentId)
+    let skill = null
+
+    for (const level of skillSegment.levels) {
+      const foundSkill = level.skills.find(sk => sk.id === id)
+      if (foundSkill) {
+        skill = foundSkill
+      }
+    }
+
+    return skill!
+  }
+}
+
 export class ProficienciesStore {
   static getById(id: string) {
     const proficiency = dataStore.proficiencies
