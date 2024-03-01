@@ -3,7 +3,7 @@ import { atletismo, combateCorpoACorpo, historia, percepcao } from '../../../pro
 import { join } from '../../../utils'
 
 export const escudeiro = <Skill> {
-  id: 'cote_1',
+  id: 'cote_Io8oF6UROc',
   title: 'Escudeiro',
   type: 'passive',
   description: join(

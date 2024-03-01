@@ -3,7 +3,7 @@ import { Skill } from '../../../../src/types'
 import { arcanismo, historia, investigacao, percepcao } from '../../../proficiencies'
 
 export const aprendizMago = <Skill> {
-  id: 'artr_1',
+  id: 'artr_PGRcRoCeEH',
   title: 'Aprendiz de Mago (Int)',
   type: 'passive',
   properties: {

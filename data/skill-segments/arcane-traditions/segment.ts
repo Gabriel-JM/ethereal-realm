@@ -1,5 +1,5 @@
 import { SkillSegment } from '../../../src/types'
-import { aprendizMago, treinamentoMagoBatalha } from './lvl1'
+import { aprendizEstudioso, aprendizMago, sentirMagia, treinamentoMagoBatalha } from './lvl1'
 
 export const arcaneTraditionsSegment = <SkillSegment> {
   id: 'arcane-traditions',
@@ -9,6 +9,8 @@ export const arcaneTraditionsSegment = <SkillSegment> {
       requirements: 'Nível de Personagem 1',
       skills: [
         aprendizMago,
+        sentirMagia,
+        aprendizEstudioso,
         treinamentoMagoBatalha
       ]
     }

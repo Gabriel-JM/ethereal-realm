@@ -47,7 +47,11 @@
     font-weight: bolder;
 
     &.passive {
-      color: #549446;
+      color: var(--green-70);
+    }
+
+    &.active {
+      color: var(--blue-60);
     }
   }
 

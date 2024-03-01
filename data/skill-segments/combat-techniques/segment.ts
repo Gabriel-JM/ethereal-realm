@@ -1,5 +1,5 @@
 import { SkillSegment } from '../../../src/types'
-import { escudeiro } from './lvl1'
+import { equilibrio, escudeiro } from './lvl1'
 
 export const combatTechniquesSegment = <SkillSegment> {
   id: 'combat-techniques',
@@ -8,7 +8,8 @@ export const combatTechniquesSegment = <SkillSegment> {
     {
       requirements: 'Nível de Personagem 1',
       skills: [
-        escudeiro
+        escudeiro,
+        equilibrio
       ]
     }
   ]

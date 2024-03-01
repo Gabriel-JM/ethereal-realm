@@ -43,6 +43,12 @@ export function skillCard(data: SkillCardProps) {
     })
   }
 
+  const skillTypeName = {
+    active: 'Ativa',
+    passive: 'Passiva',
+    rest: 'Repouso'
+  }
+
   return html`
     <div ref=${cardRef} class="skill-card ${isSelected && 'selected'}">
       <div class="check">
@@ -51,7 +57,7 @@ export function skillCard(data: SkillCardProps) {
 
       <div class="main-content" on-click=${toggleSelectCard}>
         <h4 class="title">${data.title}</h4>
-        <p class="type ${data.type}">Passiva</p>
+        <p class="type ${data.type}">${skillTypeName[data.type]}</p>
         <p class="description">
           ${raw(data.description)}
         </p>

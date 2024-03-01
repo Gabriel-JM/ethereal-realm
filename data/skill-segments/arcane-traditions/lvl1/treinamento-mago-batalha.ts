@@ -3,7 +3,7 @@ import { agilidade, combateCorpoACorpo } from '../../../proficiencies'
 import { join } from '../../../utils'
 
 export const treinamentoMagoBatalha = <Skill> {
-  id: 'artr_5',
+  id: 'artr_gIT5shwlPF',
   title: 'Treinamento de Mago de Batalha',
   type: 'passive',
   description: join(

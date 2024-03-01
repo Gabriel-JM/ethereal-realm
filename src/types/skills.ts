@@ -30,7 +30,7 @@ export type Skill = {
   benefits?: SkillBenefit
 }
 
-export type SkillTypes = 'passive' | 'active' | 'resting'
+export type SkillTypes = 'passive' | 'active' | 'rest'
 
 export type SkillProperties = {
   requirements?: string
