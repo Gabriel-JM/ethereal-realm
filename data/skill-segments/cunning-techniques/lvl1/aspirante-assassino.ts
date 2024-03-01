@@ -3,7 +3,7 @@ import { agilidade, combateADistancia, combateCorpoACorpo, furtividade, percepca
 import { join } from '../../../utils'
 
 export const aspiranteAssassino = <Skill> {
-  id: 'cute_1',
+  id: 'cute_MdNuvF6OPq',
   title: 'Aspirante a Assassino',
   type: 'passive',
   description: join(

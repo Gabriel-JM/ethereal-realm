@@ -1,5 +1,5 @@
 import { SkillSegment } from '../../../src/types'
-import { aspiranteAssassino } from './lvl1'
+import { aspiranteAssassino, assalto, ataqueFurtivo, driblar, investidaRapida, piveteDeRua } from './lvl1'
 
 export const cunningTechniquesSegment = <SkillSegment> {
   id: 'cunning-techniques',
@@ -8,7 +8,12 @@ export const cunningTechniquesSegment = <SkillSegment> {
     {
       requirements: 'Nível de Personagem 1',
       skills: [
-        aspiranteAssassino
+        aspiranteAssassino,
+        piveteDeRua,
+        ataqueFurtivo,
+        assalto,
+        investidaRapida,
+        driblar
       ]
     }
   ]
