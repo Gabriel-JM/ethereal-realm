@@ -1,5 +1,5 @@
 .proficiency-result-container {
-  height: 460px;
+  height: calc(100% - 50px);
   margin-top: 12px;
   padding: 14px 16px;
   background-color: var(--content-bg);

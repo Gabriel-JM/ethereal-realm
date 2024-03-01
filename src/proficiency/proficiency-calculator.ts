@@ -8,12 +8,19 @@ import { proficiencyCalcResult } from './calc-result/proficiency-calc-result'
 export const proficiencyInDisplay = signal('title-list')
 
 const proficiencyContainerStyles = css`
-  &.proficiency-container {
+  &.proficiency-calculator-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .proficiency-container {
     display: flex;
-    padding: 12px 0;
+    height: calc(100% - 42px);
+    padding-top: 12px;
     gap: 12px;
 
     .skills {
+      height: 100%;
       flex: 2;
 
       & h3 {
@@ -21,7 +28,8 @@ const proficiencyContainerStyles = css`
       }
 
       .skills-display {
-        height: 460px;
+        width: 100%;
+        height: calc(100% - 50px);
         overflow-x: hidden;
         overflow-y: auto;
         margin-top: 12px;
@@ -31,6 +39,7 @@ const proficiencyContainerStyles = css`
     }
 
     .result {
+      height: 100%;
       flex: 1;
 
       & h3 {
@@ -42,12 +51,12 @@ const proficiencyContainerStyles = css`
 
 export function proficiencyCalculator() {
   return commonLayout(html`
-    <div>
+    <div css=${proficiencyContainerStyles} class="proficiency-calculator-container">
       <header>
         <h2>Calculadora de Perícias</h2>
       </header>
 
-      <section css=${proficiencyContainerStyles} class="proficiency-container">
+      <section class="proficiency-container">
         <div class="skills">
           <h3>Habilidades</h3>
 

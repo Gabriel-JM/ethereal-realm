@@ -47,10 +47,17 @@ body {
   --content-bg: var(--black-75);
 }
 
+#app {
+  height: 100%;
+}
+
 /* Common Layout*/
 .container {
-  max-width: 1400px;
-  padding: 12px;
+  max-width: 1600px;
+  width: 100%;
+  height: calc(100% - 55px);
+  padding: 0px 12px;
+  margin: auto;
 }
 
 /* Buttons */
