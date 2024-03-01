@@ -71,8 +71,7 @@ export class SkillsStore {
   }
 
   static getById(id: string) {
-    const [prefix] = id.split('_')
-    const skillSegmentId = Reflect.get(this.prefixes, prefix)
+    const skillSegmentId = this.getSegmentId(id)
     const skillSegment = SkillSegmentsStore.getById(skillSegmentId)
     let skill = null
 
@@ -84,6 +83,12 @@ export class SkillsStore {
     }
 
     return skill!
+  }
+
+  static getSegmentId(id: string) {
+    const [prefix] = id.split('_')
+    const skillSegmentId = Reflect.get(this.prefixes, prefix)
+    return skillSegmentId
   }
 }
 

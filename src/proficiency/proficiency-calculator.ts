@@ -21,7 +21,7 @@ const proficiencyContainerStyles = css`
       }
 
       .skills-display {
-        height: 450px;
+        height: 460px;
         overflow-x: hidden;
         overflow-y: auto;
         margin-top: 12px;

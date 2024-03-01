@@ -1,9 +1,12 @@
 .proficiency-result-container {
-  height: 450px;
+  height: 460px;
   margin-top: 12px;
   padding: 14px 16px;
   background-color: var(--content-bg);
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 
   .empty-result {
     padding: 10% 0;
@@ -11,6 +14,44 @@
     & p {
       color: #bbb;
       text-align: center;
+    }
+  }
+
+  .result-part {
+    flex: 1;
+    max-height: 50%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    & h4 {
+      position: sticky;
+      top: 0;
+      background-color: var(--content-bg);
+      font-size: 1.15rem;
+    }
+
+    .item-list {
+      padding: 6px 10px 0 0;
+      font-size: 0.9rem;
+      
+      .skill-ref {
+        padding: 4px 14px;
+        border: 1px solid var(--black-60);
+        border-radius: 20px;
+        margin-bottom: 6px;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .remove-skill {
+          width: 20px;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          margin-left: auto;
+        }
+      }
     }
   }
 }
