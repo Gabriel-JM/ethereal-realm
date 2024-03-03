@@ -1,4 +1,7 @@
+import { signal } from 'lithen-fns'
 import { requestProficiencies, requestSkillSegment } from './request-data'
+
+export const isDataReady = signal(false)
 
 export function initData() {
   const skillSegments = [
@@ -12,4 +15,10 @@ export function initData() {
   for (const segment of skillSegments) {
     requestSkillSegment(segment)
   }
+
+  Promise.all([
+    requestProficiencies(),
+    ...skillSegments.map(requestSkillSegment)
+  ])
+    .then(() => isDataReady.set(true))
 }

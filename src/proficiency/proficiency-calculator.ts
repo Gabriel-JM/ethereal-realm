@@ -70,7 +70,11 @@ export function proficiencyCalculator() {
                 })
               }
 
-              return skillSegment(current as SkillSegmentsIds)
+              return skillSegment({
+                skillSegmentId: current as SkillSegmentsIds,
+                variant: 'cards',
+                onClickBack: () => proficiencyInDisplay.set('title-list')
+              })
             })}
           </div>
         </div>

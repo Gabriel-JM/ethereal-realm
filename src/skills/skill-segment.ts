@@ -1,9 +1,9 @@
 import { css, html } from 'lithen-fns'
 import { backButton } from '../common/buttons'
-import { proficiencyInDisplay } from '../proficiency'
 import { SkillSegmentsStore } from '../data/request-data'
 import { skillCard } from './card/skill-card'
 import { SkillSegmentsIds } from '../types'
+import { skillDescription } from '.'
 
 const skillSegmentStyles = css`
   .skill-segment-content {
@@ -17,23 +17,41 @@ const skillSegmentStyles = css`
       font-size: 1.6rem;
     }
   }
-
-  .skill-card-list {
+  
+  .skill-cards-list {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     gap: 14px;
   }
+
+  .skill-docs-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `
 
-export function skillSegment(skillSegmentId: SkillSegmentsIds) {
-  const segment = SkillSegmentsStore.getById(skillSegmentId)
+export type SkillSegmentProps = {
+  skillSegmentId: SkillSegmentsIds
+  variant?: 'docs' | 'cards'
+  onClickBack?: () => void
+}
+
+export function skillSegment(props: SkillSegmentProps) {
+  const segment = SkillSegmentsStore.getById(props.skillSegmentId)
+  const skillComponent = props.variant === 'cards' ? skillCard : skillDescription
 
   if (!segment) {
     return html`
       <div css=${skillSegmentStyles}>
         ${backButton({
-          onClick: () => proficiencyInDisplay.set('title-list')
+          onClick: props.onClickBack
         })}
 
         <p>Conteúdo em Desenvolvimento!</p>
@@ -43,7 +61,12 @@ export function skillSegment(skillSegmentId: SkillSegmentsIds) {
 
   return html`
     <div css=${skillSegmentStyles}>
-      ${skillsDisplayTitle(segment.title, skillSegmentId)}
+      ${skillsDisplayTitle({
+        id: props.skillSegmentId,
+        title: segment.title,
+        variant: props.variant === 'cards' ? 'imbeded' : 'page',
+        onClickBack: props.onClickBack
+      })}
 
       ${segment.levels.map((level, index) => {
         return html`
@@ -58,8 +81,8 @@ export function skillSegment(skillSegmentId: SkillSegmentsIds) {
               </p>
             </div>
 
-            <ul class="skill-card-list">
-              ${level.skills.map(skillCard)}
+            <ul class="skill-${props.variant}-list">
+              ${level.skills.map(skillComponent)}
             </ul>
           </div>
         `
@@ -73,10 +96,19 @@ const skillsDisplayTitleStyles = css`
     display: flex;
     align-items: center;
     padding: 12px 14px;
-    background-color: var(--content-bg);
     z-index: 10;
     position: sticky;
     top: 0;
+
+    &.imbeded {
+      background-color: var(--content-bg);
+    }
+
+    &.page {
+      font-size: 1.4rem;
+      background-color: var(--bg-color);
+      border-bottom: 1px solid var(--black-70);
+    }
   }
 
   .title {
@@ -87,18 +119,27 @@ const skillsDisplayTitleStyles = css`
   }
 `
 
-export function skillsDisplayTitle(title: string, image: string) {
+export type SkillDisplayTitleProps = {
+  id: string
+  title: string
+  variant: 'page' | 'imbeded'
+  onClickBack?: () => void
+}
+
+export function skillsDisplayTitle(props: SkillDisplayTitleProps) {
+  const imageSize = props.variant === 'imbeded' ? 40 : 50
+  
   return html`
-    <header css=${skillsDisplayTitleStyles}>
+    <header class="${props.variant}" css=${skillsDisplayTitleStyles}>
       <div>
         ${backButton({
-          onClick: () => proficiencyInDisplay.set('title-list')
+          onClick: props.onClickBack
         })}
       </div>
 
       <div class="title">
-        <img src="/images/${image}.png" width="40" />
-        <h3>${title}</h3>
+        <img src="/images/${props.id}.png" width="${imageSize}" />
+        <h3>${props.title}</h3>
       </div>
     </header>
   `

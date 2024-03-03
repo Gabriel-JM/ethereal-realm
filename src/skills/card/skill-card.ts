@@ -1,9 +1,9 @@
 import './skill-card.css'
 import { DataSignal, html, raw, ref } from 'lithen-fns'
-import { ProficiencyReference, Skill, SkillBenefit } from '../../types'
-import { ProficienciesStore } from '../../data/request-data'
+import { Skill } from '../../types'
 import { checkIcon } from '../../common/icons'
 import { selectedSkills } from '../../proficiency/calc-result/proficiency-calc-result'
+import { skillBenefits, skillTypeName } from '..'
 
 export type SkillCardProps = Skill
 
@@ -43,12 +43,6 @@ export function skillCard(data: SkillCardProps) {
     })
   }
 
-  const skillTypeName = {
-    active: 'Ativa',
-    passive: 'Passiva',
-    rest: 'Repouso'
-  }
-
   return html`
     <div ref=${cardRef} class="skill-card ${isSelected && 'selected'}">
       <div class="check">
@@ -65,57 +59,5 @@ export function skillCard(data: SkillCardProps) {
 
       ${skillBenefits(data.benefits)}
     </div>
-  `
-}
-
-function skillBenefits(benefits?: SkillBenefit) {
-  if (!benefits) return
-
-  if (benefits.type === 'text') {
-    return html`
-      <p>
-        <strong>Benefício:</strong>
-        <span>${benefits.value}</span>
-      </p>
-    `
-  }
-
-  return html`
-    <details class="benefits-details">
-      <summary>${benefits.title ?? 'Benefícios'}</summary>
-      <ul class="list">
-        ${benefits.value.map(benefit => {
-          if ('id' in benefit) {
-            return proficiencyValue(benefit)
-          }
-
-          if (benefit.type === 'list') {
-            return html`
-              <li>
-                <span>${benefit.title}</span>
-                <ul class="list">
-                  ${benefit.value.map(sub => {
-                    const subBenefit = sub as ProficiencyReference
-                    return proficiencyValue(subBenefit)
-                  })}
-                </ul>
-              </li>
-            `
-          }
-
-          return html`
-            <li>${raw(benefit.value)}</li>
-          `
-        })}
-      </ul>
-    </details>
-  `
-}
-
-function proficiencyValue(ref: ProficiencyReference) {
-  const proficiency = ProficienciesStore.getById(ref.id)
-
-  return html`
-    <li>${proficiency.name} ${ref.value}</li>
   `
 }
