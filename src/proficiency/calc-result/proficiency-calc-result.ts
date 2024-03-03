@@ -2,8 +2,8 @@ import './proficiency-calc-result.css'
 import { ProficienciesStore, SkillsStore } from '../../data/request-data'
 import { DataSignal, html, shell } from 'lithen-fns'
 import { ProficiencyReference, Skill } from '../../types'
-import { xIcon } from '../../common/icons'
 import { alphabeticSort } from '../../common/utils'
+import { skillReference } from '../../skills'
 
 class CustomSignal<T = unknown> extends DataSignal<T> {
   #value
@@ -63,7 +63,14 @@ export function proficiencyCalcResult() {
               ${
                 skillsData
                   .sort((a,b) => alphabeticSort(a.title, b.title))
-                  .map(skillReference)
+                  .map(skill => skillReference({
+                    ...skill,
+                    onUnselectSkill(id) {
+                      selectedSkills.set(value => value.filter(
+                        item => item.skillId !== id
+                      ))
+                    }
+                  }))
               }
             </ul>
           </div>
@@ -119,34 +126,4 @@ function getSkillDataAndProficienciesCount() {
     proficienciesCount,
     skillsData
   }
-}
-
-type SkillReferenceProps = Skill
-
-function skillReference(props: SkillReferenceProps) {
-  const segmentId = SkillsStore.getSegmentId(props.id)
-
-  function unselectSkill() {
-    selectedSkills.set(value => value.filter(
-      item => item.skillId !== props.id
-    ))
-  }
-  
-  return html`
-    <li class="skill-ref">
-      <img
-        src="/images/${segmentId}.png"
-        width="20"
-        alt="skill icon"
-      />
-      <span>${props.title}</span>
-
-      <div
-        class="remove-skill"
-        on-click=${unselectSkill}
-      >
-        ${xIcon()}
-      </div>
-    </li>
-  `
 }

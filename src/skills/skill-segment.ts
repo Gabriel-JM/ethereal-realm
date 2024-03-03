@@ -1,9 +1,9 @@
 import { css, html } from 'lithen-fns'
-import { backButton } from '../../common/buttons'
-import { proficiencyInDisplay } from '..'
-import { SkillSegmentsStore } from '../../data/request-data'
+import { backButton } from '../common/buttons'
+import { proficiencyInDisplay } from '../proficiency'
+import { SkillSegmentsStore } from '../data/request-data'
 import { skillCard } from './skill-card'
-import { SkillSegmentsIds } from '../../types'
+import { SkillSegmentsIds } from '../types'
 
 const skillSegmentStyles = css`
   .skill-segment-content {
