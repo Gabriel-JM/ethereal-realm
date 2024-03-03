@@ -1,9 +1,9 @@
 import { css, html, shell, signal } from 'lithen-fns'
 import { commonLayout } from '../common/layouts'
-import { proficienciesTitleList } from './proficiencies-title-list'
-import { skillSegment } from './skills-display'
 import { SkillSegmentsIds } from '../types'
 import { proficiencyCalcResult } from './calc-result/proficiency-calc-result'
+import { skillSegment } from '../skills'
+import { skillPageTitleList } from './skill-page-title-list'
 
 export const proficiencyInDisplay = signal('title-list')
 
@@ -65,7 +65,9 @@ export function proficiencyCalculator() {
               const current = proficiencyInDisplay.get()
 
               if (current === 'title-list') {
-                return proficienciesTitleList()
+                return skillPageTitleList({
+                  onClick: id => proficiencyInDisplay.set(id)
+                })
               }
 
               return skillSegment(current as SkillSegmentsIds)

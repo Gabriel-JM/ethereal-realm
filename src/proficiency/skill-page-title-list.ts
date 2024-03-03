@@ -1,16 +1,16 @@
 import { css, html } from 'lithen-fns'
-import { proficiencyInDisplay } from '.'
 
-const proficienciesTitleStyles = css`
-  &.proficiencies-title-list {
+const skillPageTitleStyles = css`
+  &.skills-title-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     padding: 14px 16px;
   }
 
-  .proficiency-title {
-    width: 49%;
+  .skill-title {
+    width: 100%;
+    max-width: 420px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -32,8 +32,12 @@ const proficienciesTitleStyles = css`
   }
 `
 
-export function proficienciesTitleList() {
-  const proficiencyTitles = {
+export type SkillPageTitleListProps = {
+  onClick?(skillId: string): void
+}
+
+export function skillPageTitleList({ onClick }: SkillPageTitleListProps) {
+  const skillsTitles = {
     'combat-techniques': 'Técnicas de Combate',
     'hunt-tactics': 'Táticas de Caça (Beta)',
     'arcane-traditions': 'Tradições Arcanas',
@@ -46,23 +50,31 @@ export function proficienciesTitleList() {
   }
 
   return html`
-    <ul css=${proficienciesTitleStyles} class="proficiencies-title-list">
+    <ul css=${skillPageTitleStyles} class="skills-title-list">
       ${Object
-          .entries(proficiencyTitles)
+          .entries(skillsTitles)
           .map(([target, title]) => {
-            return proficiencyTitle(title, target)
+            return skillPageTitle({
+              title,
+              skillId: target,
+              onClick: onClick
+            })
           })
       }
     </ul>
   `
 }
 
-export function proficiencyTitle(title: string, target: string) {
-  const handleClick = () => proficiencyInDisplay.set(target)
+export type SkillPageTitleProps = {
+  title: string
+  skillId: string
+  onClick?(id: string): void
+}
 
+export function skillPageTitle({ title, skillId, onClick }: SkillPageTitleProps) {
   return html`
-    <li class="proficiency-title" on-click=${handleClick}>
-      <img src="/images/${target}.png" width="30" />
+    <li class="skill-title" on-click=${onClick && (() => onClick(skillId))}>
+      <img src="/images/${skillId}.png" width="30" />
       <span>${title}</span>
     </li>
   `

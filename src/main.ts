@@ -1,7 +1,17 @@
 import './styles.css'
-import { proficiencyCalculator } from './proficiency'
 import { initData } from './data/init-data'
+import { router } from './config'
 
 initData()
 
-document.getElementById('app')?.append(proficiencyCalculator())
+const app = document.getElementById('app')
+
+function render() {
+  const match = router.matchRoute()
+
+  app?.replaceChildren(match.value())
+}
+
+router.onNavigate(render)
+
+window.onload = render
