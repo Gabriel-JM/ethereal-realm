@@ -3,7 +3,7 @@ import { commonLayout } from '../common/layouts'
 import { SkillSegmentsIds } from '../types'
 import { proficiencyCalcResult } from './calc-result/proficiency-calc-result'
 import { skillSegment } from '../skills'
-import { skillPageTitleList } from './skill-page-title-list'
+import { skillPageTitleList } from '../skills/page-title-list/skill-page-title-list'
 
 export const proficiencyInDisplay = signal('title-list')
 

@@ -1,7 +1,8 @@
 import './home-page.css'
 import { html } from 'lithen-fns'
 import { nav } from '../config/router'
-import { skillPageTitleList } from '../proficiency/skill-page-title-list'
+import { skillPageTitleList } from '../skills/page-title-list/skill-page-title-list'
+import { link } from '../common'
 
 export function homePage() {
   return html`
@@ -11,9 +12,10 @@ export function homePage() {
 
     <section class="home-content">
       <div>
-        <h3>Documentação</h3>
+        <h3>Habilidades</h3>
 
         ${skillPageTitleList({
+          variant: 'link',
           onClick: id => nav(`/docs/${id}`)()
         })}
       </div>
@@ -22,9 +24,10 @@ export function homePage() {
         <h3>Ferramentas</h3>
 
         <nav>
-          <a on-click=${nav('/prof-calc')}>
-            Calculadora de Perícias
-          </a>
+          ${link({
+            path: '/prof-calc',
+            content: 'Calculadora de Perícias'
+          })}
         </nav>
       </div>
     </section>

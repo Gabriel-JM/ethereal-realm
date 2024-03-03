@@ -1,9 +1,9 @@
 import './skill-card.css'
 import { DataSignal, html, raw, ref } from 'lithen-fns'
-import { ProficiencyReference, Skill, SkillBenefit } from '../types'
-import { ProficienciesStore } from '../data/request-data'
-import { checkIcon } from '../common/icons'
-import { selectedSkills } from '../proficiency/calc-result/proficiency-calc-result'
+import { ProficiencyReference, Skill, SkillBenefit } from '../../types'
+import { ProficienciesStore } from '../../data/request-data'
+import { checkIcon } from '../../common/icons'
+import { selectedSkills } from '../../proficiency/calc-result/proficiency-calc-result'
 
 export type SkillCardProps = Skill
 

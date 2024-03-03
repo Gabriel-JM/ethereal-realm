@@ -1,42 +1,12 @@
-import { css, html } from 'lithen-fns'
-
-const skillPageTitleStyles = css`
-  &.skills-title-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 14px 16px;
-  }
-
-  .skill-title {
-    width: 100%;
-    max-width: 420px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 6px;
-    background-color: var(--black-70);
-    box-shadow: 0 2px 3px var(--black-80);
-    transition: all 150ms;
-
-    &:hover {
-      background-color: var(--black-80);
-    }
-    
-    & span {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-  }
-`
+import './skill-page-title-list.css'
+import { html } from 'lithen-fns'
 
 export type SkillPageTitleListProps = {
+  variant?: 'link' | 'button'
   onClick?(skillId: string): void
 }
 
-export function skillPageTitleList({ onClick }: SkillPageTitleListProps) {
+export function skillPageTitleList(props: SkillPageTitleListProps) {
   const skillsTitles = {
     'combat-techniques': 'Técnicas de Combate',
     'hunt-tactics': 'Táticas de Caça (Beta)',
@@ -50,14 +20,15 @@ export function skillPageTitleList({ onClick }: SkillPageTitleListProps) {
   }
 
   return html`
-    <ul css=${skillPageTitleStyles} class="skills-title-list">
+    <ul class="skills-title-list">
       ${Object
           .entries(skillsTitles)
           .map(([target, title]) => {
             return skillPageTitle({
               title,
               skillId: target,
-              onClick: onClick
+              variant: props.variant,
+              onClick: props.onClick
             })
           })
       }
@@ -68,12 +39,23 @@ export function skillPageTitleList({ onClick }: SkillPageTitleListProps) {
 export type SkillPageTitleProps = {
   title: string
   skillId: string
+  variant?: 'link' | 'button'
   onClick?(id: string): void
 }
 
-export function skillPageTitle({ title, skillId, onClick }: SkillPageTitleProps) {
+export function skillPageTitle({
+  title,
+  skillId,
+  variant = 'button',
+  onClick
+}: SkillPageTitleProps) {
+  const handleClick = () => onClick?.(skillId)
+
   return html`
-    <li class="skill-title" on-click=${onClick && (() => onClick(skillId))}>
+    <li
+      class="skill-title ${variant}"
+      on-click=${onClick && handleClick}
+    >
       <img src="/images/${skillId}.png" width="30" />
       <span>${title}</span>
     </li>
