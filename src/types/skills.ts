@@ -36,6 +36,7 @@ export type SkillProperties = {
   requirements?: string
   cost?: string
   buildTime?: string
+  castingTime?: string
 }
 
 export type SkillBenefit = SkillBenefitText | SkillBenefitList

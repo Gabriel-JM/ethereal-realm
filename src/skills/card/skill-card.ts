@@ -1,9 +1,9 @@
 import './skill-card.css'
-import { DataSignal, html, raw, ref } from 'lithen-fns'
+import { DataSignal, html, ref } from 'lithen-fns'
 import { Skill } from '../../types'
 import { checkIcon } from '../../common/icons'
 import { selectedSkills } from '../../proficiency/calc-result/proficiency-calc-result'
-import { skillBenefits, skillTypeName } from '..'
+import { skillBenefits, skillDescriptionContent } from '..'
 
 export type SkillCardProps = Skill
 
@@ -50,11 +50,7 @@ export function skillCard(data: SkillCardProps) {
       </div>
 
       <div class="main-content" on-click=${toggleSelectCard}>
-        <h4 class="title">${data.title}</h4>
-        <p class="type ${data.type}">${skillTypeName[data.type]}</p>
-        <p class="description">
-          ${raw(data.description)}
-        </p>
+        ${skillDescriptionContent(data)}
       </div>
 
       ${skillBenefits(data.benefits)}
