@@ -1,2 +1,5 @@
 export * from './escudeiro'
 export * from './equilibrio'
+export * from './estilo-combate'
+export * from './provocar'
+export * from './retomar-folego'
