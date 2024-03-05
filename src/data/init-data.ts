@@ -7,7 +7,8 @@ export function initData() {
   const skillSegments = [
     'combat-techniques',
     'arcane-traditions',
-    'cunning-techniques'
+    'cunning-techniques',
+    'hunt-tactics'
   ]
 
   requestProficiencies()

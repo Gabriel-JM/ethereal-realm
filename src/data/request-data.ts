@@ -12,7 +12,8 @@ export const dataStore = {
   skillsSegments: {
     'combat-techniques': null,
     'arcane-traditions': null,
-    'cunning-techniques': null
+    'cunning-techniques': null,
+    'hunt-tactics': null
   },
   proficiencies: null
 } as unknown as DataStore
@@ -67,7 +68,8 @@ export class SkillsStore {
   static prefixes = {
     cote: 'combat-techniques',
     artr: 'arcane-traditions',
-    cute: 'cunning-techniques'
+    cute: 'cunning-techniques',
+    huta: 'hunt-tactics'
   }
 
   static getById(id: string) {

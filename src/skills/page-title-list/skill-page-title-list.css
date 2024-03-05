@@ -1,13 +1,13 @@
 .skills-title-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 16px;
   padding: 14px 16px;
 
   .skill-title {
     text-decoration: none;
-    width: 100%;
-    max-width: 420px;
+    width: calc(50% - 10px);
+    min-width: 280px;
     display: flex;
     align-items: center;
     gap: 10px;

@@ -28,7 +28,7 @@ const skillSegmentStyles = css`
   .skill-docs-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 26px;
 
     @media screen and (max-width: 800px) {
       display: flex;

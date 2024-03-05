@@ -1,5 +1,5 @@
 import { SkillSegment } from '../../../src/types'
-import { equilibrio, escudeiro, estiloCombate, provocar, retomarFolego } from './lvl1'
+import { apararGolpes, contraAtaque, equilibrio, escudeiro, estiloCombate, provocar, retomarFolego } from './lvl1'
 
 export const combatTechniquesSegment = <SkillSegment> {
   id: 'combat-techniques',
@@ -12,7 +12,9 @@ export const combatTechniquesSegment = <SkillSegment> {
         equilibrio,
         estiloCombate,
         provocar,
-        retomarFolego
+        retomarFolego,
+        contraAtaque,
+        apararGolpes
       ]
     }
   ]
