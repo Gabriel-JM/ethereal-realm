@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { percepcao } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const alerta = <Skill> {
   id: 'huta_VWgniYJzHo',
@@ -12,9 +12,5 @@ export const alerta = <Skill> {
     'com você, mas você não percebe aproximação',
     'de inimigos aos seus aliados.'
   ),
-  benefits: {
-    type: 'list',
-    title: 'Perícias',
-    value: [{ id: percepcao.id, value: 1 }]
-  }
+  benefits: proficienciesList({ Percepção: 1 })
 }

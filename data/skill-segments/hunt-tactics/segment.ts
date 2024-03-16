@@ -1,5 +1,5 @@
 import { SkillSegment } from '../../../src/types'
-import { alerta } from './lvl1'
+import { alerta, primeiroAbate, vinculoFeraMistica } from './lvl1'
 
 export const huntTacticsSegment = <SkillSegment> {
   id: 'hunt-tactics',
@@ -8,7 +8,9 @@ export const huntTacticsSegment = <SkillSegment> {
     {
       requirements: 'Nível de Personagem 1.',
       skills: [
-        alerta
+        vinculoFeraMistica,
+        alerta,
+        primeiroAbate
       ]
     }
   ]

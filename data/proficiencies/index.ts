@@ -6,7 +6,7 @@ import { alquimia, historia, medicina, sobrevivencia, tratarAnimais } from './kn
 import { acrobacia, atletismo, furtividade } from './moviment'
 import { persuasao } from './social'
 
-export const proficiencies = <Proficiency[]> [
+export const proficiencies = <const> [
   acrobacia,
   agilidade,
   alquimia,

@@ -1,7 +1,7 @@
 import { Proficiency } from '../../../src/types'
 import { join } from '../../utils'
 
-export const alquimia = <Proficiency> {
+export const alquimia = <const> {
   id: 'prof_alq',
   name: 'Alquimia',
   atribute: 'intelligence',
@@ -13,9 +13,9 @@ export const alquimia = <Proficiency> {
     'você não conheça Afeta na potência de alguns itens alquímicos',
     'efeitos por você.'
   )
-}
+} satisfies Proficiency
 
-export const historia = <Proficiency> {
+export const historia = <const> {
   id: 'prof_hist',
   name: 'História',
   atribute: 'wisdom',
@@ -24,9 +24,9 @@ export const historia = <Proficiency> {
     'Relacionado a conhecimentos históricos e a qualquer coisa que possa',
     'envolver esse tipo de conhecimento.'
   )
-}
+} satisfies Proficiency
 
-export const medicina = <Proficiency> {
+export const medicina = <const> {
   id: 'prof_med',
   name: 'Medicina',
   atribute: 'wisdom',
@@ -39,9 +39,9 @@ export const medicina = <Proficiency> {
     'as jogadas dele. Essa perícia também pode afetar a potência da maioria',
     'dos itens de cura fabricados.'
   )
-}
+} satisfies Proficiency
 
-export const sobrevivencia = <Proficiency> {
+export const sobrevivencia = <const> {
   id: 'prof_sobr',
   name: 'Sobrevivência',
   atribute: 'wisdom',
@@ -50,9 +50,9 @@ export const sobrevivencia = <Proficiency> {
     'Conhecimento sobre como sobreviver a situações complicadas,',
     'em questão de perigo, escassez de recursos e táticas de sobrevivência.'
   )
-}
+} satisfies Proficiency
 
-export const tratarAnimais = <Proficiency> {
+export const tratarAnimais = <const> {
   id: 'prof_tani',
   name: 'Tratar Animais',
   atribute: 'wisdom',
@@ -63,4 +63,4 @@ export const tratarAnimais = <Proficiency> {
     'de como engana-los. Determina também a sua afinidade',
     'espiritual com animais, principalmente animais companheiros.'
   )
-}
+} satisfies Proficiency

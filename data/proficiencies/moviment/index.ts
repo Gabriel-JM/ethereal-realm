@@ -1,7 +1,7 @@
 import { Proficiency } from '../../../src/types'
 import { join } from '../../utils'
 
-export const acrobacia = <Proficiency> {
+export const acrobacia = <const> {
   id: 'prof_acro',
   name: 'Acrobacia',
   atribute: 'dexterity',
@@ -13,9 +13,9 @@ export const acrobacia = <Proficiency> {
     'de se esgueirar, deslizar e afins… Não se aplica a',
     'movimentos de esquiva em combate.'
   )
-}
+} satisfies Proficiency
 
-export const atletismo = <Proficiency> {
+export const atletismo = <const> {
   id: 'prof_atle',
   name: 'Atletismo',
   atribute: 'strength',
@@ -25,12 +25,12 @@ export const atletismo = <Proficiency> {
     'exemplo, pulos, subir em uma corda, nadar, etc... Não se aplica a',
     'movimentos de esquiva em combate.'
   )
-}
+} satisfies Proficiency
 
-export const furtividade = <Proficiency> {
+export const furtividade = <const> {
   id: 'prof_furt',
   name: 'Furtividade',
   atribute: 'dexterity',
   category: 'moviment',
   description: 'Capacidade de realizar ações de maneira silenciosa e despercebida.'
-}
+} satisfies Proficiency

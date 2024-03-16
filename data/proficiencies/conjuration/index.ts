@@ -1,7 +1,7 @@
 import { Proficiency } from '../../../src/types'
 import { join } from '../../utils'
 
-export const arcanismo = <Proficiency> {
+export const arcanismo = <const> {
   id: 'prof_arc',
   name: 'Arcanismo',
   atribute: 'intelligence',
@@ -11,9 +11,9 @@ export const arcanismo = <Proficiency> {
     'magias do domínio arcano. Afeta a eficácia e eficiência das magias',
     'arcanas conjuradas por você.'
   )
-}
+} satisfies Proficiency
 
-export const musicismo = <Proficiency> {
+export const musicismo = <const> {
   id: 'prof_musi',
   name: 'Musicismo',
   atribute: 'charisma',
@@ -25,9 +25,9 @@ export const musicismo = <Proficiency> {
     'efeitos mágicos, no geral afeta a eficácia e eficiência dos seus',
     'efeitos sonoros que manipulam a energia arcana.'
   )
-}
+} satisfies Proficiency
 
-export const religiao = <Proficiency> {
+export const religiao = <const> {
   id: 'prof_reli',
   name: 'Religião',
   atribute: 'wisdom',
@@ -38,4 +38,4 @@ export const religiao = <Proficiency> {
     'algum vínculo religiosos ou que é devoto a algo, mas afeta as',
     'suas magias de domínio divino.'
   )
-}
+} satisfies Proficiency
