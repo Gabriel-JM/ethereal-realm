@@ -15,7 +15,7 @@ export const vinculoFeraMistica = <Skill> {
     'tornando esse vínculo algo até sobrenatural, ele',
     'garante vários benefícios para você e seu parceiro,',
     'contudo ele também pode vir com desvantagens. Vá',
-    'a lista de Feras Místicas, para ver melhor as',
+    'a lista de <a href="/">Feras Místicas</a>, para ver melhor as',
     'vantagens e desvantagens e escolher qual tipo',
     'de fera será seu aliado.'
   ),
