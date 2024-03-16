@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { prestidigtacao } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const assalto = <Skill> {
   id: 'cute_UipYZR9GEV',
@@ -15,9 +15,5 @@ export const assalto = <Skill> {
     'o alvo não tiver nada, mas aparentar ter ouro,',
     'você pode usar essa habilidade para roubá-lo.'
   ),
-  benefits: {
-    type: 'list',
-    title: 'Perícias',
-    value: [{ id: prestidigtacao.id, value: 2 }]
-  }
+  benefits: proficienciesList({ Prestidigitação: 2 })
 }

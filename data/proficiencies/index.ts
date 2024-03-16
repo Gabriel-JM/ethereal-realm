@@ -1,4 +1,3 @@
-import { Proficiency } from '../../src/types'
 import { intuicao, investigacao, percepcao, prestidigtacao } from './ability'
 import { agilidade, combateADistancia, combateCorpoACorpo, combateDefensivo } from './combat'
 import { arcanismo, musicismo, religiao } from './conjuration'

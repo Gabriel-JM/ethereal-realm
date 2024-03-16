@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { arcanismo } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const sentirMagia = <Skill> {
   id: 'artr_hOnr3EZwBC',
@@ -20,11 +20,7 @@ export const sentirMagia = <Skill> {
     type: 'list',
     value: [
       { type: 'text', value: '+2 PE Máximo' },
-      {
-        type: 'list',
-        title: 'Perícias',
-        value: [{ id: arcanismo.id, value: 1 }]
-      }
+      proficienciesList({ Arcanismo: 1 })
     ]
   }
 }

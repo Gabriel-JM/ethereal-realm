@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { acrobacia, combateCorpoACorpo, persuasao, prestidigtacao, sobrevivencia } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const piveteDeRua = <Skill> {
   id: 'cute_zjW1CU5nuA',
@@ -10,15 +10,11 @@ export const piveteDeRua = <Skill> {
     'Sua experiência em pequenos furtos, fugas',
     'e linguajar das ruas te garantem as seguintes perícias:'
   ),
-  benefits: {
-    type: 'list',
-    title: 'Perícias',
-    value: [
-      { id: acrobacia.id, value: 1 },
-      { id: sobrevivencia.id, value: 1 },
-      { id: prestidigtacao.id, value: 1 },
-      { id: persuasao.id, value: 1 },
-      { id: combateCorpoACorpo.id, value: 1 }
-    ]
-  }
+  benefits: proficienciesList({
+    Acrobacia: 1,
+    Sobrevivência: 1,
+    Prestidigitação: 1,
+    Persuasão: 1,
+    "Combate Corpo a Corpo": 1
+  })
 }

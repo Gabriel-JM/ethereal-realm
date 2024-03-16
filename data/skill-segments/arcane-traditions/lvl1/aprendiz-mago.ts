@@ -1,6 +1,6 @@
 import { join } from '../../../utils'
 import { Skill } from '../../../../src/types'
-import { arcanismo, historia, investigacao, percepcao } from '../../../proficiencies'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const aprendizMago = <Skill> {
   id: 'artr_PGRcRoCeEH',
@@ -28,28 +28,12 @@ export const aprendizMago = <Skill> {
           '<strong>Inteligencia + o Arcanismo</strong> na conjuração de magias.'
         )
       },
-      {
-        type: 'list',
-        title: 'Perícias',
-        value: [
-          {
-            id: arcanismo.id,
-            value: 1
-          },
-          {
-            id: investigacao.id,
-            value: 1
-          },
-          {
-            id: percepcao.id,
-            value: 1
-          },
-          {
-            id: historia.id,
-            value: 1
-          }
-        ]
-      }
+      proficienciesList({
+        Arcanismo: 1,
+        Investigação: 1,
+        Percepção: 1,
+        História: 1
+      })
     ]
   }
 }

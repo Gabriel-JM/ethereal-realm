@@ -7,15 +7,18 @@ export function proficienciesList(data: { [k in ProficienciesNames]?: number }) 
   return <SkillBenefitList> {
     type: 'list',
     title: 'Perícias',
-    value: Object.entries(data).map(([key, value]) => {
-      const proficiency = proficiencies.find(prof => prof.name === key)
+    value: Object
+      .entries(data)
+      .map(([key, value]) => {
+        const proficiency = proficiencies.find(prof => prof.name === key)
 
-      if (!proficiency) return
+        if (!proficiency) return
 
-      return <ProficiencyReference> {
-        id: proficiency.id,
-        value
-      }
-    })
+        return <ProficiencyReference> {
+          id: proficiency.id,
+          value
+        }
+      })
+      .filter(Boolean)
   }
 }

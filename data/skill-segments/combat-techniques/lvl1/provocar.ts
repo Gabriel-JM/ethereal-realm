@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { persuasao } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const provocar = <Skill> {
   id: 'cote_4aFSlj1Mmy',
@@ -21,9 +21,5 @@ export const provocar = <Skill> {
     'até a provocação durar, os alvos iram focar os',
     'ataques em você até que alguém cause dano a ele.'
   ),
-  benefits: {
-    type: 'list',
-    title: 'Perícias',
-    value: [{ id: persuasao.id, value: 1 }]
-  }
+  benefits: proficienciesList({ Persuasão: 1 })
 }

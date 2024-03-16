@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { agilidade } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const driblar = <Skill> {
   id: 'cute_I4egXjgNPs',
@@ -19,9 +19,5 @@ export const driblar = <Skill> {
     'ao custo de 2 PE você pode encadear na mesma reação uma',
     'jogada de furtividade para realizar um ataque furtividade contra este alvo.'
   ),
-  benefits: {
-    type: 'list',
-    title: 'Perícias',
-    value: [{ id: agilidade.id, value: 1 }]
-  }
+  benefits: proficienciesList({ Agilidade: 1 })
 }

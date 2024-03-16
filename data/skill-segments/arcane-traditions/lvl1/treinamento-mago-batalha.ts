@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { agilidade, combateCorpoACorpo } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const treinamentoMagoBatalha = <Skill> {
   id: 'artr_gIT5shwlPF',
@@ -14,18 +14,8 @@ export const treinamentoMagoBatalha = <Skill> {
     'dano da arma como: Dano Base de Força ou Destreza + o seu valor de Arcanismo.',
     'Você recebe as seguintes perícias:'
   ),
-  benefits: {
-    type: 'list',
-    title: 'Perícias',
-    value: [
-      {
-        id: combateCorpoACorpo.id,
-        value: 1
-      },
-      {
-        id: agilidade.id,
-        value: 1
-      }
-    ]
-  }
+  benefits: proficienciesList({
+    "Combate Corpo a Corpo": 1,
+    Agilidade: 1
+  })
 }

@@ -1,6 +1,6 @@
 import { Skill } from '../../../../src/types'
-import { arcanismo } from '../../../proficiencies'
 import { join } from '../../../utils'
+import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const aprendizEstudioso = <Skill> {
   id: 'artr_eZlcGKsPfs',
@@ -25,13 +25,7 @@ export const aprendizEstudioso = <Skill> {
         type: 'text',
         value: 'Acesso a 2 magias do grimório de nível 1 do domínio arcano'
       },
-      {
-        type: 'list',
-        title: 'Perícias',
-        value: [
-          { id: arcanismo.id, value: 1 }
-        ]
-      }
+      proficienciesList({ Arcanismo: 1 })
     ]
   }
 }
