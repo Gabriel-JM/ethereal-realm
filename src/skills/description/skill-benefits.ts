@@ -1,6 +1,6 @@
 import { html, raw } from 'lithen-fns'
 import { ProficienciesStore } from '../../data/request-data'
-import { SkillBenefit, ProficiencyReference } from '../../types'
+import { SkillBenefit, ProficiencyReference, SkillBenefitText } from '../../types'
 
 export function skillBenefits(benefits?: SkillBenefit) {
   if (!benefits) return
@@ -29,8 +29,15 @@ export function skillBenefits(benefits?: SkillBenefit) {
                 <span>${benefit.title}</span>
                 <ul class="list">
                   ${benefit.value.map(sub => {
-                    const subBenefit = sub as ProficiencyReference
-                    return proficiencyValue(subBenefit)
+                    if ('id' in sub) {
+                      const subBenefit = sub as ProficiencyReference
+                      return proficiencyValue(subBenefit)
+                    }
+
+                    const textBenefit = sub as SkillBenefitText
+                    return html`
+                      <li>${raw(textBenefit.value)}</li>
+                    `
                   })}
                 </ul>
               </li>

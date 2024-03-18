@@ -9,12 +9,7 @@ export type DataStore = {
 }
 
 export const dataStore = {
-  skillsSegments: {
-    'combat-techniques': null,
-    'arcane-traditions': null,
-    'cunning-techniques': null,
-    'hunt-tactics': null
-  },
+  skillsSegments: {},
   proficiencies: null
 } as unknown as DataStore
 
@@ -65,11 +60,12 @@ export class SkillSegmentsStore {
 }
 
 export class SkillsStore {
-  static prefixes = {
+  static prefixes = <Record<string, SkillSegmentsIds>> {
     cote: 'combat-techniques',
     artr: 'arcane-traditions',
     cute: 'cunning-techniques',
-    huta: 'hunt-tactics'
+    huta: 'hunt-tactics',
+    cltr: 'clerical-traditions'
   }
 
   static getById(id: string) {

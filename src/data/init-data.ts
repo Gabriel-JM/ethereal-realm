@@ -8,7 +8,8 @@ export function initData() {
     'combat-techniques',
     'arcane-traditions',
     'cunning-techniques',
-    'hunt-tactics'
+    'hunt-tactics',
+    'clerical-traditions'
   ]
 
   requestProficiencies()
