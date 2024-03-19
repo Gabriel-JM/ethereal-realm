@@ -1,4 +1,4 @@
-import { css, html } from 'lithen-fns'
+import { css, html, raw } from 'lithen-fns'
 import { backButton } from '../common/buttons'
 import { SkillSegmentsStore } from '../data/request-data'
 import { skillCard } from './card/skill-card'
@@ -77,7 +77,7 @@ export function skillSegment(props: SkillSegmentProps) {
               </h4>
               <p>
                 <strong>Requer: </strong>
-                ${level.requirements}
+                ${raw(level.requirements)}
               </p>
             </div>
 
