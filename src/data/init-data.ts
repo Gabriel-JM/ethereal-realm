@@ -1,15 +1,17 @@
 import { signal } from 'lithen-fns'
 import { requestProficiencies, requestSkillSegment } from './request-data'
+import { SkillSegmentsIds } from '../types'
 
 export const isDataReady = signal(false)
 
 export function initData() {
-  const skillSegments = [
+  const skillSegments: SkillSegmentsIds[] = [
     'combat-techniques',
     'arcane-traditions',
     'cunning-techniques',
     'hunt-tactics',
-    'clerical-traditions'
+    'clerical-traditions',
+    'alchemy-practices'
   ]
 
   requestProficiencies()
