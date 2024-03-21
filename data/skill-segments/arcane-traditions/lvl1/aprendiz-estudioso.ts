@@ -1,30 +1,24 @@
 import { Skill } from '../../../../src/types'
-import { join } from '../../../utils'
+import { md, txtBen } from '../../../utils'
 import { proficienciesList } from '../../../utils/proficiencies-list'
 
 export const aprendizEstudioso = <Skill> {
   id: 'artr_eZlcGKsPfs',
   title: 'Aprendiz Estudioso (Int)',
   type: 'passive',
-  description: join(
-    'Você é o famoso rato de biblioteca e passou muito',
-    'tempo aprendendo tudo o que podia no início de seus',
-    'estudos, com isso você acabou adquirindo uma base',
-    'de conhecimento sólida sobre o arcano e como ele',
-    'funciona. Você recene os seguintes benefícios:'
-  ),
+  description: md`
+    Você é o famoso rato de biblioteca e passou muito
+    tempo aprendendo tudo o que podia no início de seus
+    estudos, com isso você acabou adquirindo uma base
+    de conhecimento sólida sobre o arcano e como ele
+    funciona. Você recene os seguintes benefícios:
+  `,
   benefits: {
     type: 'list',
     value: [
-      { type: 'text', value: '+2 PE Máximo' },
-      {
-        type: 'text',
-        value: 'Acesso gratuito a magia <strong>Disparo Arcano</strong>'
-      },
-      {
-        type: 'text',
-        value: 'Acesso a 2 magias do grimório de nível 1 do domínio arcano'
-      },
+      txtBen`+2 PE Máximo`,
+      txtBen`Acesso gratuito a magia **Disparo Arcano**`,
+      txtBen`Acesso a 2 magias do grimório de nível 1 do domínio arcano`,
       proficienciesList({ Arcanismo: 1 })
     ]
   }
