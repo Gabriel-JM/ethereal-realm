@@ -1,4 +1,5 @@
 import { SkillSegment } from '../../../src/types'
+import { md } from '../../utils'
 import { coletaInteligente } from './lvl1'
 
 export const alchemyPracticesSegment = <SkillSegment> {
@@ -6,7 +7,7 @@ export const alchemyPracticesSegment = <SkillSegment> {
   title: 'Práticas da Alquimia',
   levels: [
     {
-      requirements: 'Nível de Personagem 1 e um <a href="/">kit alquímico</a>',
+      requirements: md`Nível de Personagem 1 e um [kit alquímico](/)`,
       skills: [
         coletaInteligente
       ]

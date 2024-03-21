@@ -103,3 +103,13 @@ body {
     list-style: disc;
   }
 }
+
+.link {
+  color: currentColor;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.bold {
+  font-weight: bold;
+}

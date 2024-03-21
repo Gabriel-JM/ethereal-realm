@@ -1,4 +1,3 @@
-import './link.css'
 import { html } from 'lithen-fns'
 import { nav } from '../../config'
 
