@@ -1,4 +1,5 @@
 import './styles.css'
+import './common'
 import { initData } from './data/init-data'
 import { router } from './config'
 
