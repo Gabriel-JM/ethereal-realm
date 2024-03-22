@@ -2,7 +2,7 @@ import { Skill } from '../../../../src/types'
 import { md, proficienciesList } from '../../../utils'
 
 export const mestreDosVenenos = <Skill> {
-  id: 'alpr_',
+  id: 'alpr_XdYS2kUdzK',
   title: 'Mestre dos Venenos (Int)',
   type: 'passive',
   description: md`
