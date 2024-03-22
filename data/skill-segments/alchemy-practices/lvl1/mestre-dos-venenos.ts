@@ -8,7 +8,7 @@ export const mestreDosVenenos = <Skill> {
   description: md`
     Você se torna um especialista na criação de venenos.
     Todo veneno produzido por você tem um dano adicional
-    igual ao **dobro do nível do Item.**
+    igual ao **dobro do nível do Item**.
   `,
   benefits: proficienciesList({ Alquimia: 1 })
 }

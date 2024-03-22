@@ -12,7 +12,7 @@ function parseMarkDown(text: string) {
   return text
     .replace(/\n\s{2,}/g, ' ')
     .replace(/\[(.+)\]\((.+)\)/g, '<app-link to="$2">$1</app-link>')
-    .replace(/(\*{1,3})([^*.]+)\*{1,3}/g, parseAsterisk)
+    .replace(/(\*{1,3})([^*]+)\*{1,3}/g, parseAsterisk)
     .replace(/(#{1,5})\s(.+)\n/g, parseTitle)
     .trim()
 }
