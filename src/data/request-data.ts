@@ -66,7 +66,8 @@ export class SkillsStore {
     cute: 'cunning-techniques',
     huta: 'hunt-tactics',
     cltr: 'clerical-traditions',
-    alpr: 'alchemy-practices'
+    alpr: 'alchemy-practices',
+    rupr: 'runic-practices'
   }
 
   static getById(id: string) {

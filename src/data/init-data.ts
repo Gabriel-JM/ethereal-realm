@@ -11,7 +11,8 @@ export function initData() {
     'cunning-techniques',
     'hunt-tactics',
     'clerical-traditions',
-    'alchemy-practices'
+    'alchemy-practices',
+    'runic-practices'
   ]
 
   requestProficiencies()
