@@ -53,6 +53,10 @@
     &.active {
       color: var(--blue-60);
     }
+
+    &.rest {
+      color: var(--yellow-50);
+    }
   }
 
   .description {

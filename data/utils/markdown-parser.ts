@@ -1,4 +1,4 @@
-export function md(textArray: TemplateStringsArray, ...values: unknown[]) {
+export function md(textArray: TemplateStringsArray | string[], ...values: unknown[]) {
   const fullText = textArray.reduce((acc, txt, index) => {
     const stringValue = String(values[index] ?? '')
 

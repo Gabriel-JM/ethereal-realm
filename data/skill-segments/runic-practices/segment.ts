@@ -1,6 +1,6 @@
 import { SkillSegment } from '../../../src/types'
 import { md } from '../../utils'
-import { brandirEnergiaRunica, combatenteArcano, eloComArma } from './lvl1'
+import { brandirEnergiaRunica, combatenteArcano, conversãoArcanaMenor, eloComArma } from './lvl1'
 
 export const runicPracticesSegment = <SkillSegment> {
   id: 'runic-practices',
@@ -11,7 +11,8 @@ export const runicPracticesSegment = <SkillSegment> {
       skills: [
         eloComArma,
         combatenteArcano,
-        brandirEnergiaRunica
+        brandirEnergiaRunica,
+        conversãoArcanaMenor
       ]
     }
   ]
