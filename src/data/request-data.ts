@@ -68,7 +68,8 @@ export class SkillsStore {
     cltr: 'clerical-traditions',
     alpr: 'alchemy-practices',
     rupr: 'runic-practices',
-    mupr: 'musical-practices'
+    mupr: 'musical-practices',
+    meta: 'merchant-tactics'
   }
 
   static getById(id: string) {

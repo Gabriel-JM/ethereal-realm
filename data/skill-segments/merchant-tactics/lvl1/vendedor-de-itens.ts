@@ -8,6 +8,9 @@ export const vendedorDeItens = <Skill> {
   description: md`
     Você passa a conseguir vender itens comuns pelo
     mesmo preço de compra, ao invés da metade.
+    E ao vender joias para alguém que não seja um
+    joalheiro, você pode adicionar o dobro do valor
+    do grau mágico da joia no valor de venda.
   `,
   benefits: proficienciesList({
     Persuasão: 1

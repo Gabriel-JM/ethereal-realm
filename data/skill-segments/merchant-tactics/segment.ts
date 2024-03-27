@@ -1,5 +1,5 @@
 import { SkillSegment } from '../../../src/types'
-import { vendedorDeItens } from './lvl1'
+import { atrairOuro, barganhar, contadorDeLorota, contratoDeMercadorAstral, estaNasMãosDaSorte, vendedorDeItens } from './lvl1'
 
 export const merchantTacticsSegment = <SkillSegment> {
   id: 'merchant-tactics',
@@ -8,7 +8,12 @@ export const merchantTacticsSegment = <SkillSegment> {
     {
       requirements: 'Nível de Personagem 1.',
       skills: [
-        vendedorDeItens
+        vendedorDeItens,
+        atrairOuro,
+        contratoDeMercadorAstral,
+        barganhar,
+        contadorDeLorota,
+        estaNasMãosDaSorte
       ]
     }
   ]
