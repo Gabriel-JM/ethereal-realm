@@ -15,7 +15,7 @@ export function homePage() {
         <h3>Geral</h3>
 
         <app-link to="/docs/proficiencies">
-          Perícias
+          Perícias &#xFE0F;
         </app-link>
       </div>
 
