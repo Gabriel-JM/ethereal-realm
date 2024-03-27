@@ -1,17 +1,4 @@
-import { Proficiency, SkillSegment, SkillSegmentsIds } from '../types'
-
-export type DataStore = {
-  skillsSegments: Record<
-    string,
-    SkillSegment
-  >
-  proficiencies: Proficiency[]
-}
-
-export const dataStore = {
-  skillsSegments: {},
-  proficiencies: null
-} as unknown as DataStore
+import { dataStore } from './stores/data-store'
 
 export async function requestSkillSegment(id: string) {
   const cache = Reflect.get(dataStore.skillsSegments, id)
@@ -51,56 +38,3 @@ export async function requestProficiencies() {
 
   return data
 }
-
-export class SkillSegmentsStore {
-  static getById(id: SkillSegmentsIds) {
-    const segment = dataStore.skillsSegments[id]
-    return segment
-  }
-}
-
-export class SkillsStore {
-  static prefixes = <Record<string, SkillSegmentsIds>> {
-    cote: 'combat-techniques',
-    artr: 'arcane-traditions',
-    cute: 'cunning-techniques',
-    huta: 'hunt-tactics',
-    cltr: 'clerical-traditions',
-    alpr: 'alchemy-practices',
-    rupr: 'runic-practices',
-    mupr: 'musical-practices',
-    meta: 'merchant-tactics'
-  }
-
-  static getById(id: string) {
-    const skillSegmentId = this.getSegmentId(id)
-    const skillSegment = SkillSegmentsStore.getById(skillSegmentId)
-    let skill = null
-
-    for (const level of skillSegment.levels) {
-      const foundSkill = level.skills.find(sk => sk.id === id)
-      if (foundSkill) {
-        skill = foundSkill
-      }
-    }
-
-    return skill!
-  }
-
-  static getSegmentId(id: string) {
-    const [prefix] = id.split('_')
-    const skillSegmentId = Reflect.get(this.prefixes, prefix)
-    return skillSegmentId
-  }
-}
-
-export class ProficienciesStore {
-  static getById(id: string) {
-    const proficiency = dataStore.proficiencies
-      .find(item => item.id === id)
-
-    return proficiency!
-  }
-}
-
-export const ProficiencyCalcStore = new Map<string, number>()

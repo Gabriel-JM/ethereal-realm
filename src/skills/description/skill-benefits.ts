@@ -1,6 +1,6 @@
 import { html, raw } from 'lithen-fns'
-import { ProficienciesStore } from '../../data/request-data'
 import { SkillBenefit, ProficiencyReference, SkillBenefitText } from '../../types'
+import { ProficienciesStore } from '../../data/stores'
 
 export function skillBenefits(benefits?: SkillBenefit) {
   if (!benefits) return

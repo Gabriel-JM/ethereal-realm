@@ -1,7 +1,7 @@
 import { html } from 'lithen-fns'
-import { SkillsStore } from '../data/request-data'
 import { Skill } from '../types'
 import { xIcon } from '../common/icons'
+import { SkillsStore } from '../data/stores'
 
 export type SkillReferenceProps = Skill & {
   onUnselectSkill(id: string): void
