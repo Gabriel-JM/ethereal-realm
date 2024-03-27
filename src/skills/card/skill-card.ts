@@ -2,8 +2,8 @@ import './skill-card.css'
 import { DataSignal, html, ref } from 'lithen-fns'
 import { Skill } from '../../types'
 import { checkIcon } from '../../common/icons'
-import { selectedSkills } from '../../proficiency/calc-result/proficiency-calc-result'
 import { skillBenefits, skillDescriptionContent } from '..'
+import { selectedSkills } from '../../proficiency'
 
 export type SkillCardProps = Skill
 

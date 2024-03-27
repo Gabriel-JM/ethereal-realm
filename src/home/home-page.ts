@@ -12,6 +12,14 @@ export function homePage() {
 
     <section class="home-content">
       <div>
+        <h3>Geral</h3>
+
+        <app-link to="/docs/proficiencies">
+          Perícias
+        </app-link>
+      </div>
+
+      <div>
         <h3>Habilidades</h3>
 
         ${skillPageTitleList({

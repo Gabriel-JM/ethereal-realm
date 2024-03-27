@@ -1,0 +1,67 @@
+.prof-doc-page .header {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  gap: 14px;
+  border-bottom: 1px solid var(--black-70);
+
+  .title {
+    font-size: 1.4rem;
+  }
+}
+
+.prof-doc-page .content {
+  padding: 12px 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.proficiency-doc-card {
+  padding: 4px 0;
+  flex: 1;
+
+  .name {
+    font-size: 1.35rem;
+    padding-bottom: 6px;
+  }
+
+  .type {
+    font-weight: bold;
+    font-size: 0.95rem;
+
+    &.ability {
+      color: var(--brown-50);
+    }
+
+    &.combat {
+      color: var(--red-50);
+    }
+    
+    &.conjuration {
+      color: var(--blue-50);
+    }
+    
+    &.knowledge {
+      color: var(--yellow-50);
+    }
+    
+    &.moviment {
+      color: var(--green-50);
+    }
+    
+    &.social {
+      color: var(--purple-50);
+    }
+  }
+
+  .description {
+    padding-top: 6px;
+    text-align: justify;
+  }
+}

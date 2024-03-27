@@ -1,9 +1,9 @@
 import './proficiency-calc-result.css'
 import { html, shell, signal } from 'lithen-fns'
-import { ProficiencyReference, Skill } from '../../types'
-import { alphabeticSort } from '../../common/utils'
-import { skillReference } from '../../skills'
-import { ProficienciesStore, SkillsStore } from '../../data/stores'
+import { alphabeticSort } from '../../../common/utils'
+import { ProficienciesStore, SkillsStore } from '../../../data/stores'
+import { skillReference } from '../../../skills'
+import { ProficiencyReference, Skill } from '../../../types'
 
 export const selectedSkills = signal<Array<{ skillId: string }>>([])
 

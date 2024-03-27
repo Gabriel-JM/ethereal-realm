@@ -43,10 +43,18 @@
 
   --blue-80: #45d;
   --blue-60: #4e8dcc;
+  --blue-50: #629eda;
+
+  --red-50: #da5e5e;
 
   --green-70: #549446;
+  --green-50: #76ce60;
 
-  --yellow-50: #dac051;
+  --yellow-50: #dbbe5f;
+
+  --brown-50: #bd774e;
+
+  --purple-50: #a964eb;
 }
 
 html, body {

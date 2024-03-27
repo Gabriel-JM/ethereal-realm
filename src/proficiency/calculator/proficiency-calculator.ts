@@ -1,12 +1,12 @@
 import './proficiency-calculator.css'
 import { html, shell, signal } from 'lithen-fns'
-import { commonLayout } from '../common/layouts'
-import { SkillSegmentsIds } from '../types'
+import { commonLayout } from '../../common/layouts'
+import { SkillSegmentsIds } from '../../types'
 import { proficiencyCalcResult } from './calc-result/proficiency-calc-result'
-import { skillSegment } from '../skills'
-import { skillPageTitleList } from '../skills/page-title-list/skill-page-title-list'
-import { backButton } from '../common/buttons'
-import { nav } from '../config'
+import { skillSegment } from '../../skills'
+import { skillPageTitleList } from '../../skills/page-title-list/skill-page-title-list'
+import { backButton } from '../../common/buttons'
+import { nav } from '../../config'
 
 export const proficiencyInDisplay = signal('title-list')
 
