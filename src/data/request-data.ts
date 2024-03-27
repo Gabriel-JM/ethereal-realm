@@ -67,7 +67,8 @@ export class SkillsStore {
     huta: 'hunt-tactics',
     cltr: 'clerical-traditions',
     alpr: 'alchemy-practices',
-    rupr: 'runic-practices'
+    rupr: 'runic-practices',
+    mupr: 'musical-practices'
   }
 
   static getById(id: string) {

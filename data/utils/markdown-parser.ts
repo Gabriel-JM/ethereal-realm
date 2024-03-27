@@ -8,12 +8,12 @@ export function md(textArray: TemplateStringsArray | string[], ...values: unknow
   return parseMarkDown(fullText)
 }
 
-function parseMarkDown(text: string) {
+export function parseMarkDown(text: string) {
   return text
-    .replace(/\n\s{2,}/g, ' ')
+    .replace(/(#{1,5})\s(.+)\n/g, parseTitle)
     .replace(/\[(.+)\]\((.+)\)/g, '<app-link to="$2">$1</app-link>')
     .replace(/(\*{1,3})([^*]+)\*{1,3}/g, parseAsterisk)
-    .replace(/(#{1,5})\s(.+)\n/g, parseTitle)
+    .replace(/\n\s{2,}/g, ' ')
     .trim()
 }
 
