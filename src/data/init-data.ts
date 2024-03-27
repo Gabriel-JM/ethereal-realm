@@ -13,7 +13,8 @@ export function initData() {
     'clerical-traditions',
     'alchemy-practices',
     'runic-practices',
-    'musical-practices'
+    'musical-practices',
+    'merchant-tactics'
   ]
 
   requestProficiencies()

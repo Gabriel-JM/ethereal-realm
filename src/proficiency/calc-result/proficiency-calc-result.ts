@@ -1,25 +1,11 @@
 import './proficiency-calc-result.css'
 import { ProficienciesStore, SkillsStore } from '../../data/request-data'
-import { DataSignal, html, shell } from 'lithen-fns'
+import { html, shell, signal } from 'lithen-fns'
 import { ProficiencyReference, Skill } from '../../types'
 import { alphabeticSort } from '../../common/utils'
 import { skillReference } from '../../skills'
 
-class CustomSignal<T = unknown> extends DataSignal<T> {
-  #value
-
-  constructor(value: T) {
-    super(value)
-    this.#value = value
-    this.onChange(newValue => void (this.#value = newValue))
-  }
-
-  data() {
-    return this.#value
-  }
-}
-
-export const selectedSkills = new CustomSignal<Array<{ skillId: string }>>([])
+export const selectedSkills = signal<Array<{ skillId: string }>>([])
 
 export function proficiencyCalcResult() {
   return html`
