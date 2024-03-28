@@ -20,6 +20,14 @@ export function homePage() {
       </div>
 
       <div>
+        <h3>Items</h3>
+
+        <app-link to="/docs/items/common">
+          &#x1F9EA; Itens Comuns
+        </app-link>
+      </div>
+
+      <div>
         <h3>Habilidades</h3>
 
         ${skillPageTitleList({

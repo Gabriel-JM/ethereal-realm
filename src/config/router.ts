@@ -4,10 +4,12 @@ import { proficiencyCalculator } from '../proficiency'
 import { html } from 'lithen-fns'
 import { skillSegmentDocPage } from '../skills'
 import { proficienciesDocsPage } from '../proficiency/docs/proficiencies-docs-page'
+import { commonItemsPage } from '../common-items/docs/common-items-page'
 
 export const router = new LithenRouter({
   '/': homePage,
   '/docs/proficiencies': proficienciesDocsPage,
+  '/docs/items/common': commonItemsPage,
   '/docs/:skillId': skillSegmentDocPage,
   '/prof-calc': proficiencyCalculator,
   notFound: () => html`

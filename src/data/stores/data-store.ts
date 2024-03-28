@@ -1,4 +1,4 @@
-import { Proficiency, SkillSegment } from '../../types'
+import { CommonItem, Proficiency, SkillSegment } from '../../types'
 
 export type DataStore = {
   skillsSegments: Record<
@@ -6,9 +6,15 @@ export type DataStore = {
     SkillSegment
   >
   proficiencies: Proficiency[]
+  items: {
+    common: CommonItem[]
+  }
 }
 
 export const dataStore = {
   skillsSegments: {},
-  proficiencies: null
+  proficiencies: null,
+  items: {
+    common: null
+  }
 } as unknown as DataStore

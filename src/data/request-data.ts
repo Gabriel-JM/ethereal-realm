@@ -6,14 +6,7 @@ export async function requestSkillSegment(id: string) {
     return cache
   }
   
-  const response = await fetch(`/data/${id}.json`)
-  const contentType = response.headers.get('content-type')
-  
-  if (!contentType?.startsWith('application/json')) {
-    return null
-  }
-
-  const data = await response.json()
+  const data = await requestData(id)
 
   Reflect.set(dataStore.skillsSegments, id, data)
 
@@ -26,15 +19,34 @@ export async function requestProficiencies() {
     return cache
   }
 
-  const response = await fetch('/data/proficiencies.json')
+  const data = await requestData('proficiencies')
+
+  dataStore.proficiencies = data
+
+  return data
+}
+
+export async function requestCommonItems() {
+  const cache = dataStore.items.common
+  if (cache) {
+    return cache
+  }
+
+  const data = await requestData('common-items')
+
+  dataStore.items.common = data
+
+  return data
+}
+
+export async function requestData(fileName: string) {
+  const response = await fetch(`/data/${fileName}.json`)
   const contentType = response.headers.get('content-type')
   
   if (!contentType?.startsWith('application/json')) {
     return null
   }
   const data = await response.json()
-
-  dataStore.proficiencies = data
 
   return data
 }

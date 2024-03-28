@@ -1,5 +1,5 @@
 import { signal } from 'lithen-fns'
-import { requestProficiencies, requestSkillSegment } from './request-data'
+import { requestCommonItems, requestProficiencies, requestSkillSegment } from './request-data'
 import { SkillSegmentsIds } from '../types'
 
 export const isDataReady = signal(false)
@@ -17,13 +17,8 @@ export function initData() {
     'merchant-tactics'
   ]
 
-  requestProficiencies()
-
-  for (const segment of skillSegments) {
-    requestSkillSegment(segment)
-  }
-
   Promise.all([
+    requestCommonItems(),
     requestProficiencies(),
     ...skillSegments.map(requestSkillSegment)
   ])
