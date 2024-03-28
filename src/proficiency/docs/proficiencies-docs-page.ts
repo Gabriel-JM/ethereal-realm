@@ -1,24 +1,15 @@
 import './proficiencies-docs-page.css'
 import { html, shell } from 'lithen-fns'
-import { backButton } from '../../common/buttons'
-import { nav } from '../../config'
 import { commonLayout } from '../../common/layouts'
 import { isDataReady } from '../../data/init-data'
 import { AttributeStore, ProficienciesStore, dataStore } from '../../data/stores'
+import { docHeader } from '../../common'
 
 export function proficienciesDocsPage() {
 
   return commonLayout(html`
     <div class="prof-doc-page">
-      <header class="header">
-        <div>
-          ${backButton({ onClick: nav('/') })}
-        </div>
-
-        <div class="title">
-          <h3>Perícias</h3>
-        </div>
-      </header>
+      ${docHeader({ title: '&#128170;&#127997; Perícias' })}
 
       <section class="content">
         ${shell(() => {

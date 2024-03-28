@@ -1,0 +1,51 @@
+.skill-segment .header {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+
+  &.imbeded {
+    background-color: var(--content-bg);
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: 20px;
+  }
+}
+
+.skill-segment .content {
+  padding: 14px 16px;
+}
+
+.skill-segment {
+  .level-title-container {
+    padding-bottom: 20px;
+    
+    .level-title {
+      font-size: 1.6rem;
+    }
+  }
+  
+  .skill-cards-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .skill-docs-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  
+    @media screen and (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

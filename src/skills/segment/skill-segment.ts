@@ -1,41 +1,11 @@
-import { css, html, raw } from 'lithen-fns'
-import { backButton } from '../common/buttons'
-import { skillCard } from './card/skill-card'
-import { SkillSegmentsIds } from '../types'
-import { skillDescription } from '.'
-import { SkillSegmentsStore } from '../data/stores'
-
-const skillSegmentStyles = css`
-  .skill-segment-content {
-    padding: 14px 16px;
-  }
-
-  .level-title-container {
-    padding-bottom: 20px;
-    
-    .level-title {
-      font-size: 1.6rem;
-    }
-  }
-  
-  .skill-cards-list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .skill-docs-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 26px;
-
-    @media screen and (max-width: 800px) {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-`
+import './skill-segment.css'
+import { html, raw } from 'lithen-fns'
+import { backButton } from '../../common/buttons'
+import { skillCard } from '../card/skill-card'
+import { SkillSegmentsIds } from '../../types'
+import { skillDescription } from '..'
+import { SkillSegmentsStore } from '../../data/stores'
+import { docHeader } from '../../common'
 
 export type SkillSegmentProps = {
   skillSegmentId: SkillSegmentsIds
@@ -49,7 +19,7 @@ export function skillSegment(props: SkillSegmentProps) {
 
   if (!segment) {
     return html`
-      <div css=${skillSegmentStyles}>
+      <div class="skill-segment">
         ${backButton({
           onClick: props.onClickBack
         })}
@@ -60,7 +30,7 @@ export function skillSegment(props: SkillSegmentProps) {
   }
 
   return html`
-    <div css=${skillSegmentStyles}>
+    <div class="skill-segment">
       ${skillsDisplayTitle({
         id: props.skillSegmentId,
         title: segment.title,
@@ -70,7 +40,7 @@ export function skillSegment(props: SkillSegmentProps) {
 
       ${segment.levels.map((level, index) => {
         return html`
-          <div class="skill-segment-content">
+          <div class="content">
             <div class="level-title-container">
               <h4 class="level-title">
                 Nível ${index + 1}
@@ -91,34 +61,6 @@ export function skillSegment(props: SkillSegmentProps) {
   `
 }
 
-const skillsDisplayTitleStyles = css`
-  & {
-    display: flex;
-    align-items: center;
-    padding: 12px 14px;
-    z-index: 10;
-    position: sticky;
-    top: 0;
-
-    &.imbeded {
-      background-color: var(--content-bg);
-    }
-
-    &.page {
-      font-size: 1.4rem;
-      background-color: var(--bg-color);
-      border-bottom: 1px solid var(--black-70);
-    }
-  }
-
-  .title {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-left: 20px;
-  }
-`
-
 export type SkillDisplayTitleProps = {
   id: string
   title: string
@@ -128,17 +70,29 @@ export type SkillDisplayTitleProps = {
 
 export function skillsDisplayTitle(props: SkillDisplayTitleProps) {
   const imageSize = props.variant === 'imbeded' ? 40 : 50
+
+  const image = html`
+    <img
+      src="/images/${props.id}.png"
+      width="${imageSize}"
+    />
+  `
+
+  if (props.variant === 'page') {
+    return docHeader({
+      title: props.title,
+      img: image
+    })
+  }
   
   return html`
-    <header class="${props.variant}" css=${skillsDisplayTitleStyles}>
+    <header class="header imbeded">
       <div>
-        ${backButton({
-          onClick: props.onClickBack
-        })}
+        ${backButton({ onClick: props.onClickBack })}
       </div>
 
       <div class="title">
-        <img src="/images/${props.id}.png" width="${imageSize}" />
+        ${image}   
         <h3>${props.title}</h3>
       </div>
     </header>

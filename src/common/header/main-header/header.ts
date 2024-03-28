@@ -1,4 +1,4 @@
-import { nav } from '../../config'
+import { nav } from '../../../config'
 import './header.css'
 import { html } from 'lithen-fns'
 
