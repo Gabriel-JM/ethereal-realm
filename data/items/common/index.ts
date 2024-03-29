@@ -1,2 +1,6 @@
 export * from './adaga-de-arremesso'
 export * from './tocha'
+export * from './corda'
+export * from './oleo'
+export * from './pe-de-cabra'
+export * from './tenda'

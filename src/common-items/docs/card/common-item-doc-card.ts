@@ -1,5 +1,5 @@
 import './common-item-doc-card.css'
-import { html } from 'lithen-fns'
+import { html, raw } from 'lithen-fns'
 import { CommonItem } from '../../../types'
 
 type CommonItemDocCardProps = CommonItem
@@ -28,7 +28,7 @@ export function commonItemDocCard(props: CommonItemDocCardProps) {
         ${props.cost}
       </p>
       <p class="description">
-        ${props.description}
+        ${raw(props.description)}
       </p>
     </div>
   `
