@@ -11,7 +11,7 @@ export function proficienciesDocsPage() {
     <div class="prof-doc-page">
       ${docHeader({ title: '&#128170;&#127997; Perícias' })}
 
-      <section class="content">
+      <section class="doc-content">
         ${shell(() => {
           const dataIsLoaded = isDataReady.get()
 

@@ -1,0 +1,10 @@
+.item-doc-card {
+  .title {
+    font-size: 1.4rem;
+    padding-bottom: 6px;
+  }
+
+  .description {
+    padding-top: 6px;
+  }
+}

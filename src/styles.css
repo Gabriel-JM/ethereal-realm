@@ -31,7 +31,7 @@
 
 :root {
   --black-90: #050505;
-  --black-85: #0d0d0d;
+  --black-85: #0b0b0b;
   --black-80: #111;
   --black-75: #181818;
   --black-70: #222;
@@ -123,4 +123,18 @@ body {
 
 .bold {
   font-weight: bold;
+}
+
+/* Documentation content */
+section.doc-content {
+  padding: 12px 14px;
+  padding-bottom: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+  }
 }

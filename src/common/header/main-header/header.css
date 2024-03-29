@@ -1,11 +1,11 @@
 .main-header {
   background-color: var(--black-90);
-  border-bottom: 1px solid var(--black-75);
+  /* border-bottom: 1px solid var(--black-75); */
   font-family: Caudex, sans-serif;
 
   & .container {
-    padding: 8px 12px;
-    font-size: 0.75rem;
+    padding: 6px 12px;
+    font-size: 0.68rem;
   }
 
   & h1 {
