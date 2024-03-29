@@ -4,5 +4,6 @@ export const htmlEntity = (name: keyof typeof HTMLEntities) => ({
 })
 
 export const HTMLEntities = <const> {
-  Sword: '&#x1F5E1;'
+  Sword: '&#x1F5E1;',
+  Candle: '&#128367;'
 }

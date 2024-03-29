@@ -126,6 +126,11 @@ body {
 }
 
 /* Documentation content */
+.doc-description {
+  padding: 12px 14px;
+  padding-bottom: 20px;
+}
+
 section.doc-content {
   padding: 12px 14px;
   padding-bottom: 36px;

@@ -6,5 +6,6 @@
 
   .description {
     padding-top: 6px;
+    text-align: justify;
   }
 }

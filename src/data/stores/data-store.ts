@@ -1,4 +1,4 @@
-import { CommonItem, Proficiency, SkillSegment } from '../../types'
+import { CommonItem, PageInfo, Proficiency, SkillSegment } from '../../types'
 
 export type DataStore = {
   skillsSegments: Record<
@@ -7,7 +7,7 @@ export type DataStore = {
   >
   proficiencies: Proficiency[]
   items: {
-    common: CommonItem[]
+    common: PageInfo<CommonItem[]>
   }
 }
 
