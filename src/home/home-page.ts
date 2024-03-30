@@ -2,7 +2,6 @@ import './home-page.css'
 import { html } from 'lithen-fns'
 import { nav } from '../config/router'
 import { skillPageTitleList } from '../skills/page-title-list/skill-page-title-list'
-import { link } from '../common'
 
 export function homePage() {
   return html`
@@ -14,24 +13,28 @@ export function homePage() {
       <div>
         <h3>Geral</h3>
 
-        <app-link to="/docs/proficiencies">
-          &#128170;&#127997; Perícias
-        </app-link>
+        <nav>
+          <app-link class="home-link" to="/docs/proficiencies">
+            💪🏽 Perícias
+          </app-link>
+        </nav>
       </div>
 
       <div>
         <h3>Items</h3>
 
-        <app-link to="/docs/items/common">
-          &#x1F9EA; Itens Comuns
-        </app-link>
+        <nav>
+          <app-link class="home-link" to="/docs/items/common">
+            🧪 Itens Comuns
+          </app-link>
+        </nav>
       </div>
 
       <div>
         <h3>Habilidades</h3>
 
         ${skillPageTitleList({
-          variant: 'link',
+          variant: 'home-link',
           onClick: id => nav(`/docs/${id}`)()
         })}
       </div>
@@ -40,10 +43,9 @@ export function homePage() {
         <h3>Ferramentas</h3>
 
         <nav>
-          ${link({
-            path: '/prof-calc',
-            content: 'Calculadora de Perícias'
-          })}
+          <app-link class="home-link" to="/prof-calc">
+            🧮 Calculadora de Perícias
+          </app-link>
         </nav>
       </div>
     </section>

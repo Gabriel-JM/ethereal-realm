@@ -2,7 +2,7 @@ import './skill-page-title-list.css'
 import { html } from 'lithen-fns'
 
 export type SkillPageTitleListProps = {
-  variant?: 'link' | 'button'
+  variant?: 'home-link' | 'link' | 'button'
   onClick?(skillId: string): void
 }
 
@@ -20,7 +20,7 @@ export function skillPageTitleList(props: SkillPageTitleListProps) {
   }
 
   return html`
-    <ul class="skills-title-list">
+    <ul class="skills-title-list ${props.variant}">
       ${Object
           .entries(skillsTitles)
           .map(([target, title]) => {
@@ -39,7 +39,7 @@ export function skillPageTitleList(props: SkillPageTitleListProps) {
 export type SkillPageTitleProps = {
   title: string
   skillId: string
-  variant?: 'link' | 'button'
+  variant?: 'home-link' | 'link' | 'button'
   onClick?(id: string): void
 }
 
@@ -50,6 +50,20 @@ export function skillPageTitle({
   onClick
 }: SkillPageTitleProps) {
   const handleClick = () => onClick?.(skillId)
+
+  if (variant === 'home-link') {
+    return html`
+      <app-link
+        class="home-link"
+        to="/docs/${skillId}"
+      >
+        <span class="skill-title">
+          <img src="/images/${skillId}.png" width="24" />
+          <span>${title}</span>
+        </span>
+      </app-link>
+    `
+  }
 
   return html`
     <li

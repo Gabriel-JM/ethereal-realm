@@ -15,7 +15,7 @@ export function proficiencyCalculator() {
     <div class="proficiency-calculator-container">
       <header class="proficiency-calculator-header">
         ${backButton({ onClick: nav('/') })}
-        <h2>Calculadora de Perícias</h2>
+        <h2>🧮 Calculadora de Perícias</h2>
       </header>
 
       <section class="proficiency-container">

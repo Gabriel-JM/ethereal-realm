@@ -161,6 +161,10 @@ section.doc-content {
   color: var(--yellow-50);
 }
 
+.brown {
+  color: var(--brown-50);
+}
+
 .purple {
   color: var(--purple-50);
 }

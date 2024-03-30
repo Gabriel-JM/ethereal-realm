@@ -5,7 +5,7 @@ export type DataStore = {
     string,
     SkillSegment
   >
-  proficiencies: Proficiency[]
+  proficiencies: PageInfo<Proficiency[]>
   items: {
     common: PageInfo<CommonItem[]>
   }

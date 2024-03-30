@@ -1,44 +1,56 @@
 import './proficiencies-docs-page.css'
-import { html, shell } from 'lithen-fns'
+import { html, raw, shell } from 'lithen-fns'
 import { commonLayout } from '../../common/layouts'
 import { isDataReady } from '../../data/init-data'
 import { AttributeStore, ProficienciesStore, dataStore } from '../../data/stores'
 import { docHeader } from '../../common'
+import { Proficiency } from '../../types'
 
 export function proficienciesDocsPage() {
-
   return commonLayout(html`
     <div class="prof-doc-page">
       ${docHeader({ title: '&#128170;&#127997; Perícias' })}
 
-      <section class="doc-content">
-        ${shell(() => {
-          const dataIsLoaded = isDataReady.get()
+      ${shell(() => {
+        const dataIsLoaded = isDataReady.get()
 
-          if (!dataIsLoaded) {
-            return new Text('Loading...')
-          }
+        if (!dataIsLoaded) {
+          return new Text('Loading...')
+        }
 
-          return dataStore.proficiencies.map(prof => {
-            const attr = AttributeStore.getAlias(prof.atribute)
-            const categoryName = ProficienciesStore.getCategoryName(prof.category)
+        const { description, content } = dataStore.proficiencies
 
-            return html`
-              <div class="proficiency-doc-card">
-                <h4 class="name">
-                  ${prof.name} (${attr})
-                </h4>
-                <p class="type ${prof.category}">
-                  Perícia de ${categoryName}
-                </p>
-                <p class="description">
-                  ${prof.description}
-                </p>
-              </div>
-            `
-          })
-        })}
-      </section>
+        return html`
+          <p class="doc-description">
+            ${raw(description!)}
+          </p>
+
+          <section class="doc-content">
+            ${content.map(proficiencyDocCard)}
+          </section>
+        `
+      })}
     </div>
   `)
+}
+
+type ProficiencyDocCardProps = Proficiency
+
+function proficiencyDocCard(props: ProficiencyDocCardProps) {
+  const attr = AttributeStore.getAlias(props.atribute)
+  const categoryName = ProficienciesStore.getCategoryName(props.category)
+
+  return html`
+    <div class="proficiency-doc-card">
+      <h4 class="name">
+        ${props.name} (${attr})
+      </h4>
+      <p class="type ${props.category}">
+        Perícia de ${categoryName}
+      </p>
+      <p class="description">
+        ${props.description}
+      </p>
+    </div>
+  `
 }

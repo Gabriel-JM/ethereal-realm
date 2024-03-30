@@ -1,7 +1,7 @@
 import path from 'node:path'
 import { writeFile } from 'node:fs/promises'
 import * as segments from './skill-segments'
-import { proficiencies } from './proficiencies'
+import { proficienciesPageInfo } from './proficiencies'
 import { commonItemsPageInfo } from './items/common/page-info'
 
 for (const segment of Object.values(segments)) {
@@ -11,7 +11,7 @@ for (const segment of Object.values(segments)) {
 
 await writeFile(
   path.resolve('public', 'data', 'proficiencies.json'),
-  JSON.stringify(proficiencies)
+  JSON.stringify(proficienciesPageInfo)
 )
 
 await writeFile(

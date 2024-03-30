@@ -12,7 +12,7 @@ export class ProficienciesStore {
   }
 
   static getById(id: string) {
-    const proficiency = dataStore.proficiencies
+    const proficiency = dataStore.proficiencies.content
       .find(item => item.id === id)
 
     return proficiency!
