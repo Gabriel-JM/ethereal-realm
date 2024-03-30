@@ -17,6 +17,8 @@ export function commonItemDocCard(props: CommonItemDocCardProps) {
 
     return props.icon.value
   })()
+
+  console.log(props.description)
   
   return html`
     <div class="item-doc-card">
@@ -24,7 +26,7 @@ export function commonItemDocCard(props: CommonItemDocCardProps) {
         ${icon} ${props.name}
       </h4>
       <p>
-        <span class="bold">Cost: </span>
+        <span class="bold">Custo: </span>
         ${props.cost}
       </p>
       <p class="description">

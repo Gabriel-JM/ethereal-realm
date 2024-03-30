@@ -143,3 +143,54 @@ section.doc-content {
     flex-direction: column;
   }
 }
+
+/* Colors */
+.red {
+  color: var(--red-50);
+}
+
+.green {
+  color: var(--green-50);
+}
+
+.blue {
+  color: var(--blue-50);
+}
+
+.yellow {
+  color: var(--yellow-50);
+}
+
+.purple {
+  color: var(--purple-50);
+}
+
+/* Docs Details List */
+.details-list {
+  margin-top: 6px;
+  padding: 4px 8px;
+  
+  & summary {
+    font-weight: bolder;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border: solid currentColor;
+      border-width: 0 3px 3px 0;
+      border-radius: 2px;
+      rotate: -45deg;
+      transition: all 150ms;
+    }
+  }
+
+  &[open] summary:before {
+    translate: 2px -3px;
+    rotate: 45deg;
+  }
+}
