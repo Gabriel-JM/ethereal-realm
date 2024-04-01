@@ -32,12 +32,12 @@
 :root {
   --black-90: #050505;
   --black-85: #0b0b0b;
-  --black-80: #111;
+  --black-80: #111111;
   --black-75: #181818;
-  --black-70: #222;
+  --black-70: #222222;
   --black-65: #282828;
-  --black-60: #333;
-  --black-50: #444;
+  --black-60: #333333;
+  --black-50: #444444;
 
   --white-80: #eee;
 
@@ -82,7 +82,7 @@ body {
 .container {
   max-width: 1600px;
   width: 100%;
-  height: calc(100% - 55px);
+  height: fit-content;
   padding: 0px 12px;
   margin: auto;
 }
