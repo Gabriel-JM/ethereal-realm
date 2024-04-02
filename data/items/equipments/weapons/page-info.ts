@@ -1,3 +1,4 @@
+import { adaga } from '.'
 import { PageInfo, Weapon } from '../../../../src/types'
 import { md } from '../../../utils'
 
@@ -26,5 +27,7 @@ export const weaponsPageInfo: PageInfo<Weapon[]> = {
     o seu equipamento atual por ela usando **metade da sua ação de
     movimento** como custo.
   `,
-  content: []
+  content: [
+    adaga
+  ]
 }

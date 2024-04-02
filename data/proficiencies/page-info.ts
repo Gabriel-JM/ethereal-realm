@@ -43,5 +43,3 @@ export const proficienciesPageInfo = <PageInfo> {
   `,
   content: proficiencies
 }
-
-console.log(proficienciesPageInfo.description)

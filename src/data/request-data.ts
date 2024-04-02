@@ -38,6 +38,18 @@ export async function requestCommonItems() {
 
   return data
 }
+export async function requestWeapons() {
+  const cache = dataStore.items.weapons
+  if (cache) {
+    return cache
+  }
+
+  const data = await requestData('weapons')
+
+  dataStore.items.weapons = data
+
+  return data
+}
 
 export async function requestData(fileName: string) {
   const response = await fetch(`/data/${fileName}.json`)
