@@ -27,6 +27,9 @@ export function homePage() {
           <app-link class="home-link" to="/docs/items/common">
             🧪 Itens Comuns
           </app-link>
+          <app-link class="home-link" to="/docs/equips">
+            Equipamentos
+          </app-link>
         </nav>
       </div>
 

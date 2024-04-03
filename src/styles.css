@@ -198,3 +198,7 @@ section.doc-content {
     rotate: 45deg;
   }
 }
+
+app-link {
+  display: block;
+}
