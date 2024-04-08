@@ -2,6 +2,7 @@ export type Weapon = {
   id: `weap_${string}`
   name: string
   rarity: ItemRarity
+  type: WeaponTypes
   damage: WeaponDamage[]
   attributes: WeaponAttributes[]
   initiativeModifier: number
@@ -9,6 +10,28 @@ export type Weapon = {
   distance?: string
   description: string
 }
+
+export type WeaponTypes = (
+  'dagger'
+  |'staff'
+  |'scepter'
+  |'rod'
+  |'shortSword'
+  |'straightSword'
+  |'greatSword'
+  |'rapier'
+  |'axe'
+  |'warAxe'
+  |'hammer'
+  |'mace'
+  |'warhammer'
+  |'spear'
+  |'pike'
+  |'shortBow'
+  |'longBow'
+  |'handCrossbow'
+  |'crossbow'
+)
 
 export type WeaponDamage = {
   types: DamageTypes[]

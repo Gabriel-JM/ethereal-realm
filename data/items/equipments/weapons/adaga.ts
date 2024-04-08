@@ -4,6 +4,7 @@ import { md } from '../../../utils'
 export const adaga = <Weapon> {
   id: 'weap_SWL3WHJy4n',
   name: 'Adaga',
+  type: 'dagger',
   rarity: 'common',
   attributes: ['light', 'quickShift', 'throwable'],
   damage: [
