@@ -39,7 +39,16 @@
   --black-60: #333333;
   --black-50: #444444;
 
-  --white-80: #eee;
+  --white-90: #f5f5f5;
+  --white-80: #eaeaea;
+  --white-75: #e8e8e8;
+  --white-70: #e0e0e0;
+  --white-65: #ddd;
+  --white-60: #d8d8d8;
+  --white-55: #ccc;
+  --white-50: #c0c0c0;
+  --white-45: #bbb;
+  --white-40: #b0b0b0;
 
   --blue-80: #45d;
   --blue-60: #4e8dcc;
@@ -125,6 +134,7 @@ body {
 
 .bold {
   font-weight: bold;
+  color: var(--white-90);
 }
 
 /* Documentation content */

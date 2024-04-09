@@ -1,7 +1,45 @@
 .weapon-doc-card {
-  padding: 10px;
-  background: linear-gradient(145deg, var(--common-rarity), var(--black-90) 35%);
+  width: 280px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  background: linear-gradient(
+    145deg,
+    var(--common-rarity), 
+    color-mix(in srgb, var(--black-90), transparent 70%) 35%
+  );
+  backdrop-filter: blur(5px);
   border-radius: 4px;
-  box-shadow: 0 0 4px 2px var(--black-85),
-    5px 5px 0 #2226;
+  box-shadow: 0 0 0 1px var(--common-rarity),
+    4px 4px 0 2px #3336;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .name {
+      font-size: 1.3rem;
+    }
+
+    .icon {
+      width: 30px;
+      font-size: 3rem;
+    }
+  }
+
+  .prop-name {
+    color: #7a7a7a;
+    font-size: 0.85rem;
+    padding-bottom: 2px;
+  }
+
+  .prop-container {
+    padding-bottom: 10px;
+
+    &.group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }
