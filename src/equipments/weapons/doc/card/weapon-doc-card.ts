@@ -1,6 +1,7 @@
 import './weapon-doc-card.css'
 import { html } from 'lithen-fns'
-import { Weapon } from '../../../../types'
+import { DamageTypes, Weapon, WeaponAttributes } from '../../../../types'
+import { DamageStore, WeaponsStore } from '../../../../data/stores'
 
 type WeaponDocCardProps = Weapon
 
@@ -21,17 +22,21 @@ export function weaponDocCard(props: WeaponDocCardProps) {
         <p class="prop-name">Dano</p>
         ${props.damage.map(dmg => {
           return html`
-            <p>${dmg.value} (${dmg.types.join(', ')})</p>
+            <p>${dmg.value} ${dmg.types.map(damageCard)}</p>
           `
         })}
       </div>
       
       <div class="prop-container">
         <p class="prop-name">Atributos</p>
-        <p>${props.attributes.join(', ')}</p>
+        <p>${props.attributes.map(weaponAttrCard)}</p>
       </div>
       
       <div class="prop-container group">
+        <div>
+          <p class="prop-name">Preço</p>
+          <p>${props.price}</p>
+        </div>
         <div>
           <p class="prop-name">Iniciativa</p>
           <p>
@@ -45,10 +50,6 @@ export function weaponDocCard(props: WeaponDocCardProps) {
           <p class="prop-name">Distância</p>
           <p>${props.distance ?? '-'}</p>
         </div>
-        <div>
-          <p class="prop-name">Preço</p>
-          <p>${props.price}</p>
-        </div>
       </div>
 
       <div>
@@ -56,5 +57,21 @@ export function weaponDocCard(props: WeaponDocCardProps) {
         <p>${props.description}</p>
       </div>
     </div>
+  `
+}
+
+export function damageCard(type: DamageTypes) {
+  const name = DamageStore.getName(type)
+
+  return html`
+    <span class="${type}">${name}</span>
+  `
+}
+
+export function weaponAttrCard(attr: WeaponAttributes) {
+  const name = WeaponsStore.getAttributeName(attr)
+
+  return html`
+    <span class="weapon-attr">${name}</span>
   `
 }
