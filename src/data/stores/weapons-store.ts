@@ -1,4 +1,4 @@
-import { WeaponAttributes } from '../../types'
+import { WeaponAttributes, WeaponTypes } from '../../types'
 
 export class WeaponsStore {
   static attributesNames: Record<WeaponAttributes, string> = {
@@ -8,6 +8,28 @@ export class WeaponsStore {
     resistent: 'Resistente',
     throwable: 'Arremessável',
     twoHands: 'Duas Mãos'
+  }
+
+  static typeNames: Record<WeaponTypes, string> = {
+    dagger: 'Adaga',
+    staff: 'Bastão',
+    rod: 'Cajado',
+    scepter: 'Cetro',
+    shortSword: 'Espada Curta',
+    straightSword: 'Espada Reta',
+    greatSword: 'Espada Grande',
+    rapier: 'Rapieira',
+    axe: 'Machado',
+    warAxe: 'Machado de Guerra',
+    hammer: 'Martelo',
+    warhammer: 'Martelo de Guerra',
+    mace: 'Maça',
+    spear: 'Lança',
+    pike: 'Pique',
+    shortBow: 'Arco Curto',
+    longBow: 'Arco Longo',
+    handCrossbow: 'Besta de Mão',
+    crossbow: 'Besta'
   }
 
   static getAttributeName(attr: WeaponAttributes) {

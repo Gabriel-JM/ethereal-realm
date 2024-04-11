@@ -1,7 +1,8 @@
 import './weapon-doc-card.css'
 import { html } from 'lithen-fns'
-import { DamageTypes, Weapon, WeaponAttributes } from '../../../../types'
-import { DamageStore, WeaponsStore } from '../../../../data/stores'
+import { Weapon, WeaponAttributes } from '../../../../types'
+import { WeaponsStore } from '../../../../data/stores'
+import { damageCard } from '../../../../damage'
 
 type WeaponDocCardProps = Weapon
 
@@ -57,14 +58,6 @@ export function weaponDocCard(props: WeaponDocCardProps) {
         <p>${props.description}</p>
       </div>
     </div>
-  `
-}
-
-export function damageCard(type: DamageTypes) {
-  const name = DamageStore.getName(type)
-
-  return html`
-    <span class="${type}">${name}</span>
   `
 }
 

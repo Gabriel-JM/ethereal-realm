@@ -1,0 +1,36 @@
+.damage {
+  display: inline-block;
+  padding: 2px 5px;
+  text-shadow: 0 1px 3px var(--black-90);
+  background-color: gray;
+  font-size: 0.79rem;
+  border-radius: 4px;
+
+  &.slash {
+    background: linear-gradient(145deg, var(--black-55) 50%, var(--gray-blue-30));
+  }
+
+  &.pierce {
+    background: linear-gradient(145deg, var(--black-55) 50%, var(--black-20));
+  }
+
+  &.strike {
+    background: linear-gradient(145deg, var(--black-55) 50%, var(--gray-orange-30));
+  }
+
+  &.arcane {
+    background: linear-gradient(145deg, var(--purple-80) 50%, var(--purple-50));
+  }
+
+  &.fire {
+    background: linear-gradient(145deg, var(--orange-80) 50%, var(--orange-50));
+  }
+
+  &.water {
+    background: linear-gradient(145deg, var(--blue-80) 50%, var(--blue-50));
+  }
+
+  &.ice {
+    background: linear-gradient(145deg, var(--blue-60) 50%, var(--white-20));
+  }
+}
