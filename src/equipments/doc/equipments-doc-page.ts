@@ -5,7 +5,7 @@ import { weaponsDocPage } from '../weapons'
 
 export function equipmentsDocPage() {
   return commonLayout(html`
-    ${docHeader({ title: '⚔️ Equipamentos' })}
+    ${docHeader({ title: '🛡 Equipamentos' })}
 
     ${weaponsDocPage()}
   `)

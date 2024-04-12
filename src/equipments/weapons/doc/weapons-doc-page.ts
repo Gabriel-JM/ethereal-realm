@@ -17,7 +17,7 @@ export function weaponsDocPage() {
 
         return html`
           <div class="doc-description">
-            <h3>Armas</h3>
+            <h3>⚔️ Armas</h3>
 
             <p>${raw(description!)}</p>
           </div>

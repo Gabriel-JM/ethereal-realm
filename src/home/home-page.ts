@@ -13,7 +13,7 @@ export function homePage() {
       <div>
         <h3>Geral</h3>
 
-        <nav>
+        <nav class="link-list">
           <app-link class="home-link" to="/docs/proficiencies">
             💪🏽 Perícias
           </app-link>
@@ -23,12 +23,12 @@ export function homePage() {
       <div>
         <h3>Items</h3>
 
-        <nav>
+        <nav class="link-list">
           <app-link class="home-link" to="/docs/items/common">
             🧪 Itens Comuns
           </app-link>
           <app-link class="home-link" to="/docs/equips">
-            Equipamentos
+            🛡 Equipamentos
           </app-link>
         </nav>
       </div>
@@ -45,7 +45,7 @@ export function homePage() {
       <div>
         <h3>Ferramentas</h3>
 
-        <nav>
+        <nav class="link-list">
           <app-link class="home-link" to="/prof-calc">
             🧮 Calculadora de Perícias
           </app-link>

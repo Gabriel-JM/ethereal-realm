@@ -7,7 +7,7 @@ export type Weapon = {
   attributes: WeaponAttributes[]
   initiativeModifier: number
   price: number
-  distance?: string
+  range: string
   description: string
 }
 

@@ -8,12 +8,12 @@ export function damageCard(type: DamageTypes) {
 
   return html`
     <span class="damage ${type}">${name}</span>
-    <span class="damage strike">Concussão</span>
+    <!-- <span class="damage strike">Concussão</span>
     <span class="damage arcane">Arcano</span>
     <span class="damage fire">Fogo</span>
     <span class="damage water">Água</span>
     <span class="damage eletric">Elétrico</span>
     <span class="damage ">Gelo</span>
-    <span class="damage ice">Gelo</span>
+    <span class="damage ice">Gelo</span> -->
   `
 }

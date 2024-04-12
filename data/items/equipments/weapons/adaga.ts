@@ -9,12 +9,13 @@ export const adaga = <Weapon> {
   attributes: ['light', 'quickShift', 'throwable'],
   damage: [
     {
-      value: 'Dano Base de For/Des + 1',
+      value: 'Dano de For/Des + 1',
       types: ['pierce', 'slash']
     }
   ],
   initiativeModifier: 1,
   price: 5,
+  range: '1 metro',
   description: md`
     Uma arma com lâmina, pequena e simples. Porém versátil
     e flexível, podendo ser uma arma extremamente letal.

@@ -87,7 +87,7 @@
   --purple-60: #993fee;
   --purple-50: #a964eb;
 
-  --common-rarity: var(--black-60);
+  --common-rarity: var(--black-45);
 }
 
 html, body {

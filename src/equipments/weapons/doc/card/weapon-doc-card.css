@@ -1,5 +1,5 @@
 .weapon-doc-card {
-  width: 280px;
+  width: 300px;
   padding: 10px 12px;
   font-size: 0.9rem;
   background: linear-gradient(
@@ -10,7 +10,7 @@
   backdrop-filter: blur(5px);
   border-radius: 4px;
   box-shadow: 0 0 0 1px var(--common-rarity),
-    4px 4px 0 2px #3336;
+    4px 4px 0 2px color-mix(in srgb, var(--common-rarity), transparent 40%);
 
   .header {
     display: flex;
@@ -25,21 +25,46 @@
       width: 30px;
       font-size: 3rem;
     }
+
+    & p.common {
+      color: var(--white-40);
+    }
   }
 
   .prop-name {
     color: #7a7a7a;
     font-size: 0.85rem;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
   }
 
   .prop-container {
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 
     &.group {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+  }
+
+  .dmg-value {
+    font-size: 0.85rem;
+    margin-right: 10px;
+  }
+
+  .card-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .weapon-attr {
+    display: inline-block;
+    padding: 3px 5px;
+    text-shadow: 0 1px 3px var(--black-90);
+    background-color: var(--black-60);
+    box-shadow: 0 0 0 2px var(--black-55);
+    font-size: 0.79rem;
+    border-radius: 4px;
   }
 }

@@ -1,18 +1,21 @@
 import './weapon-doc-card.css'
 import { html } from 'lithen-fns'
 import { Weapon, WeaponAttributes } from '../../../../types'
-import { WeaponsStore } from '../../../../data/stores'
+import { RarityStore, WeaponsStore } from '../../../../data/stores'
 import { damageCard } from '../../../../damage'
 
 type WeaponDocCardProps = Weapon
 
 export function weaponDocCard(props: WeaponDocCardProps) {
+  const typeName = WeaponsStore.getTypeName(props.type)
+  const rarityName = RarityStore.getName(props.rarity)
+
   return html`
     <div class="weapon-doc-card">
       <div class="header">
         <div>
           <h4 class="name">${props.name}</h4>
-          <p>${props.rarity} ${props.type}</p>
+          <p class="${props.rarity}">${typeName} ${rarityName}</p>
         </div>
         <div>
           <img class="icon" src="" alt="🗡️" />
@@ -23,20 +26,29 @@ export function weaponDocCard(props: WeaponDocCardProps) {
         <p class="prop-name">Dano</p>
         ${props.damage.map(dmg => {
           return html`
-            <p>${dmg.value} ${dmg.types.map(damageCard)}</p>
+            <p>
+              <span class="dmg-value">
+                ${dmg.value}
+              </span>
+              <span class="card-group">
+                ${dmg.types.map(damageCard)}
+              </span>
+            </p>
           `
         })}
       </div>
       
       <div class="prop-container">
         <p class="prop-name">Atributos</p>
-        <p>${props.attributes.map(weaponAttrCard)}</p>
+        <p class="card-group">
+          ${props.attributes.map(weaponAttrCard)}
+        </p>
       </div>
       
       <div class="prop-container group">
         <div>
           <p class="prop-name">Preço</p>
-          <p>${props.price}</p>
+          <p>$${props.price}</p>
         </div>
         <div>
           <p class="prop-name">Iniciativa</p>
@@ -48,8 +60,8 @@ export function weaponDocCard(props: WeaponDocCardProps) {
           </p>
         </div>
         <div>
-          <p class="prop-name">Distância</p>
-          <p>${props.distance ?? '-'}</p>
+          <p class="prop-name">Alcance</p>
+          <p>${props.range}</p>
         </div>
       </div>
 

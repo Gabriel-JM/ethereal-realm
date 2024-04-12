@@ -35,4 +35,8 @@ export class WeaponsStore {
   static getAttributeName(attr: WeaponAttributes) {
     return this.attributesNames[attr]
   }
+
+  static getTypeName(type: WeaponTypes) {
+    return this.typeNames[type]
+  }
 }

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm run data && vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "data": "tsx ./data/generate-data.ts",
