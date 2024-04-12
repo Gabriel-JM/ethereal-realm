@@ -18,7 +18,7 @@
     "vite": "^5.2.8"
   },
   "dependencies": {
-    "lithen-fns": "^4.2.0",
+    "lithen-fns": "^4.2.1",
     "lithen-router": "^3.0.1",
     "lithen-super-element": "^5.1.1"
   }
