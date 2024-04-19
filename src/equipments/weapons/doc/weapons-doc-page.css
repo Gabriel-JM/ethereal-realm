@@ -1,0 +1,54 @@
+.selected-weapon-container {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  bottom: 0;
+  right: 18px;
+  width: fit-content;
+  padding: 6px;
+  z-index: 5;
+
+  &.open {
+    display: block;
+  }
+
+  @media screen and (max-width: 450px) {
+    & {
+      position: fixed;
+      justify-content: center;
+      align-items: end;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: color-mix(in srgb, var(--black-90), transparent 30%);
+    }
+
+    &.open {
+      display: flex;
+    }
+  }
+}
+
+.selected-weapon-display {
+  translate: 25%;
+  opacity: 0;
+  animation: show 150ms forwards ease-out;
+
+  .btn-close {
+    margin-top: 22px;
+    width: 100%;
+    padding: 6px 0;
+    color: var(--black-20);
+    background-color: var(--black-80);
+    border: 1px solid var(--black-20);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+}
+
+@keyframes show {
+  to {
+    translate: 0;
+    opacity: 1;
+  }
+}

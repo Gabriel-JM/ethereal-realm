@@ -1,0 +1,31 @@
+.weapon-tiny-card {
+  width: 300px;
+  height: fit-content;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  background: linear-gradient(
+    145deg,
+    var(--common-rarity), 
+    color-mix(in srgb, var(--black-90), transparent 70%) 35%
+  );
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--common-rarity);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  .name {
+    font-size: 1.25rem;
+  }
+
+  .icon {
+    width: 22px;
+    font-size: 2rem;
+  }
+
+  & p.common {
+    color: var(--white-40);
+  }
+}
