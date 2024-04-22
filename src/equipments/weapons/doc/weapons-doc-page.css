@@ -1,6 +1,6 @@
 .selected-weapon-container {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: transparent;
   bottom: 0;
   right: 18px;
@@ -20,7 +20,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-color: color-mix(in srgb, var(--black-90), transparent 30%);
+      background-color: color-mix(in srgb, var(--black-90), transparent 20%);
     }
 
     &.open {

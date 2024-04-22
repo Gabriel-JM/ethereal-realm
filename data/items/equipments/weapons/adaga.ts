@@ -9,7 +9,7 @@ export const adaga = <Weapon> {
   attributes: ['light', 'quickShift', 'throwable'],
   damage: [
     {
-      value: 'Dano de For/Des + 1',
+      value: 'For/Des + 1',
       types: ['pierce', 'slash']
     }
   ],

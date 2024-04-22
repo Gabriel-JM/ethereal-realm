@@ -36,7 +36,7 @@ export function weaponsDocPage() {
         `
       })}
 
-      <div ref=${weaponContainerRef } class="selected-weapon-container">
+      <div ref=${weaponContainerRef} class="selected-weapon-container">
         ${shell(() => {
           const weapon = selectedWeapon.get()
 

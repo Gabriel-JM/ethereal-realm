@@ -8,7 +8,8 @@
     var(--common-rarity), 
     color-mix(in srgb, var(--black-90), transparent 70%) 35%
   );
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border-radius: 4px;
   box-shadow: 0 0 0 1px var(--common-rarity);
   cursor: pointer;
