@@ -1,3 +1,12 @@
+.doc-content {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  padding: 12px 14px;
+}
+
 .selected-weapon-container {
   display: none;
   position: fixed;

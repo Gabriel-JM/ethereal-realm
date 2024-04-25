@@ -1,2 +1,5 @@
 export * from './adaga'
 export * from './bastão-madeira'
+export * from './cajado-madeira'
+export * from './cetro-madeira'
+export * from './espada-curta'

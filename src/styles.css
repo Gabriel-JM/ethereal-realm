@@ -165,7 +165,7 @@ body {
   padding-bottom: 20px;
 }
 
-section.doc-content {
+section.doc-grid-content {
   padding: 12px 14px;
   padding-bottom: 36px;
   display: grid;

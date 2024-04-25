@@ -25,7 +25,7 @@ export function commonItemsPage() {
           </p>
         `}
 
-        <section class="doc-content">
+        <section class="doc-grid-content">
           ${content.map(commonItemDocCard)}
         </section>
       `

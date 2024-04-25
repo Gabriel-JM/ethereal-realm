@@ -25,7 +25,7 @@ export function proficienciesDocsPage() {
             ${raw(description!)}
           </p>
 
-          <section class="doc-content">
+          <section class="doc-grid-content">
             ${content.map(proficiencyDocCard)}
           </section>
         `

@@ -10,6 +10,7 @@ export function weaponDocCard(props: WeaponDocCardProps) {
   const typeName = WeaponsStore.getTypeName(props.type)
   const rarityName = RarityStore.getName(props.rarity)
 
+  // <!-- <img class="icon" src="" alt="🗡️" /> -->
   return html`
     <div class="weapon-doc-card">
       <div class="header">
@@ -18,7 +19,7 @@ export function weaponDocCard(props: WeaponDocCardProps) {
           <p class="${props.rarity}">${typeName} ${rarityName}</p>
         </div>
         <div>
-          <img class="icon" src="" alt="🗡️" />
+          <span class="icon">🗡️</span>
         </div>
       </div>
       
@@ -68,17 +69,7 @@ export function weaponDocCard(props: WeaponDocCardProps) {
       <div>
         <p class="prop-name">Descrição</p>
         <p class="description">
-          ${[
-            props.description,
-            props.description,
-            props.description,
-            props.description,
-            props.description,
-            props.description,
-            props.description,
-            props.description,
-            props.description
-          ]}
+          ${props.description}
         </p>
       </div>
     </div>

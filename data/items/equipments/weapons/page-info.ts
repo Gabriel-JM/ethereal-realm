@@ -1,13 +1,12 @@
-import { adaga, bastãoDeMadeira } from '.'
+import { adaga, bastãoDeMadeira, cajadoMadeira, cetroMadeira, espadaCurta } from '.'
 import { PageInfo, Weapon } from '../../../../src/types'
 import { md } from '../../../utils'
 
 export const weaponsPageInfo: PageInfo<Weapon[]> = {
   description: md`
+    <br/>
     ## Atributos
-
-    Valores entre parenteses representam requisitos mínimos.
-    <br/><br/>
+    <br/>
     
     **Arremessável**: A arma pode ser arremessada com **eficiência**.
     Armas que não possuem esse atributo também podem ser arremessadas
@@ -34,7 +33,10 @@ export const weaponsPageInfo: PageInfo<Weapon[]> = {
     movimento** como custo.
   `,
   content: [
+    cajadoMadeira,
+    cetroMadeira,
     adaga,
-    bastãoDeMadeira
+    bastãoDeMadeira,
+    espadaCurta
   ]
 }

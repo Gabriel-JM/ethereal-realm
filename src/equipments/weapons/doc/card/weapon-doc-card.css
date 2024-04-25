@@ -1,6 +1,6 @@
 .weapon-doc-card {
-  width: 300px;
-  padding: 10px 12px;
+  width: 320px;
+  padding: 14px 16px;
   font-size: 0.9rem;
   background: linear-gradient(
     145deg,
@@ -50,6 +50,7 @@
   .description {
     max-height: 160px;
     overflow-y: auto;
+    text-align: justify;
   }
 
   .dmg-value {
@@ -68,7 +69,7 @@
     padding: 3px 5px;
     text-shadow: 0 1px 3px var(--black-90);
     background-color: var(--black-60);
-    box-shadow: 0 0 0 2px var(--black-55);
+    border: 2px solid var(--black-55);
     font-size: 0.79rem;
     border-radius: 4px;
   }

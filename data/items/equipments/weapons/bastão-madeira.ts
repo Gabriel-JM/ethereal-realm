@@ -15,6 +15,6 @@ export const bastãoDeMadeira = <Weapon> {
   initiativeModifier: 0,
   description: md`
     Um bastão feito de madeira e construido para combate.
-    Pode ser uma arma destruidora nas mãos certas
+    Pode ser uma arma destruidora nas mãos certas.
   `
 }
