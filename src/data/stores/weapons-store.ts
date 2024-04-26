@@ -5,7 +5,7 @@ export class WeaponsStore {
     light: 'Leve',
     heavy: 'Pesado',
     quickShift: 'Troca Ágil',
-    resistent: 'Resistente',
+    resistant: 'Resistente',
     throwable: 'Arremessável',
     twoHands: 'Duas Mãos'
   }

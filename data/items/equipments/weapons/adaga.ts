@@ -15,7 +15,7 @@ export const adaga = <Weapon> {
   ],
   initiativeModifier: 1,
   price: 5,
-  range: '1 metro',
+  range: '5 metros (Arremesso)',
   description: md`
     Uma arma com lâmina, pequena e simples. Porém versátil
     e flexível, podendo ser uma arma extremamente letal.

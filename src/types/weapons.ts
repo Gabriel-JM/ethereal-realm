@@ -64,6 +64,6 @@ export type WeaponAttributes = (
   |'throwable'
   |'quickShift'
   |'twoHands'
-  |'resistent'
+  |'resistant'
   |'heavy'
 )

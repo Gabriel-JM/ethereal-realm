@@ -21,7 +21,7 @@ export function weaponTinyCard(props: WeaponTinyCardProps) {
         <p class="${props.rarity}">${typeName} ${rarityName}</p>
       </div>
       <div>
-        <img class="icon" src="" alt="🗡️" />
+        <span class="icon">🗡️</span>
       </div>
     </div>
   `
