@@ -1,4 +1,4 @@
-import { adaga, bastãoDeMadeira, cajadoMadeira, cetroMadeira, espadaCurta, espadaLonga } from '.'
+import { adaga, bastãoDeMadeira, cajadoMadeira, cetroMadeira, espadaCurta, espadaGrande, espadaLonga, rapieira } from '.'
 import { PageInfo, Weapon } from '../../../../src/types'
 import { md } from '../../../utils'
 
@@ -38,6 +38,8 @@ export const weaponsPageInfo: PageInfo<Weapon[]> = {
     adaga,
     bastãoDeMadeira,
     espadaCurta,
-    espadaLonga
+    espadaLonga,
+    espadaGrande,
+    rapieira
   ]
 }

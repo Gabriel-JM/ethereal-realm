@@ -44,7 +44,11 @@ export function skillCard(data: SkillCardProps) {
   }
 
   return html`
-    <div ref=${cardRef} class="skill-card ${isSelected && 'selected'}">
+    <div 
+      key=${data.id}
+      ref=${cardRef}
+      class="skill-card ${isSelected && 'selected'}"
+    >
       <div class="check">
         ${checkIcon()}
       </div>
