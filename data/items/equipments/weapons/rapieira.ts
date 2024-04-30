@@ -7,7 +7,7 @@ export const rapieira = <Weapon> {
   type: 'rapier',
   rarity: 'common',
   attributes: ['light', 'resistant'],
-  damage: [{ value: 'For/Des + 2', types: ['pierce'] }],
+  damage: [{ value: 'For/Des +2', types: ['pierce'] }],
   initiativeModifier: 0,
   price: 12,
   range: '1 metro',

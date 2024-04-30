@@ -7,7 +7,7 @@ export const espadaLonga = <Weapon> {
   type: 'straightSword',
   rarity: 'common',
   attributes: ['resistant'],
-  damage: [{ value: 'For/Des + 4', types: ['slash', 'pierce'] }],
+  damage: [{ value: 'For/Des +4', types: ['slash', 'pierce'] }],
   initiativeModifier: -2,
   price: 26,
   range: '1 metro',

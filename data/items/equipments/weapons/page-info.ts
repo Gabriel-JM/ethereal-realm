@@ -1,4 +1,23 @@
-import { adaga, bastãoDeMadeira, cajadoMadeira, cetroMadeira, espadaCurta, espadaGrande, espadaLonga, rapieira } from '.'
+import {
+  adaga,
+  arcoCurto,
+  arcoLongo,
+  bastãoDeMadeira,
+  bestaDeMão,
+  bestaPesada,
+  cajadoMadeira,
+  cetroMadeira,
+  espadaCurta,
+  espadaGrande,
+  espadaLonga,
+  lança,
+  machado,
+  machadoGuerra,
+  martelo,
+  marteloGuerra,
+  pique,
+  rapieira
+} from '.'
 import { PageInfo, Weapon } from '../../../../src/types'
 import { md } from '../../../utils'
 
@@ -40,6 +59,16 @@ export const weaponsPageInfo: PageInfo<Weapon[]> = {
     espadaCurta,
     espadaLonga,
     espadaGrande,
-    rapieira
+    rapieira,
+    machado,
+    machadoGuerra,
+    martelo,
+    marteloGuerra,
+    lança,
+    pique,
+    arcoCurto,
+    arcoLongo,
+    bestaDeMão,
+    bestaPesada
   ]
 }

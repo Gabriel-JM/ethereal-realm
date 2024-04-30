@@ -7,7 +7,7 @@ export const espadaGrande = <Weapon> {
   type: 'greatSword',
   rarity: 'common',
   attributes: ['heavy', 'twoHands', 'resistant'],
-  damage: [{ value: 'For/Des + 6', types: ['slash', 'pierce'] }],
+  damage: [{ value: 'For/Des +6', types: ['slash', 'pierce'] }],
   initiativeModifier: -4,
   price: 46,
   range: '1 metro',

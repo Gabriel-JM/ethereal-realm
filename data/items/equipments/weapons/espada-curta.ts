@@ -7,7 +7,7 @@ export const espadaCurta = <Weapon> {
   type: 'shortSword',
   rarity: 'common',
   attributes: ['light'],
-  damage: [{ value: 'For/Des + 2', types: ['slash', 'pierce'] }],
+  damage: [{ value: 'For/Des +2', types: ['slash', 'pierce'] }],
   initiativeModifier: 0,
   price: 10,
   range: '1 metro',

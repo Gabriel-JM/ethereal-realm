@@ -8,7 +8,7 @@ export const bastãoDeMadeira = <Weapon> {
   rarity: 'common',
   attributes: ['twoHands'],
   damage: [
-    { value: 'For + 2', types: ['strike'] }
+    { value: 'For +2', types: ['strike'] }
   ],
   price: 10,
   range: '1 metro',
