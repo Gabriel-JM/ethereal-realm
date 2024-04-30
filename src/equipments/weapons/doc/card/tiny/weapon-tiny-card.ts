@@ -9,6 +9,7 @@ export type WeaponTinyCardProps = Weapon
 export function weaponTinyCard(props: WeaponTinyCardProps) {
   const typeName = WeaponsStore.getTypeName(props.type)
   const rarityName = RarityStore.getName(props.rarity)
+  const icon = WeaponsStore.getIcon(props.type)
 
   return html`
     <div
@@ -21,7 +22,7 @@ export function weaponTinyCard(props: WeaponTinyCardProps) {
         <p class="${props.rarity}">${typeName} ${rarityName}</p>
       </div>
       <div>
-        <span class="icon">🗡️</span>
+        <span class="icon">${icon}</span>
       </div>
     </div>
   `

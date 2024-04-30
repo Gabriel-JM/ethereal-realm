@@ -17,6 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
+    margin-bottom: 6px;
 
     .name {
       font-size: 1.3rem;
@@ -43,15 +44,19 @@
 
     &.group {
       display: flex;
-      justify-content: space-between;
+      gap: 12px;
       align-items: center;
+
+      > * {
+        flex: 1;
+      }
     }
   }
 
   .description {
     max-height: 160px;
     overflow-y: auto;
-    text-align: justify;
+    text-align: left;
   }
 
   .dmg-value {

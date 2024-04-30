@@ -23,13 +23,37 @@ export class WeaponsStore {
     warAxe: 'Machado de Guerra',
     hammer: 'Martelo',
     warhammer: 'Martelo de Guerra',
-    mace: 'Maça',
     spear: 'Lança',
     pike: 'Pique',
     shortBow: 'Arco Curto',
     longBow: 'Arco Longo',
     handCrossbow: 'Besta de Mão',
     crossbow: 'Besta'
+  }
+
+  static iconByType: Record<WeaponTypes, string> = {
+    dagger: '🗡️',
+    staff: '🗡️',
+    rod: '🪄',
+    scepter: '🪄',
+    shortSword: '🗡️',
+    straightSword: '🗡️',
+    greatSword: '🗡️',
+    rapier: '🗡️',
+    axe: '🪓',
+    warAxe: '🪓',
+    hammer: '🔨',
+    warhammer: '🔨',
+    spear: '🗡️',
+    pike: '🗡️',
+    shortBow: '🏹',
+    longBow: '🏹',
+    handCrossbow: '🏹',
+    crossbow: '🏹'
+  }
+
+  static getIcon(type: WeaponTypes) {
+    return this.iconByType[type]
   }
 
   static getAttributeName(attr: WeaponAttributes) {

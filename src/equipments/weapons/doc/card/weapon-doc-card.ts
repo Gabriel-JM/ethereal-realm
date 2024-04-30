@@ -9,6 +9,7 @@ type WeaponDocCardProps = Weapon
 export function weaponDocCard(props: WeaponDocCardProps) {
   const typeName = WeaponsStore.getTypeName(props.type)
   const rarityName = RarityStore.getName(props.rarity)
+  const icon = WeaponsStore.getIcon(props.type)
 
   // <!-- <img class="icon" src="" alt="🗡️" /> -->
   return html`
@@ -19,7 +20,7 @@ export function weaponDocCard(props: WeaponDocCardProps) {
           <p class="${props.rarity}">${typeName} ${rarityName}</p>
         </div>
         <div>
-          <span class="icon">🗡️</span>
+          <span class="icon">${icon}</span>
         </div>
       </div>
       

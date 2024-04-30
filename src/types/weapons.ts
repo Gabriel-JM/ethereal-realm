@@ -23,7 +23,6 @@ export type WeaponTypes = (
   |'axe'
   |'warAxe'
   |'hammer'
-  |'mace'
   |'warhammer'
   |'spear'
   |'pike'
