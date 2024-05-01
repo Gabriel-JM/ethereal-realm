@@ -7,6 +7,10 @@
   padding: 12px 14px;
 }
 
+.attrs-content {
+  padding-top: 8px;
+}
+
 .selected-weapon-container {
   display: none;
   position: fixed;

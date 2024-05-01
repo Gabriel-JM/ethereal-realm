@@ -23,10 +23,6 @@ import { md } from '../../../utils'
 
 export const weaponsPageInfo: PageInfo<Weapon[]> = {
   description: md`
-    <br/>
-    ## Atributos
-    <br/>
-    
     **Arremessável**: A arma pode ser arremessada com **eficiência**.
     Armas que não possuem esse atributo também podem ser arremessadas
     porém é adicionada uma desvantagem de **-4** nas jogadas de ataque.

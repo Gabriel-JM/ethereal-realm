@@ -38,6 +38,7 @@ export async function requestCommonItems() {
 
   return data
 }
+
 export async function requestWeapons() {
   const cache = dataStore.items.weapons
   if (cache) {
@@ -47,6 +48,19 @@ export async function requestWeapons() {
   const data = await requestData('weapons')
 
   dataStore.items.weapons = data
+
+  return data
+}
+
+export async function requestArmors() {
+  const cache = dataStore.items.armors
+  if (cache) {
+    return cache
+  }
+
+  const data = await requestData('armors')
+
+  dataStore.items.armors = data
 
   return data
 }

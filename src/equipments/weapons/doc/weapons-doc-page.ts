@@ -27,7 +27,10 @@ export function weaponsDocPage() {
           <div class="doc-description">
             <h1>⚔️ Armas</h1>
 
-            <p>${raw(description!)}</p>
+            <details class="details-list">
+              <summary><h3>Atributos</h3></summary>
+              <p class="attrs-content">${raw(description!)}</p>
+            </details>
           </div>
 
           <section class="doc-content">
