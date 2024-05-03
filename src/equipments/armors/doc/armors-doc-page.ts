@@ -1,6 +1,7 @@
 import { isDataReady } from '@/data/init-data'
 import { dataStore } from '@/data/stores'
 import { html, raw, shell } from 'lithen-fns'
+import { armorDocCard } from '../card/armor-doc-card'
 
 export function armorDocPage() {
   return html`
@@ -25,6 +26,7 @@ export function armorDocPage() {
         </div>
 
         <section class="doc-content">
+          ${content.map(armorDocCard)}
         </section>
       `
     })}
