@@ -2,7 +2,7 @@ import './weapon-tiny-card.css'
 import { html } from 'lithen-fns'
 import { RarityStore, WeaponsStore } from '@/data/stores'
 import { Weapon } from '@/types'
-import { selectedWeapon } from '../../weapons-doc-page'
+import { selectedEquipment } from '@/equipments/doc/equipments-doc-page'
 
 export type WeaponTinyCardProps = Weapon
 
@@ -15,7 +15,7 @@ export function weaponTinyCard(props: WeaponTinyCardProps) {
     <div
       key="${props.id}"
       class="weapon-tiny-card"
-      on-click=${() => selectedWeapon.set(props)}
+      on-click=${() => selectedEquipment.set(props)}
     >
       <div>
         <h4 class="name">${props.name}</h4>
