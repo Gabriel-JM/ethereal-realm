@@ -1,14 +1,14 @@
 import { html } from 'lithen-fns'
-import { RarityStore, WeaponsStore } from '@/data/stores'
-import { Weapon } from '@/types'
+import { ArmorsStore, RarityStore } from '@/data/stores'
+import { Armor } from '@/types'
 import { selectedEquipment } from '@/equipments/doc/equipments-doc-page'
 
-export type WeaponTinyCardProps = Weapon
+export type ArmorTinyCardProps = Armor
 
-export function weaponTinyCard(props: WeaponTinyCardProps) {
-  const typeName = WeaponsStore.getTypeName(props.type)
+export function armorTinyCard(props: ArmorTinyCardProps) {
+  const typeName = ArmorsStore.getTypeName(props.type)
   const rarityName = RarityStore.getName(props.rarity)
-  const icon = WeaponsStore.getIcon(props.type)
+  const icon = ArmorsStore.getIcon(props.type)
 
   return html`
     <div

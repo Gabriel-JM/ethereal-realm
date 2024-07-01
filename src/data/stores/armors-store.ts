@@ -2,7 +2,7 @@ import { ArmorTypes } from '@/types'
 
 export class ArmorsStore {
   static typeNames: Record<ArmorTypes, string> = {
-    clothing: 'Vestimentas',
+    clothing: 'Vestimenta',
     lightArmor: 'Armadura Leve',
     midArmor: 'Armadura Média',
     heavyArmor: 'Armadura Pesada'
@@ -10,5 +10,9 @@ export class ArmorsStore {
 
   static getTypeName(type: ArmorTypes) {
     return this.typeNames[type]
+  }
+
+  static getIcon(_type: ArmorTypes) {
+    return '👕'
   }
 }
