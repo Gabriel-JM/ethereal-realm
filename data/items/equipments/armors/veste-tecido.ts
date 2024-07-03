@@ -3,7 +3,7 @@ import { md } from '../../../utils'
 
 export const vesteTecido = <Armor> {
   id: 'armr_Vo3aLPl4OV',
-  name: 'Veste de Tecido',
+  name: 'Vestes',
   type: 'clothing',
   rarity: 'common',
   attributes: ['light'],

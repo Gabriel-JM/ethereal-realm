@@ -1,4 +1,4 @@
-import { vesteTecido } from './index'
+import { armaduraDeCouro, armaduraLeveDeEscamas, peitoralDeBronze, vesteTecido } from './index'
 import { Armor, PageInfo } from '../../../../src/types'
 import { md } from '../../../utils'
 
@@ -21,6 +21,9 @@ export const armorsPageInfo = <PageInfo<Armor[]>> {
     resistir a impactos físicos. Vantagem de +1.
   `,
   content: [
-    vesteTecido
+    vesteTecido,
+    armaduraDeCouro,
+    armaduraLeveDeEscamas,
+    peitoralDeBronze
   ]
 }
