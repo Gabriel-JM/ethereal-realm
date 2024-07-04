@@ -1,6 +1,6 @@
-import { armaduraDeCouro, armaduraLeveDeEscamas, peitoralDeBronze, vesteTecido } from './index'
+import { armaduraDeAço, armaduraDeAçoLaminado, armaduraDeCouro, armaduraDeFerro, armaduraLeveDeEscamas, cotaDeMalha, peitoralDeBronze, vesteTecido } from './index'
 import { Armor, PageInfo } from '../../../../src/types'
-import { md } from '../../../utils'
+import { list, md } from '../../../utils'
 
 export const armorsPageInfo = <PageInfo<Armor[]>> {
   description: md`
@@ -12,10 +12,12 @@ export const armorsPageInfo = <PageInfo<Armor[]>> {
     relacionados a destreza como: atletismo, acrobacias, furtividade, etc e
     impossibilita a esquiva. Com exceção de se defender com um escudo.
     A desvantagem e a força variam:
-      - **Pesado 1**: For 3, desvantagem -4.
-      - **Pesado 2**: For 4, desvantagem -6.
-      - **Pesado 3**: For 4, desvantagem -8.
-    <br/><br/>
+      ${list(
+        '**Pesado 1**: For 3, desvantagem -4.',
+        '**Pesado 2**: For 4, desvantagem -6.',
+        '**Pesado 3**: For 4, desvantagem -8.'
+      )}
+    <br/>
 
     **Resistente:** Armaduras que dão vantagem para testes que envolvem
     resistir a impactos físicos. Vantagem de +1.
@@ -24,6 +26,10 @@ export const armorsPageInfo = <PageInfo<Armor[]>> {
     vesteTecido,
     armaduraDeCouro,
     armaduraLeveDeEscamas,
-    peitoralDeBronze
+    peitoralDeBronze,
+    cotaDeMalha,
+    armaduraDeFerro,
+    armaduraDeAço,
+    armaduraDeAçoLaminado
   ]
 }

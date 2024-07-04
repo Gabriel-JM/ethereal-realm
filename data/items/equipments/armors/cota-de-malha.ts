@@ -1,7 +1,6 @@
 import { Armor } from '../../../../src/types'
 import { md } from '../../../utils'
 
-// Não terminei
 export const cotaDeMalha = <Armor> {
   id: 'armr_7Y4orQxxoU',
   name: 'Cota de Malha',
@@ -9,15 +8,13 @@ export const cotaDeMalha = <Armor> {
   rarity: 'common',
   attributes: ['heavy1'],
   damageReduction: {
-    slash: 2,
-    pierce: 3,
-    strike: 2
+    slash: 3,
+    pierce: 2,
+    strike: 3
   },
-  price: 60,
+  price: 85,
   description: md`
-    Peças de armadura feitas de bronze que
-    protegem principalmente o peitoral.
-    Possui uma boa resistência física, mas
-    já prejudica um pouco a movimentação.
+    Cota de malha comum que garante uma ótima proteção,
+    prejudicando pouca da movimentação.
   `
 }
