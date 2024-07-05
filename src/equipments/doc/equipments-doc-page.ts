@@ -1,5 +1,6 @@
 import './equipments-doc-page.css'
 import './equip-tiny-card.css'
+import './equip-doc-card.css'
 import { html, ref, shell, signal } from 'lithen-fns'
 import { commonLayout } from '../../common/layouts'
 import { docHeader } from '../../common'

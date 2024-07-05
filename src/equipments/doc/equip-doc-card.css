@@ -1,4 +1,4 @@
-.weapon-doc-card {
+.equip-doc-card {
   width: 320px;
   padding: 14px 16px;
   font-size: 0.9rem;
@@ -70,7 +70,7 @@
     gap: 6px;
   }
 
-  .weapon-attr {
+  .equip-attr {
     display: inline-block;
     padding: 3px 5px;
     text-shadow: 0 1px 3px var(--black-90);

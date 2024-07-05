@@ -16,9 +16,14 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  gap: 6px;
 
   .name {
+    max-width: 210px;
     font-size: 1.25rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .icon {

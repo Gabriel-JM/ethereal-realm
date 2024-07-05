@@ -1,4 +1,3 @@
-import './weapon-doc-card.css'
 import { html } from 'lithen-fns'
 import { Weapon, WeaponAttributes } from '@/types'
 import { RarityStore, WeaponsStore } from '@/data/stores'
@@ -13,7 +12,7 @@ export function weaponDocCard(props: WeaponDocCardProps) {
 
   // <!-- <img class="icon" src="" alt="🗡️" /> -->
   return html`
-    <div class="weapon-doc-card">
+    <div class="equip-doc-card">
       <div class="header">
         <div>
           <h4 class="name">${props.name}</h4>
@@ -33,7 +32,7 @@ export function weaponDocCard(props: WeaponDocCardProps) {
                 ${dmg.value}
               </span>
               <span class="card-group">
-                ${dmg.types.map(damageCard)}
+                ${dmg.types.map(type => damageCard(type))}
               </span>
             </p>
           `
@@ -81,6 +80,6 @@ export function weaponAttrCard(attr: WeaponAttributes) {
   const name = WeaponsStore.getAttributeName(attr)
 
   return html`
-    <span class="weapon-attr">${name}</span>
+    <span class="equip-attr">${name}</span>
   `
 }

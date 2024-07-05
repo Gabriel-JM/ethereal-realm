@@ -1,5 +1,6 @@
+import { damageCard } from '@/damage'
 import { ArmorsStore, RarityStore } from '@/data/stores'
-import { Armor } from '@/types'
+import { Armor, DamageTypes } from '@/types'
 import { html } from 'lithen-fns'
 
 type ArmorDocCardProps = Armor
@@ -9,7 +10,7 @@ export function armorDocCard(props: ArmorDocCardProps) {
   const rarityName = RarityStore.getName(props.rarity)
 
   return html`
-    <div class="weapon-doc-card">
+    <div class="equip-doc-card">
       <div class="header">
         <div>
           <h4 class="name">${props.name}</h4>
@@ -24,14 +25,9 @@ export function armorDocCard(props: ArmorDocCardProps) {
         <p class="prop-name">Redução de Dano</p>
         ${Object.entries(props.damageReduction).map(([type, dmg]) => {
           return html`
-            <p>
-              <span class="dmg-value">
-                ${type}
-              </span>
-              <span class="card-group">
-                ${dmg}
-              </span>
-            </p>
+            <span class="dmg-value">
+              ${damageCard(type as DamageTypes, String(dmg))}
+            </span>
           `
         })}
       </div>
@@ -39,7 +35,11 @@ export function armorDocCard(props: ArmorDocCardProps) {
       <div class="prop-container">
         <p class="prop-name">Atributos</p>
         <p class="card-group">
-          ${props.attributes.join(', ')}
+          ${props.attributes.map(attr => {
+            const name = ArmorsStore.getAttr(attr)
+            
+            return html`<span class="equip-attr">${name}</span>`
+          })}
         </p>
       </div>
       
