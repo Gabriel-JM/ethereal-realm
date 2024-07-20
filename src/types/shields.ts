@@ -7,6 +7,7 @@ export type Shield = {
   type: ShieldTypes
   attributes: ShieldAttributes[]
   price: number
+  damage: number
   damageReduction: string
   description: string
 }

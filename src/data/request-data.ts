@@ -65,6 +65,19 @@ export async function requestArmors() {
   return data
 }
 
+export async function requestShields() {
+  const cache = dataStore.items.shields
+  if (cache) {
+    return cache
+  }
+
+  const data = await requestData('shields')
+
+  dataStore.items.shields = data
+
+  return data
+}
+
 export async function requestData(fileName: string) {
   const response = await fetch(`/data/${fileName}.json`)
   const contentType = response.headers.get('content-type')

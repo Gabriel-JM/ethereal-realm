@@ -1,4 +1,4 @@
-import { Armor, CommonItem, PageInfo, Proficiency, SkillSegment, Weapon } from '../../types'
+import { Armor, CommonItem, PageInfo, Proficiency, Shield, SkillSegment, Weapon } from '../../types'
 
 export type DataStore = {
   skillsSegments: Record<
@@ -10,6 +10,7 @@ export type DataStore = {
     common: PageInfo<CommonItem[]>,
     weapons: PageInfo<Weapon[]>,
     armors: PageInfo<Armor[]>
+    shields: PageInfo<Shield[]>
   }
 }
 

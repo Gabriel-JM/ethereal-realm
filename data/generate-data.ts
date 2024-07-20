@@ -5,6 +5,7 @@ import { proficienciesPageInfo } from './proficiencies'
 import { commonItemsPageInfo } from './items/common/page-info'
 import { weaponsPageInfo } from './items/equipments/weapons/page-info'
 import { armorsPageInfo } from './items/equipments/armors/page-info'
+import { shieldPageInfo } from './items/equipments/shields/page-info'
 
 for (const segment of Object.values(segments)) {
   const filePath = path.resolve('public', 'data', `${segment.id}.json`)
@@ -15,7 +16,8 @@ const contents = [
   { path: ['proficiencies.json'], data: proficienciesPageInfo },
   { path: ['common-items.json'], data: commonItemsPageInfo },
   { path: ['weapons.json'], data: weaponsPageInfo },
-  { path: ['armors.json'], data: armorsPageInfo }
+  { path: ['armors.json'], data: armorsPageInfo },
+  { path: ['shields.json'], data: shieldPageInfo }
 ]
 
 for (const content of contents) {
