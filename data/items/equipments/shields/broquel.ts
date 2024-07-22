@@ -8,7 +8,7 @@ export const broquel: Shield = {
   type: 'buckler',
   attributes: ['light'],
   damage: 0,
-  damageReduction: '2+FOR',
+  damageReduction: 'For + 2',
   price: 12,
   description: md`
     Escudo pequeno com baixa proteção e que

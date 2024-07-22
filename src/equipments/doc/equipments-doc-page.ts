@@ -6,24 +6,27 @@ import { commonLayout } from '../../common/layouts'
 import { docHeader } from '../../common'
 import { weaponsDocPage } from '../weapons'
 import { armorDocPage } from '../armors'
-import { Armor, Weapon } from '@/types'
+import { Armor, Shield, Weapon } from '@/types'
 import { weaponDocCard } from '../weapons/doc/card/weapon-doc-card'
 import { xIcon } from '@/common/icons'
 import { armorDocCard } from '../armors/card/armor-doc-card'
+import { shieldDocCard, shieldDocPage } from '../shields'
 
-export const selectedEquipment = signal<Weapon | Armor | null>(null)
+export const selectedEquipment = signal<Weapon | Armor | Shield | null>(null)
 
 export function equipmentsDocPage() {
   const equipContainerRef = ref<HTMLDivElement>()
   const equipDocCards = new Map()
     .set("weap", weaponDocCard)
     .set("armr", armorDocCard)
+    .set("shld", shieldDocCard)
 
   return commonLayout(html`
     ${[
       docHeader({ title: '🛡 Equipamentos' }),
       weaponsDocPage(),
-      armorDocPage()
+      armorDocPage(),
+      shieldDocPage()
     ]}
 
     <div ref=${equipContainerRef} class="selected-equip-container">

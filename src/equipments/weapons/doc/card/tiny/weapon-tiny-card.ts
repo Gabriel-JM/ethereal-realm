@@ -15,6 +15,7 @@ export function weaponTinyCard(props: WeaponTinyCardProps) {
       key="${props.id}"
       class="equip-tiny-card"
       on-click=${() => selectedEquipment.set(props)}
+      title="${props.name}"
     >
       <div>
         <h4 class="name">${props.name}</h4>
