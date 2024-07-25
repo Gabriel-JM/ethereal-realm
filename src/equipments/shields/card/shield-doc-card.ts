@@ -31,7 +31,7 @@ export function shieldDocCard(props: ShieldDocCardProps) {
         <div>
           <p class="prop-name">Dano</p>
           <span class="dmg-value">
-            For &nbsp; ${props.damage && `+ ${props.damage}`} ${damageCard('strike')}
+            For&nbsp;${props.damage && `+ ${props.damage}&nbsp;`}${damageCard('strike')}
           </span>
         </div>
       </div>
