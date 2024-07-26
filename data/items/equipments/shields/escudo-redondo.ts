@@ -5,7 +5,7 @@ export const escudoRedondo: Shield = {
   id: 'shld_OMi4ShoYMd',
   name: 'Escudo Redondo',
   rarity: 'common',
-  type: 'midShield',
+  type: 'lightShield',
   attributes: ['light'],
   damage: 1,
   damageReduction: 'For + 4',

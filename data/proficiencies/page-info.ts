@@ -36,10 +36,10 @@ export const proficienciesPageInfo = <PageInfo> {
     personagem em determinadas ações, elas são normalmente
     vinculadas a algum atributo sendo um bonus para ele
     para determinadas situações. Essas perícias podem ser
-    separadas em categorias como [**combate**]:red,
-    [**movimentação**]:green, [**conjuração**]:blue,
-    [**conhecimento**]:yellow, [**aptidão**]:brown e
-    [**social**]:purple.
+    separadas em categorias como [combate]:combat,
+    [movimentação]:moviment, [conjuração]:conjuration,
+    [conhecimento]:knowledge, [aptidão]:ability e
+    [social]:social.
   `,
   content: proficiencies
 }

@@ -15,8 +15,8 @@ export type Shield = {
 export type ShieldTypes = (
   'buckler'
   |'lightShield'
-  |'midShield'
   |'heavyShield'
+  |'wallShield'
 )
 
 export type ShieldAttributes = 'light' | 'heavy'

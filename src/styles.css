@@ -154,11 +154,6 @@ body {
   cursor: pointer;
 }
 
-.bold {
-  font-weight: bold;
-  color: var(--white-90);
-}
-
 /* Documentation content */
 .doc-description {
   padding: 12px 14px;
@@ -203,6 +198,11 @@ section.doc-grid-content {
   color: var(--purple-50);
 }
 
+.bold {
+  font-weight: bold;
+  color: var(--white-90);
+}
+
 /* Docs Details List */
 .details-list {
   margin-top: 6px;
@@ -231,8 +231,4 @@ section.doc-grid-content {
     translate: 2px -3px;
     rotate: 45deg;
   }
-}
-
-app-link {
-  display: block;
 }

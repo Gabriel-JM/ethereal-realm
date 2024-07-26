@@ -1,3 +1,39 @@
+.ability {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--brown-50);
+}
+
+.combat {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--red-50);
+}
+
+.conjuration {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--blue-50);
+}
+
+.knowledge {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--yellow-50);
+}
+
+.moviment {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--green-50);
+}
+
+.social {
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--purple-50);
+}
+
 .proficiency-doc-card {
   padding: 4px 0;
   flex: 1;
@@ -5,35 +41,6 @@
   .name {
     font-size: 1.35rem;
     padding-bottom: 6px;
-  }
-
-  .type {
-    font-weight: bold;
-    font-size: 0.95rem;
-
-    &.ability {
-      color: var(--brown-50);
-    }
-
-    &.combat {
-      color: var(--red-50);
-    }
-    
-    &.conjuration {
-      color: var(--blue-50);
-    }
-    
-    &.knowledge {
-      color: var(--yellow-50);
-    }
-    
-    &.moviment {
-      color: var(--green-50);
-    }
-    
-    &.social {
-      color: var(--purple-50);
-    }
   }
 
   .description {

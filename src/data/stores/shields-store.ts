@@ -4,8 +4,8 @@ export class ShieldsStore {
   static typeNames: Record<ShieldTypes, string> = {
     buckler: 'Broquel',
     lightShield: 'Escudo Leve',
-    midShield: 'Escudo Médio',
-    heavyShield: 'Escudo Pesado'
+    heavyShield: 'Escudo Pesado',
+    wallShield: 'Escudo Muralha'
   }
 
   static attributesNames: Record<ShieldAttributes, string> = {

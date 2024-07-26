@@ -1,3 +1,16 @@
+.doc-content {
+  width: minmax(100%, fit-content);
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  padding: 12px 14px;
+}
+
+.attrs-content {
+  padding-top: 8px;
+}
+
 .selected-equip-container {
   display: none;
   position: fixed;

@@ -1,4 +1,4 @@
-import { broquel, escudoRedondo } from '.'
+import { broquel, escudoGrande, escudoMuralha, escudoRedondo } from '.'
 import { PageInfo } from '../../../../src/types'
 import { detailsList, md } from '../../../utils'
 
@@ -24,5 +24,5 @@ export const shieldPageInfo: PageInfo = {
         com o escudo. A desvantagem é de -2.`
     ])}
   `,
-  content: [broquel, escudoRedondo]
+  content: [broquel, escudoRedondo, escudoGrande, escudoMuralha]
 }

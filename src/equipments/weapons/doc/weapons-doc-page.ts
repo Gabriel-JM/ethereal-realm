@@ -1,4 +1,3 @@
-import './weapons-doc-page.css'
 import { html, raw, shell } from 'lithen-fns'
 import { isDataReady } from '@/data/init-data'
 import { dataStore } from '@/data/stores'
@@ -6,7 +5,7 @@ import { weaponTinyCard } from './card/tiny/weapon-tiny-card'
 
 export function weaponsDocPage() {
   return html`
-    <div class="weapons-doc-page">
+    <div>
       ${shell(() => {
         const dataIsLoaded = isDataReady.get()
 
