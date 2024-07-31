@@ -5,14 +5,15 @@ import { nav } from '../../../config'
 
 export type DocHeaderProps = {
   title: string
+  backPath?: string
   img?: Node
 }
 
-export function docHeader({ title, img }: DocHeaderProps) {
+export function docHeader({ title, img, backPath = '/' }: DocHeaderProps) {
   return html`
     <header class="doc-header">
       <div>
-        ${backButton({ onClick: nav('/') })}
+        ${backButton({ onClick: nav(backPath) })}
       </div>
 
       <div class="title">

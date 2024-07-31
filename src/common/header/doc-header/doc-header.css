@@ -15,4 +15,15 @@
     gap: 14px;
     align-items: center;
   }
+
+  @media screen and (max-width: 480px) {
+    & {
+      gap: 10px;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      gap: 10px;
+    }
+  }
 }

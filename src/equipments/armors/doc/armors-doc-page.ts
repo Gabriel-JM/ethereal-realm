@@ -17,7 +17,7 @@ export function armorDocPage() {
 
       return html`
         <div class="doc-description">
-          <h1>⚔️ Armaduras</h1>
+          <h1>👕 Armaduras</h1>
 
           <details class="details-list">
             <summary><h3>Atributos</h3></summary>

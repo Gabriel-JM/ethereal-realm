@@ -7,7 +7,7 @@ export function header() {
     <header class="main-header">
       <div class="container">
         <h1 on-click=${nav('/')}>
-          Ethereal Realm
+          Reino Etéreo
         </h1>
       </div>
     </header>

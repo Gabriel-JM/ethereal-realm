@@ -6,7 +6,7 @@ import { skillPageTitleList } from '../skills/page-title-list/skill-page-title-l
 export function homePage() {
   return html`
     <header class="home-header">
-      <h1>Ethereal Realm</h1>
+      <h1>Reino Etéreo</h1>
     </header>
 
     <section class="home-content">
@@ -14,6 +14,9 @@ export function homePage() {
         <h3>Geral</h3>
 
         <nav class="link-list">
+          <app-link class="home-link" to="/docs/rules">
+            📋 Regras
+          </app-link>
           <app-link class="home-link" to="/docs/proficiencies">
             💪🏽 Perícias
           </app-link>
