@@ -8,6 +8,7 @@ import { commonItemsPage } from '../common-items/docs/common-items-page'
 import { equipmentsDocPage } from '../equipments'
 import { rulesDocPage } from '@/rules/rules-doc-page'
 import { createCharDocPage } from '@/rules/character/create-char-doc-page'
+import { levelingUpCharDocPage } from '@/rules/character/leveling-up-char-doc-page'
 
 export const router = new LithenRouter({
   '/': homePage,
@@ -16,6 +17,7 @@ export const router = new LithenRouter({
   '/docs/equips': equipmentsDocPage,
   '/docs/rules': rulesDocPage,
   '/docs/rules/create-character': createCharDocPage,
+  '/docs/rules/leveling-up-character': levelingUpCharDocPage,
   '/docs/:skillId': skillSegmentDocPage,
   '/prof-calc': proficiencyCalculator,
   notFound: () => html`

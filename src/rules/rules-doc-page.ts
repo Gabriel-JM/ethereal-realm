@@ -12,7 +12,12 @@ export function rulesDocPage() {
       <ul class="list">
         <li>
           <app-link to="/docs/rules/create-character">
-            Criando seu Personagem
+            Criando um Personagem
+          </app-link>
+        </li>
+        <li>
+          <app-link to="/docs/rules/leveling-up-character">
+            Subindo o Nível de um Personagem
           </app-link>
         </li>
       </ul>
