@@ -10,9 +10,9 @@ export const exaustão: AdverseStatus = {
     Principalmente descansar.
     ---
     Nível 1: desvantagem de -3 em todos os testes envolvendo atributos e perícias.
-
+    <br/>
     Nível 2: pontos de vida máximos, reduzidos pela metade temporariamente.
-
+    <br/>
     Nível 3: a cada 10 minutos deve se fazer um teste de **Con CD 8**, caso falhe
     o personagem desmaia. Somente outro personagem pode salva-lo em uma situação assim.
   `

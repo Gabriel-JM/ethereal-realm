@@ -198,6 +198,10 @@ section.doc-grid-content {
   color: var(--purple-50);
 }
 
+.orange {
+  color: var(--orange-60);
+}
+
 .bold {
   font-weight: bold;
   color: var(--white-90);
@@ -231,4 +235,11 @@ section.doc-grid-content {
     translate: 2px -3px;
     rotate: 45deg;
   }
+}
+
+.division-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--black-60);
+  margin: 16px 0;
 }

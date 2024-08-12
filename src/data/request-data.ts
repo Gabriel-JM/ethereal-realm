@@ -78,6 +78,19 @@ export async function requestShields() {
   return data
 }
 
+export async function requestAdverseStatus() {
+  const cache = dataStore.adverseStatus
+  if (cache) {
+    return cache
+  }
+
+  const data = await requestData('adverse-status')
+
+  dataStore.adverseStatus = data
+
+  return data
+}
+
 export async function requestData(fileName: string) {
   const response = await fetch(`/data/${fileName}.json`)
   const contentType = response.headers.get('content-type')
