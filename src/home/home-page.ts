@@ -20,6 +20,9 @@ export function homePage() {
           <app-link class="home-link" to="/docs/proficiencies">
             💪🏽 Perícias
           </app-link>
+          <app-link class="home-link" to="/docs/adverse-status">
+            🤒 Estados e Efeitos Adversos
+          </app-link>
         </nav>
       </div>
 

@@ -6,6 +6,7 @@ import { commonItemsPageInfo } from './items/common/page-info'
 import { weaponsPageInfo } from './items/equipments/weapons/page-info'
 import { armorsPageInfo } from './items/equipments/armors/page-info'
 import { shieldPageInfo } from './items/equipments/shields/page-info'
+import { AdverseStatusPageInfo } from './adverse-status/page-info'
 
 for (const segment of Object.values(segments)) {
   const filePath = path.resolve('public', 'data', `${segment.id}.json`)
@@ -17,7 +18,8 @@ const contents = [
   { path: ['common-items.json'], data: commonItemsPageInfo },
   { path: ['weapons.json'], data: weaponsPageInfo },
   { path: ['armors.json'], data: armorsPageInfo },
-  { path: ['shields.json'], data: shieldPageInfo }
+  { path: ['shields.json'], data: shieldPageInfo },
+  { path: ['adverse-status.json'], data: AdverseStatusPageInfo }
 ]
 
 for (const content of contents) {

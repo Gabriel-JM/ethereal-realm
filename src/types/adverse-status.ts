@@ -1,9 +1,8 @@
 import { Icon } from './icons'
 
-export type CommonItem = {
-  id: `coit_${string}`
+export type AdverseStatus = {
+  id: `adst_${string}`
   name: string
-  cost: string
   icon: Icon
   description: string
 }

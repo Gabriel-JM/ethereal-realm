@@ -9,12 +9,14 @@ import { equipmentsDocPage } from '../equipments'
 import { rulesDocPage } from '@/rules/rules-doc-page'
 import { createCharDocPage } from '@/rules/character/create-char-doc-page'
 import { levelingUpCharDocPage } from '@/rules/character/leveling-up-char-doc-page'
+import { adverseStatusDocPage } from '@/adverse-status/adverse-status-doc-page'
 
 export const router = new LithenRouter({
   '/': homePage,
   '/docs/proficiencies': proficienciesDocsPage,
   '/docs/items/common': commonItemsPage,
   '/docs/equips': equipmentsDocPage,
+  '/docs/adverse-status': adverseStatusDocPage,
   '/docs/rules': rulesDocPage,
   '/docs/rules/create-character': createCharDocPage,
   '/docs/rules/leveling-up-character': levelingUpCharDocPage,

@@ -1,18 +1,12 @@
-import { isDataReady } from '@/data/init-data'
 import { dataStore } from '@/data/stores'
-import { html, raw, shell } from 'lithen-fns'
+import { html, raw } from 'lithen-fns'
 import { armorTinyCard } from '../card/tiny/armor-tiny-card'
+import { whenDataIsReady } from '@/common/utils'
 
 export function armorDocPage() {
   return html`
     <div>
-    ${shell(() => {
-      const dataIsLoaded = isDataReady.get()
-
-      if (!dataIsLoaded) {
-        return new Text('Loading...')
-      }
-
+    ${whenDataIsReady(() => {
       const { description, content } = dataStore.items.armors
 
       return html`

@@ -1,23 +1,17 @@
 import './proficiencies-docs-page.css'
-import { html, raw, shell } from 'lithen-fns'
+import { html, raw } from 'lithen-fns'
 import { commonLayout } from '../../common/layouts'
-import { isDataReady } from '../../data/init-data'
 import { AttributeStore, ProficienciesStore, dataStore } from '../../data/stores'
 import { docHeader } from '../../common'
 import { Proficiency } from '../../types'
+import { whenDataIsReady } from '@/common/utils'
 
 export function proficienciesDocsPage() {
   return commonLayout(html`
     <div class="prof-doc-page">
       ${docHeader({ title: '&#128170;&#127997; Perícias' })}
 
-      ${shell(() => {
-        const dataIsLoaded = isDataReady.get()
-
-        if (!dataIsLoaded) {
-          return new Text('Loading...')
-        }
-
+      ${whenDataIsReady(() => {
         const { description, content } = dataStore.proficiencies
 
         return html`
