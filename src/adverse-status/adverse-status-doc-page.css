@@ -1,12 +1,15 @@
 .adverse-status-page-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 42px 12px;
-  margin-top: 20px;
+  columns: 2;
+  column-gap: 40px;
+  margin: 20px 0;
 
   > * {
-    width: 48%;
+    width: 100%;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
