@@ -9,7 +9,7 @@ export function adverseStatusDocPage() {
   return commonLayout(html`
     ${docHeader({ title: '🤒 Estados e Efeitos Adversos' })}
 
-    <div class="doc-content adverse-status-page-content">
+    <div class="doc-description adverse-status-page-content">
       ${whenDataIsReady(() => {
         const { content } = dataStore.adverseStatus
 
