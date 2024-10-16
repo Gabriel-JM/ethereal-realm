@@ -91,6 +91,19 @@ export async function requestAdverseStatus() {
   return data
 }
 
+export async function requestMagicGrimorie() {
+  const cache = dataStore.magicGrimorie
+  if (cache) {
+    return cache
+  }
+
+  const data = await requestData('magic-grimorie')
+
+  dataStore.magicGrimorie = data
+
+  return data
+}
+
 export async function requestData(fileName: string) {
   const response = await fetch(`/data/${fileName}.json`)
   const contentType = response.headers.get('content-type')

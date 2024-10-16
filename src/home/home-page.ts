@@ -49,6 +49,16 @@ export function homePage() {
       </div>
 
       <div>
+        <h3>Coleções</h3>
+
+        <nav class="link-list">
+          <app-link class="home-link" to="/docs/magic-grimorie">
+            📔 Grimório de Magias
+          </app-link>
+        </nav>
+      </div>
+
+      <div>
         <h3>Ferramentas</h3>
 
         <nav class="link-list">

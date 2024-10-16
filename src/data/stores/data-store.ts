@@ -1,4 +1,15 @@
-import { AdverseStatus, Armor, CommonItem, PageInfo, Proficiency, Shield, SkillSegment, Weapon } from '../../types'
+import {
+  AdverseStatus,
+  Armor,
+  Collection,
+  CommonItem,
+  PageInfo,
+  Proficiency,
+  Shield,
+  SkillSegment,
+  Spell,
+  Weapon
+} from '../../types'
 
 export type DataStore = {
   skillsSegments: Record<
@@ -12,7 +23,8 @@ export type DataStore = {
     armors: PageInfo<Armor[]>
     shields: PageInfo<Shield[]>
   },
-  adverseStatus: PageInfo<AdverseStatus[]>
+  adverseStatus: PageInfo<AdverseStatus[]>,
+  magicGrimorie: Collection<Spell>
 }
 
 export const dataStore = {

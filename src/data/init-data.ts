@@ -1,5 +1,5 @@
 import { signal } from 'lithen-fns'
-import { requestAdverseStatus, requestArmors, requestCommonItems, requestProficiencies, requestShields, requestSkillSegment, requestWeapons } from './request-data'
+import { requestAdverseStatus, requestArmors, requestCommonItems, requestMagicGrimorie, requestProficiencies, requestShields, requestSkillSegment, requestWeapons } from './request-data'
 import { SkillSegmentsIds } from '../types'
 
 export const isDataReady = signal(false)
@@ -24,6 +24,7 @@ export function initData() {
     requestArmors(),
     requestShields(),
     requestAdverseStatus(),
+    requestMagicGrimorie(),
     ...skillSegments.map(requestSkillSegment)
   ])
     .then(() => isDataReady.set(true))

@@ -10,6 +10,7 @@ import { rulesDocPage } from '@/rules/rules-doc-page'
 import { createCharDocPage } from '@/rules/character/create-char-doc-page'
 import { levelingUpCharDocPage } from '@/rules/character/leveling-up-char-doc-page'
 import { adverseStatusDocPage } from '@/adverse-status/adverse-status-doc-page'
+import { magicGrimorieDocPage } from '@/magic-grimorie'
 
 export const router = new LithenRouter({
   '/': homePage,
@@ -17,6 +18,7 @@ export const router = new LithenRouter({
   '/docs/items/common': commonItemsPage,
   '/docs/equips': equipmentsDocPage,
   '/docs/adverse-status': adverseStatusDocPage,
+  '/docs/magic-grimorie': magicGrimorieDocPage,
   '/docs/rules': rulesDocPage,
   '/docs/rules/create-character': createCharDocPage,
   '/docs/rules/leveling-up-character': levelingUpCharDocPage,

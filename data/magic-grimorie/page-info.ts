@@ -1,12 +1,14 @@
 import { Collection, Spell } from '../../src/types'
 import { md } from '../utils'
+import { disparoArcano } from './disparo-arcano'
 
-export const magicGrimorie: Collection<Spell> = {
+export const magicGrimoriePageInfo: Collection<Spell> = {
   id: 'magic-grimoire',
   title: 'Grimório de Magias',
   description: md`
     ## Atributos das magias
-    
+    <br/>
+
     **Habilidade de Conjuração:** Boa parte das magia precisam ou de um teste
     de sucesso do alvo ou do usuário para o efeito desejado aconteça. A princípio
     nenhum atributo ou perícia é requisitado para definir esses valores e graças
@@ -30,7 +32,7 @@ export const magicGrimorie: Collection<Spell> = {
     atributos ao adquirir uma habilidade. Perícias de conjuração podem muitas
     vezes serem utilizadas para determinar valor dinâmicos na magia. Você pode
     ver quais perícias são consideradas como **Perícias de Conjuração** na página
-    de [Perícias](/docs/proficiences).
+    de [Perícias.](/docs/proficiencies)
     <br/><br/>
 
     **Concentração:** Normalmente um usuário de magia só pode ter uma magia que
@@ -38,5 +40,12 @@ export const magicGrimorie: Collection<Spell> = {
     a anterior é desfeita. Existem efeitos que removem a concentração automaticamente,
     como choque elétrico, congelamento, derrubada e atordoamento.
   `,
-  levels: []
+  levels: [
+    {
+      requirements: 'Nível de Personagem 1.',
+      items: [
+        disparoArcano
+      ]
+    }
+  ]
 }
