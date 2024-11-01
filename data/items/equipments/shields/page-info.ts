@@ -8,7 +8,7 @@ export const shieldPageInfo: PageInfo = {
     Quando um ataque **possui dano mágico** e você realizou um **bloqueio bem sucedido**
     com o escudo o dano mágico é **reduzido pela metade**, isso **não se aplica** para ataques
     **inteiramente mágicos** como magias.
-    <br/><br/>
+
     Escudos são primariamente ferramentas para defesa, que com uma **reação de bloqueio**
     você pode aplicar a **redução de dano** do escudo no dano recebido. Contudo, escudos
     também podem ser utilizados como **armas**, mesmo que sejam menos eficazes.

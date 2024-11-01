@@ -1,5 +1,6 @@
 import { Collection, Spell } from '../../src/types'
 import { md } from '../utils'
+import { descargaEletrica } from './descarga-eletrica'
 import { disparoArcano } from './disparo-arcano'
 
 export const magicGrimoriePageInfo: Collection<Spell> = {
@@ -7,7 +8,6 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
   title: 'Grimório de Magias',
   description: md`
     ## Atributos das magias
-    <br/>
 
     **Habilidade de Conjuração:** Boa parte das magia precisam ou de um teste
     de sucesso do alvo ou do usuário para o efeito desejado aconteça. A princípio
@@ -18,13 +18,11 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
     essa CD, se for o caso o calculo passa a ser **CD = Base da Magia + Atributo
     de Conjuração + Perícia de Conjuração**, habilidade que permitem isso são
     conhecidas como **Habilidade de Conjuração**.
-    <br/><br/>
 
     **Atributo de Conjuração:** Atributo utilizado para a realização de magias,
     por padrão nenhum atributo pode ser utilizado e é necessário uma habilidade
     que proporcione isso. Atributos que são utilizados para isso são **Inteligencia**,
     **Sabedoria** e **Carisma**.
-    <br/><br/>
 
     **Perícia de Conjuração:** Perícia utilizada para determinar a potência das
     magias, por padrão nenhuma perícia é utilizada e deve considerar o valor de
@@ -33,7 +31,6 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
     vezes serem utilizadas para determinar valor dinâmicos na magia. Você pode
     ver quais perícias são consideradas como **Perícias de Conjuração** na página
     de [Perícias.](/docs/proficiencies)
-    <br/><br/>
 
     **Concentração:** Normalmente um usuário de magia só pode ter uma magia que
     requer concentração ativa, se conjurar outra magia que requer concentração
@@ -44,7 +41,8 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
     {
       requirements: 'Nível de Personagem 1.',
       items: [
-        disparoArcano
+        disparoArcano,
+        descargaEletrica
       ]
     }
   ]

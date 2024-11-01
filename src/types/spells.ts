@@ -1,6 +1,7 @@
 export type Spell = {
   id: `spll_${string}`
   name: string
+  cover?: string
   concentration: boolean
   domain: SpellDomains
   energyCost: number

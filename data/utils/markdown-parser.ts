@@ -15,6 +15,7 @@ export function parseMarkDown(text: string) {
     .replace(/\[([^\]]+)\]:(\w+)/g, '<span class="$2">$1</span>')
     .replace(/\-{3}\n/g, '<div class="division-line"></div>')
     .replace(/(\*{1,3})([^*]+)\*{1,3}/g, parseAsterisk)
+    .replace(/\n\n/g, '<br/><br/>')
     .replace(/\n\s{2,}/g, ' ')
     .trim()
 }

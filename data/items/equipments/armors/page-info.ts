@@ -5,7 +5,6 @@ import { list, md } from '../../../utils'
 export const armorsPageInfo = <PageInfo<Armor[]>> {
   description: md`
     **Leve:** Armaduras que não prejudicam a movimentação do personagem.
-    <br/><br/>
 
     **Pesado:** Armaduras que requerem uma força mínima para serem usadas
     e prejudicam a movimentação do personagem, dando desvantagem em movimentos
@@ -17,7 +16,6 @@ export const armorsPageInfo = <PageInfo<Armor[]>> {
         '**Pesado 2**: For 4, desvantagem -6.',
         '**Pesado 3**: For 4, desvantagem -8.'
       )}
-    <br/>
 
     **Resistente:** Armaduras que dão vantagem para testes que envolvem
     resistir a impactos físicos. Vantagem de +1.
