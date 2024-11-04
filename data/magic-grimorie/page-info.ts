@@ -1,10 +1,17 @@
 import { Collection, Spell } from '../../src/types'
 import { md } from '../utils'
+import { chamaEspiritual } from './chama-espiritual'
 import { chamaSagrada } from './chama-sagrada'
+import { chicoteDeEspinhos } from './chicote-de-espinhos'
 import { descargaEletrica } from './descarga-eletrica'
 import { disparoArcano } from './disparo-arcano'
 import { disparoDeFogo } from './disparo-de-fogo'
 import { disparoGelido } from './disparo-gelido'
+import { escudoArcano } from './escudo-arcano'
+import { fecharFerimentos } from './fechar-ferimentos'
+import { ilusãoMenor } from './ilusão-menor'
+import { marcaArcana } from './marca-arcana'
+import { mensagem } from './mensagem'
 import { ondaDeForça } from './onda-de-força'
 import { rajadaDeVentos } from './rajada-de-ventos'
 
@@ -52,7 +59,14 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
         disparoGelido,
         rajadaDeVentos,
         chamaSagrada,
-        ondaDeForça
+        ondaDeForça,
+        ilusãoMenor,
+        marcaArcana,
+        fecharFerimentos,
+        mensagem,
+        chicoteDeEspinhos,
+        chamaEspiritual,
+        escudoArcano
       ]
     }
   ]
