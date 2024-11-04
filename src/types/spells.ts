@@ -3,7 +3,7 @@ export type Spell = {
   name: string
   cover?: string
   concentration: boolean
-  domain: SpellDomains
+  domains: SpellDomains[]
   energyCost: number
   effect: string
   savingThrow?: string

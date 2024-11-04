@@ -1,7 +1,12 @@
 import { Collection, Spell } from '../../src/types'
 import { md } from '../utils'
+import { chamaSagrada } from './chama-sagrada'
 import { descargaEletrica } from './descarga-eletrica'
 import { disparoArcano } from './disparo-arcano'
+import { disparoDeFogo } from './disparo-de-fogo'
+import { disparoGelido } from './disparo-gelido'
+import { ondaDeForça } from './onda-de-força'
+import { rajadaDeVentos } from './rajada-de-ventos'
 
 export const magicGrimoriePageInfo: Collection<Spell> = {
   id: 'magic-grimoire',
@@ -42,7 +47,12 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
       requirements: 'Nível de Personagem 1.',
       items: [
         disparoArcano,
-        descargaEletrica
+        descargaEletrica,
+        disparoDeFogo,
+        disparoGelido,
+        rajadaDeVentos,
+        chamaSagrada,
+        ondaDeForça
       ]
     }
   ]
