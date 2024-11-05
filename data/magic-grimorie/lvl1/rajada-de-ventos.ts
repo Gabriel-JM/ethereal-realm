@@ -1,9 +1,11 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const rajadaDeVentos: Spell = {
   id: 'spll_5gil0Wn75o',
   name: 'Rajada de Ventos',
+  cover: supabaseStorageURL + 'rajada-de-ventos.jpg',
   concentration: false,
   domains: ['arcane'],
   energyCost: 2,

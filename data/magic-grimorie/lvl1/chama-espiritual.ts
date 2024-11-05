@@ -1,9 +1,11 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const chamaEspiritual: Spell = {
   id: 'spll_vhrRfQVL0u',
   name: 'Chama Espiritual',
+  cover: supabaseStorageURL + 'chama-espiritual.jpg',
   concentration: false,
   domains: ['arcane', 'clerical'],
   energyCost: 3,

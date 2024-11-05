@@ -1,5 +1,5 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
 
 export const mensagem: Spell = {
   id: 'spll_WHzu427EsT',

@@ -1,9 +1,11 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const disparoGelido: Spell = {
   id: 'spll_IXdmWXJJmL',
   name: 'Disparo Gélido',
+  cover: supabaseStorageURL + 'disparo-gelido.jpg',
   concentration: false,
   domains: ['arcane'],
   energyCost: 3,

@@ -1,5 +1,5 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
 
 export const marcaArcana: Spell = {
   id: 'spll_fH10MKKmDe',

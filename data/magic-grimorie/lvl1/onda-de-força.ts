@@ -1,9 +1,11 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const ondaDeForça: Spell = {
   id: 'spll_oMDBnB2HZr',
   name: 'Onda de Força',
+  cover: supabaseStorageURL + 'onda-de-forca.jpg',
   concentration: false,
   domains: ['arcane', 'acustic'],
   energyCost: 2,

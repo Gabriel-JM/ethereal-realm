@@ -1,5 +1,5 @@
-import { Spell } from '../../src/types'
-import { md } from '../utils'
+import { Spell } from '../../../src/types'
+import { md } from '../../utils'
 
 export const fecharFerimentos: Spell = {
   id: 'spll_dhDV6GdKDt',
