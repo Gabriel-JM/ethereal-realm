@@ -1,18 +1,25 @@
 import { Collection, Spell } from '../../src/types'
 import { md } from '../utils'
+import { amizadeAnimal } from './lvl1/amizade-animal'
+import { apoioDivino } from './lvl1/apoio-divino'
 import { chamaEspiritual } from './lvl1/chama-espiritual'
 import { chamaSagrada } from './lvl1/chama-sagrada'
 import { chicoteDeEspinhos } from './lvl1/chicote-de-espinhos'
 import { descargaEletrica } from './lvl1/descarga-eletrica'
+import { detectarVenenoDoença } from './lvl1/detectar-veneno-e-doença'
 import { disparoArcano } from './lvl1/disparo-arcano'
 import { disparoDeFogo } from './lvl1/disparo-de-fogo'
 import { disparoGelido } from './lvl1/disparo-gelido'
+import { enfeitiçarPessoa } from './lvl1/enfeitiçar-pessoa'
 import { escudoArcano } from './lvl1/escudo-arcano'
+import { estabilizar } from './lvl1/estabilizar'
 import { fecharFerimentos } from './lvl1/fechar-ferimentos'
+import { globosDeLuz } from './lvl1/globos-de-luz'
 import { ilusãoMenor } from './lvl1/ilusão-menor'
 import { marcaArcana } from './lvl1/marca-arcana'
 import { mensagem } from './lvl1/mensagem'
 import { ondaDeForça } from './lvl1/onda-de-força'
+import { proteçãoContraLaminas } from './lvl1/proteção-contra-laminas'
 import { rajadaDeVentos } from './lvl1/rajada-de-ventos'
 
 export const magicGrimoriePageInfo: Collection<Spell> = {
@@ -66,7 +73,14 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
         mensagem,
         chicoteDeEspinhos,
         chamaEspiritual,
-        escudoArcano
+        escudoArcano,
+        proteçãoContraLaminas,
+        estabilizar,
+        apoioDivino,
+        globosDeLuz,
+        detectarVenenoDoença,
+        enfeitiçarPessoa,
+        amizadeAnimal
       ]
     }
   ]

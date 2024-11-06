@@ -1,9 +1,11 @@
 import { Spell } from '../../../src/types'
 import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const fecharFerimentos: Spell = {
   id: 'spll_dhDV6GdKDt',
   name: 'Fechar Ferimentos',
+  cover: supabaseStorageURL + 'fechar-ferimentos.jpg',
   concentration: false,
   domains: ['arcane', 'clerical', 'acustic'],
   energyCost: 2,

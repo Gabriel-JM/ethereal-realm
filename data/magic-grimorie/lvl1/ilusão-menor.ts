@@ -1,9 +1,11 @@
 import { Spell } from '../../../src/types'
 import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const ilusãoMenor: Spell = {
   id: 'spll_ZwivnVagjg',
   name: 'Ilusão Menor',
+  cover: supabaseStorageURL + 'ilusao-menor.jpg',
   concentration: false,
   domains: ['arcane', 'acustic'],
   energyCost: 1,

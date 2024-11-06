@@ -36,7 +36,7 @@ function magicGrimorieLevelSection(level: CollectionLevel<Spell>, index: number)
 
       if (String(key) === 'cover') {
         return html`
-         <img src="${value}" alt="Spell Cover Image" /> 
+         <img src="${value}" alt="Spell Cover Image" width="180" height="100" /> 
         `
       }
 

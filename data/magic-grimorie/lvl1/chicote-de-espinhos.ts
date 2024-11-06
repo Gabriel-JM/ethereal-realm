@@ -1,9 +1,11 @@
 import { Spell } from '../../../src/types'
 import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const chicoteDeEspinhos: Spell = {
   id: 'spll_cF4rzvZD37',
   name: 'Chicote de Espinhos',
+  cover: supabaseStorageURL + 'chicote-de-espinhos.jpg',
   concentration: false,
   domains: ['arcane'],
   energyCost: 2,

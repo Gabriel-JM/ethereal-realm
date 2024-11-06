@@ -1,9 +1,11 @@
 import { Spell } from '../../../src/types'
 import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const escudoArcano: Spell = {
   id: 'spll_YTZG5uaNSf',
   name: 'Escudo Arcano',
+  cover: supabaseStorageURL + 'escudo-arcano.jpg',
   concentration: false,
   domains: ['arcane', 'clerical', 'acustic'],
   energyCost: 1,

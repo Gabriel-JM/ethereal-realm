@@ -1,9 +1,11 @@
 import { Spell } from '../../../src/types'
 import { md } from '../../utils'
+import { supabaseStorageURL } from '../../utils/constants'
 
 export const mensagem: Spell = {
   id: 'spll_WHzu427EsT',
   name: 'Mensagem',
+  cover: supabaseStorageURL + 'mensagem.jpg',
   concentration: true,
   domains: ['arcane', 'acustic'],
   energyCost: 1,
