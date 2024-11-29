@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const enfeitiçarPessoa: Spell = {
   id: 'spll_L6qjuCmQVa',
   name: 'Enfeitiçar Pessoa',
-  cover: supabaseStorageURL + 'enfeiticar-pessoa.jpg',
+  cover: supabaseStorageURL + 'enfeiticar-pessoa.webp',
   concentration: true,
   domains: ['arcane', 'acustic'],
   energyCost: 1,

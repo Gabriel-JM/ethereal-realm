@@ -1,3 +1,4 @@
+import './magic-grimorie-doc-page.css'
 import { docHeader } from '@/common'
 import { commonLayout } from '@/common/layouts'
 import { whenDataIsReady } from '@/common/utils'
@@ -19,7 +20,7 @@ export function magicGrimorieDocPage() {
           </p>
         `}
 
-        <div>
+        <div class="doc-description">
           ${levels.map(magicGrimorieLevelSection)}
         </div>
       `
@@ -28,40 +29,35 @@ export function magicGrimorieDocPage() {
 }
 
 function magicGrimorieLevelSection(level: CollectionLevel<Spell>, index: number) {
-  function spellAttributes(spell: Spell) {
-    return Object.entries(spell).map(([key, value]) => {
-      if (String(key) === 'name' || String(key) === 'id') {
-        return ''
-      }
-
-      if (String(key) === 'cover') {
-        return html`
-         <img src="${value}" alt="Spell Cover Image" width="180" height="100" /> 
-        `
-      }
-
-      return html`
-        <p>
-          <span class="bold">${key}: </span>
-          <span>${raw(value.toString())}</span>
-        </p>
-      `
-    })
-  }
-  
   return html`
     <h2>Nível ${index + 1}</h2>
     <p>Requer: ${level.requirements}</p>
 
     <br/>
 
-    <ul>
+    <ul class="spells-list">
       ${level.items.map(item => html`
-        <li style="padding: 20px 0">
-          <h3>${item.name}</h3>
-          ${spellAttributes(item)}
+        <li>
+          <div class="spell-tiny-card">
+            <figure>
+              <img
+                src="${item.cover}"
+                alt="Spell Cover Image"
+              />
+            </figure>
+            <div class="spell-details">
+              <h3 class="spell-title">${item.name}</h3>
+              <div class="spell-domains">
+                <p>${item.domains.join(' ')}</p>
+              </div>
+              <p>
+                <span class="bold">Custo: </span>
+                <span>${item.energyCost}</span>
+              </p>
+              <p class="spell-effect">${item.effect}</p>
+            </div>
+          </div>
         </li>
-        <hr/>  
       `)}
     </ul>
   `

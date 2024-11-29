@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const apoioDivino: Spell = {
   id: 'spll_EjduHuYTCX',
   name: 'Apoio Divino',
-  cover: supabaseStorageURL + 'apoio-divino.jpg',
+  cover: supabaseStorageURL + 'apoio-divino.webp',
   concentration: false,
   domains: ['clerical'],
   energyCost: 1,

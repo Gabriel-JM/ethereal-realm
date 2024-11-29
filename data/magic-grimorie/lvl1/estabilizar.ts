@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const estabilizar: Spell = {
   id: 'spll_ISGVgzSuPC',
   name: 'Estabilizar',
-  cover: supabaseStorageURL + 'estabilizar.jpg',
+  cover: supabaseStorageURL + 'estabilizar.webp',
   concentration: false,
   domains: ['clerical'],
   energyCost: 2,

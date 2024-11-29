@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const proteçãoContraLaminas: Spell = {
   id: 'spll_R6bmgmBJLF',
   name: 'Proteção contra Lâminas',
-  cover: supabaseStorageURL + 'protecao-contra-laminas.jpg',
+  cover: supabaseStorageURL + 'protecao-contra-laminas.webp',
   concentration: false,
   domains: ['arcane', 'acustic'],
   energyCost: 1,

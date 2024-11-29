@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const globosDeLuz: Spell = {
   id: 'spll_YliDo1UCUk',
   name: 'Globos de Luz',
-  cover: supabaseStorageURL + 'globos-de-luz.jpg',
+  cover: supabaseStorageURL + 'globos-de-luz.webp',
   concentration: true,
   domains: ['arcane', 'acustic'],
   energyCost: 1,

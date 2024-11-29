@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const amizadeAnimal: Spell = {
   id: 'spll_D3JKOWzY1z',
   name: 'Amizade Animal',
-  cover: supabaseStorageURL + 'amizade-animal.jpg',
+  cover: supabaseStorageURL + 'amizade-animal.webp',
   concentration: false,
   domains: ['acustic'],
   energyCost: 1,

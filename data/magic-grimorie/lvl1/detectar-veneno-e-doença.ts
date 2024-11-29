@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const detectarVenenoDoença: Spell = {
   id: 'spll_7m3Nx5mhZU',
   name: 'Detectar Veneno e Doença',
-  cover: supabaseStorageURL + 'detectar-veneno-e-doenca.jpg',
+  cover: supabaseStorageURL + 'detectar-veneno-e-doenca.webp',
   concentration: true,
   domains: ['arcane', 'clerical'],
   energyCost: 1,

@@ -5,7 +5,7 @@ import { supabaseStorageURL } from '../../utils/constants'
 export const chamaEspiritual: Spell = {
   id: 'spll_vhrRfQVL0u',
   name: 'Chama Espiritual',
-  cover: supabaseStorageURL + 'chama-espiritual.jpg',
+  cover: supabaseStorageURL + 'chama-espiritual.webp',
   concentration: false,
   domains: ['arcane', 'clerical'],
   energyCost: 3,
