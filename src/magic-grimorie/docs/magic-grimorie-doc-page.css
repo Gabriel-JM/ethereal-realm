@@ -13,6 +13,14 @@
   border-radius: 24px 4px 24px 4px;
   background-color: var(--black-75);
   box-shadow: 4px 4px var(--black-70);
+  transition: all 250ms ease-in-out;
+  transition-delay: 80ms;
+
+  &:hover {
+    cursor: pointer;
+    border-color: var(--black-20);
+    box-shadow: 5px 5px var(--black-30);
+  }
 
   > figure {
     width: 100%;
