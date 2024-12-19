@@ -51,6 +51,37 @@ export function magicGrimorieDocPage() {
           <h2>${spell.name}</h2>
           <p>${spell.domains.join(' ')}</p>
 
+          <table>
+            <tr>
+              <td>Custo</td>
+              <td>${spell.energyCost} PE</td>
+            </tr>
+            <tr>
+              <td>Concentração</td>
+              <td>${spell.concentration.toString()}</td>
+            </tr>
+            <tr>
+              <td>Efeito</td>
+              <td>${spell.effect}</td>
+            </tr>
+            <tr>
+              <td>Teste de Sucesso</td>
+              <td>${spell.savingThrow ?? '-'}</td>
+            </tr>
+            <tr>
+              <td>Tempo de Conjuração</td>
+              <td>${spell.conjurationTime ?? 'Instantâneo'}</td>
+            </tr>
+            <tr>
+              <td>Duração</td>
+              <td>${spell.duration ?? 'Instantâneo'}</td>
+            </tr>
+            <tr>
+              <td>Descrição</td>
+              <td>${raw(spell.description)}</td>
+            </tr>
+          </table>
+
           <button on-click=${() => spellModalRef.el?.close()}>
             Close
           </button>
