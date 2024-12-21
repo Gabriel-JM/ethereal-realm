@@ -15,6 +15,14 @@ export function magicGrimorieDocPage() {
     spell && spellModalRef.el?.showModal()
   }
 
+  function clickBackdropClose(event: Event) {
+    const currentTarget = event.currentTarget as HTMLDialogElement
+
+    if (event.target === currentTarget) {
+      currentTarget.close()
+    }
+  }
+
   return commonLayout(html`
     ${docHeader({ title: '📔 Grimório de Magias' })}
 
@@ -34,7 +42,11 @@ export function magicGrimorieDocPage() {
       `
     })}
 
-    <dialog ref=${spellModalRef}>
+    <dialog
+      ref=${spellModalRef}
+      class="spell-modal"
+      on-click=${clickBackdropClose}
+    >
       ${shell(() => {
         const spell = currentSpell.get()
         if (!spell) {
@@ -48,43 +60,47 @@ export function magicGrimorieDocPage() {
               alt="Spell Cover Image"
             />
           </figure>
-          <h2>${spell.name}</h2>
-          <p>${spell.domains.join(' ')}</p>
+          <div class="spell-details">
+            <div class="spell-header">
+              <h2 class="spell-name">${spell.name}</h2>
+              <p>${spell.domains.join(' ')}</p>
+            </div>
 
-          <table>
-            <tr>
-              <td>Custo</td>
-              <td>${spell.energyCost} PE</td>
-            </tr>
-            <tr>
-              <td>Concentração</td>
-              <td>${spell.concentration.toString()}</td>
-            </tr>
-            <tr>
-              <td>Efeito</td>
-              <td>${spell.effect}</td>
-            </tr>
-            <tr>
-              <td>Teste de Sucesso</td>
-              <td>${spell.savingThrow ?? '-'}</td>
-            </tr>
-            <tr>
-              <td>Tempo de Conjuração</td>
-              <td>${spell.conjurationTime ?? 'Instantâneo'}</td>
-            </tr>
-            <tr>
-              <td>Duração</td>
-              <td>${spell.duration ?? 'Instantâneo'}</td>
-            </tr>
-            <tr>
-              <td>Descrição</td>
-              <td>${raw(spell.description)}</td>
-            </tr>
-          </table>
+            <table class="spell-info-table">
+              <tr>
+                <td class="bold">Custo</td>
+                <td>${spell.energyCost} PE</td>
+              </tr>
+              <tr>
+                <td class="bold">Concentração</td>
+                <td>${spell.concentration.toString()}</td>
+              </tr>
+              <tr>
+                <td class="bold">Efeito</td>
+                <td>${spell.effect}</td>
+              </tr>
+              <tr>
+                <td class="bold">Teste de Sucesso</td>
+                <td>${spell.savingThrow ?? '-'}</td>
+              </tr>
+              <tr>
+                <td class="bold">Tempo de Conjuração</td>
+                <td>${spell.conjurationTime ?? 'Instantâneo'}</td>
+              </tr>
+              <tr>
+                <td class="bold">Duração</td>
+                <td>${spell.duration ?? 'Instantâneo'}</td>
+              </tr>
+              <tr>
+                <td class="bold">Descrição</td>
+                <td>${raw(spell.description)}</td>
+              </tr>
+            </table>
 
-          <button on-click=${() => spellModalRef.el?.close()}>
-            Close
-          </button>
+            <button on-click=${() => spellModalRef.el?.close()}>
+              Close
+            </button>
+          </div>
         `
       })}
     </dialog>
