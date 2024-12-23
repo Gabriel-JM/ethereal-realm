@@ -19,7 +19,7 @@
   gap: 6px;
 
   .name {
-    max-width: 210px;
+    max-width: 100%;
     font-size: 1.25rem;
     white-space: nowrap;
     overflow: hidden;
@@ -33,5 +33,11 @@
 
   & p.common {
     color: var(--white-40);
+  }
+
+  @media screen and (max-width: 600px) {
+    & {
+      width: 100%;
+    }
   }
 }

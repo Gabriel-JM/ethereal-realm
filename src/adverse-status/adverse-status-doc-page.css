@@ -7,6 +7,16 @@
   > * {
     width: 48%;
   }
+
+  @media screen and (max-width: 720px) {
+    & {
+      flex-direction: column;
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .adverse-status-card {

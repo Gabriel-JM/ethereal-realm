@@ -60,7 +60,7 @@ export function magicGrimorieDocPage() {
               alt="Spell Cover Image"
             />
           </figure>
-          <div class="spell-details">
+          <div class="spell-details" tabindex="1">
             <div class="spell-header">
               <h2 class="spell-name">${spell.name}</h2>
               <p>${spell.domains.join(' ')}</p>
@@ -96,10 +96,6 @@ export function magicGrimorieDocPage() {
                 <td>${raw(spell.description)}</td>
               </tr>
             </table>
-
-            <button on-click=${() => spellModalRef.el?.close()}>
-              Close
-            </button>
           </div>
         `
       })}
