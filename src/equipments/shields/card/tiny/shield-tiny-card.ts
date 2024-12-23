@@ -1,10 +1,11 @@
 import { html } from 'lithen-fns'
 import { RarityStore } from '@/data/stores'
 import { Shield } from '@/types'
-import { selectedEquipment } from '@/equipments/doc/equipments-doc-page'
 import { ShieldsStore } from '@/data/stores/shields-store'
 
-export type ShieldTinyCardProps = Shield
+export type ShieldTinyCardProps = Shield & {
+  setEquip(equip: Shield | null): void
+}
 
 export function shieldTinyCard(props: ShieldTinyCardProps) {
   const typeName = ShieldsStore.getTypeName(props.type)
@@ -15,7 +16,7 @@ export function shieldTinyCard(props: ShieldTinyCardProps) {
     <div
       key="${props.id}"
       class="equip-tiny-card"
-      on-click=${() => selectedEquipment.set(props)}
+      on-click=${() => props.setEquip(props)}
       title="${props.name}"
     >
       <div>

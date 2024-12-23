@@ -2,8 +2,9 @@ import { dataStore } from '@/data/stores'
 import { html, raw } from 'lithen-fns'
 import { armorTinyCard } from '../card/tiny/armor-tiny-card'
 import { whenDataIsReady } from '@/common/utils'
+import { Armor } from '@/types'
 
-export function armorDocPage() {
+export function armorDocPage(setEquip: (equip: Armor | null) => void) {
   return html`
     <div>
     ${whenDataIsReady(() => {
@@ -20,7 +21,10 @@ export function armorDocPage() {
         </div>
 
         <section class="doc-content">
-          ${content.map(armorTinyCard)}
+          ${content.map(armor => armorTinyCard({
+            ...armor,
+            setEquip
+          }))}
         </section>
       `
     })}

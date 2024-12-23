@@ -12,21 +12,24 @@ import { xIcon } from '@/common/icons'
 import { armorDocCard } from '../armors/card/armor-doc-card'
 import { shieldDocCard, shieldDocPage } from '../shields'
 
-export const selectedEquipment = signal<Weapon | Armor | Shield | null>(null)
+type Equip = Weapon | Armor | Shield | null
 
 export function equipmentsDocPage() {
+  const selectedEquipment = signal<Equip>(null)
   const equipContainerRef = ref<HTMLDivElement>()
   const equipDocCards = new Map()
     .set("weap", weaponDocCard)
     .set("armr", armorDocCard)
     .set("shld", shieldDocCard)
 
+  const setEquip = (equip: Equip) => selectedEquipment.set(equip)
+
   return commonLayout(html`
     ${[
       docHeader({ title: '🛡 Equipamentos' }),
-      weaponsDocPage(),
-      armorDocPage(),
-      shieldDocPage()
+      weaponsDocPage(setEquip),
+      armorDocPage(setEquip),
+      shieldDocPage(setEquip)
     ]}
 
     <div ref=${equipContainerRef} class="selected-equip-container">

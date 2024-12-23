@@ -2,8 +2,9 @@ import { html, raw } from 'lithen-fns'
 import { dataStore } from '@/data/stores'
 import { weaponTinyCard } from './card/tiny/weapon-tiny-card'
 import { whenDataIsReady } from '@/common/utils'
+import { Weapon } from '@/types'
 
-export function weaponsDocPage() {
+export function weaponsDocPage(setEquip: (equip: Weapon | null) => void) {
   return html`
     <div>
       ${whenDataIsReady(() => {
@@ -20,7 +21,10 @@ export function weaponsDocPage() {
           </div>
 
           <section class="doc-content">
-            ${content.map(weaponTinyCard)}
+            ${content.map(weapon => weaponTinyCard({
+              ...weapon,
+              setEquip
+            }))}
           </section>
         `
       })}
