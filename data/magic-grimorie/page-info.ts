@@ -21,6 +21,7 @@ import { mensagem } from './lvl1/mensagem'
 import { ondaDeForça } from './lvl1/onda-de-força'
 import { proteçãoContraLaminas } from './lvl1/proteção-contra-laminas'
 import { rajadaDeVentos } from './lvl1/rajada-de-ventos'
+import { combustão } from './lvl2/combustão'
 
 export const magicGrimoriePageInfo: Collection<Spell> = {
   id: 'magic-grimoire',
@@ -82,6 +83,10 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
         enfeitiçarPessoa,
         amizadeAnimal
       ]
+    },
+    {
+      requirements: 'Nível de Personagem 4.',
+      items: [combustão]
     }
   ]
 }

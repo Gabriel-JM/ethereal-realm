@@ -1,5 +1,6 @@
 import './magic-grimorie-doc-page.css'
 import { docHeader } from '@/common'
+import { magicIcon } from '@/common/icons'
 import { commonLayout } from '@/common/layouts'
 import { whenDataIsReady } from '@/common/utils'
 import { dataStore } from '@/data/stores'
@@ -53,6 +54,10 @@ export function magicGrimorieDocPage() {
           return ''
         }
 
+        const concentrationText = spell.concentration
+          ? 'Requer Concentração.'
+          : 'Não Requer Concentração.'
+
         return html`
           <figure>
             <img
@@ -68,12 +73,11 @@ export function magicGrimorieDocPage() {
 
             <table class="spell-info-table">
               <tr>
-                <td class="bold">Custo</td>
-                <td>${spell.energyCost} PE</td>
+                <td colspan="2" class="bold">${concentrationText}</td>
               </tr>
               <tr>
-                <td class="bold">Concentração</td>
-                <td>${spell.concentration.toString()}</td>
+                <td class="bold">Custo</td>
+                <td>${spell.energyCost} PE</td>
               </tr>
               <tr>
                 <td class="bold">Efeito</td>
@@ -109,35 +113,44 @@ function magicGrimorieLevelSection(
   setSpell: (spell: Spell | null) => void
 ) {
   return html`
-    <h2>Nível ${index + 1}</h2>
-    <p>Requer: ${level.requirements}</p>
+    <div class="spell-section-container">
+      <h2>Nível ${index + 1}</h2>
+      <p>Requer: ${level.requirements}</p>
 
-    <br/>
+      <br/>
 
-    <ul class="spells-list">
-      ${level.items.map(item => html`
-        <li>
-          <div class="spell-tiny-card" on-click=${() => setSpell(item)}>
-            <figure>
-              <img
-                src="${item.cover}"
-                alt="Spell Cover Image"
-              />
-            </figure>
-            <div class="spell-details">
-              <h3 class="spell-title">${item.name}</h3>
-              <div class="spell-domains">
-                <p>${item.domains.join(' ')}</p>
+      <ul class="spells-list">
+        ${level.items.map(item => html`
+          <li>
+            <div
+              class="spell-tiny-card"
+              title="${item.name}"
+              on-click=${() => setSpell(item)}
+            >
+              <figure>
+                <img
+                  src="${item.cover}"
+                  alt="Spell Cover Image"
+                />
+              </figure>
+              <div class="spell-details">
+                <h3 class="spell-title">
+                  <span class="icon">${magicIcon()}</span>
+                  <span>${item.name}</span>
+                </h3>
+                <div class="spell-domains">
+                  <p>${item.domains.join(' ')}</p>
+                </div>
+                <p>
+                  <span class="bold">Custo: </span>
+                  <span>${item.energyCost}</span>
+                </p>
+                <p class="spell-effect">${item.effect}</p>
               </div>
-              <p>
-                <span class="bold">Custo: </span>
-                <span>${item.energyCost}</span>
-              </p>
-              <p class="spell-effect">${item.effect}</p>
             </div>
-          </div>
-        </li>
-      `)}
-    </ul>
+          </li>
+        `)}
+      </ul>
+    </div>
   `
 }

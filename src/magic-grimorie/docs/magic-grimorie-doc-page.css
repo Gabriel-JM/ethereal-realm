@@ -1,8 +1,12 @@
+.spell-section-container {
+  padding-bottom: 68px;
+}
+
 .spells-list {
   width: fit-content;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 24px;
   margin: auto;
 
   @media screen and (max-width: 470px) {
@@ -13,7 +17,7 @@
 }
 
 .spell-tiny-card {
-  width: 200px;
+  width: 220px;
   height: 300px;
   border: 1px solid var(--black-65);
   border-radius: 24px 4px 24px 4px;
@@ -21,6 +25,7 @@
   box-shadow: 4px 4px var(--black-70);
   transition: all 250ms ease-in-out;
   transition-delay: 80ms;
+  overflow: hidden;
 
   &:hover {
     cursor: pointer;
@@ -46,7 +51,17 @@
     padding: 10px;
 
     .spell-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      > .icon {
+        width: 24px;
+      }
     }
 
     .spell-domains {
