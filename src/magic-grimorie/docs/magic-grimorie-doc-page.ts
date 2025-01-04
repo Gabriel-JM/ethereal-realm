@@ -67,13 +67,20 @@ export function magicGrimorieDocPage() {
           </figure>
           <div class="spell-details" tabindex="1">
             <div class="spell-header">
-              <h2 class="spell-name">${spell.name}</h2>
+              <h2 class="spell-name">
+                  <span class="icon">
+                    ${magicIcon()}
+                  </span>
+                <span>${spell.name}</span>
+              </h2>
               <p>${spell.domains.join(' ')}</p>
             </div>
 
             <table class="spell-info-table">
               <tr>
-                <td colspan="2" class="bold">${concentrationText}</td>
+                <td colspan="2" class="bold">
+                  ${concentrationText}
+                </td>
               </tr>
               <tr>
                 <td class="bold">Custo</td>
@@ -135,7 +142,9 @@ function magicGrimorieLevelSection(
               </figure>
               <div class="spell-details">
                 <h3 class="spell-title">
-                  <span class="icon">${magicIcon()}</span>
+                  <span class="icon">
+                    ${magicIcon()}
+                  </span>
                   <span>${item.name}</span>
                 </h3>
                 <div class="spell-domains">
