@@ -26,7 +26,9 @@ import { combustão } from './lvl2/combustão'
 import { espiritoAnimal } from './lvl2/espirito-animal'
 import { estacasDeGelo } from './lvl2/estacas-de-gelo'
 import { luzCegante } from './lvl2/luz-cegante'
+import { maoFantasma } from './lvl2/mao-fantasma'
 import { nuvemVenenosa } from './lvl2/nuvem-venenosa'
+import { tentaculosDeAgua } from './lvl2/tentaculos-de-agua'
 
 export const magicGrimoriePageInfo: Collection<Spell> = {
   id: 'magic-grimoire',
@@ -97,7 +99,9 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
         espiritoAnimal,
         luzCegante,
         estacasDeGelo,
-        armaduraArcana
+        armaduraArcana,
+        tentaculosDeAgua,
+        maoFantasma
       ]
     }
   ]
