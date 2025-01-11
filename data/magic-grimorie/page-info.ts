@@ -24,8 +24,14 @@ import { rajadaDeVentos } from './lvl1/rajada-de-ventos'
 import { armaduraArcana } from './lvl2/armadura-arcana'
 import { comandar } from './lvl2/comandar'
 import { combustão } from './lvl2/combustão'
+import { curaRadiante } from './lvl2/cura-radiante'
+import { escritaIlusoria } from './lvl2/escrita-ilusoria'
+import { escudoDaFé } from './lvl2/escudo-da-fé'
 import { espiritoAnimal } from './lvl2/espirito-animal'
 import { estacasDeGelo } from './lvl2/estacas-de-gelo'
+import { expulsarMortoVivo } from './lvl2/expulsar-morto-vivo'
+import { identificação } from './lvl2/identificação'
+import { lufadaDeVento } from './lvl2/lufada-de-vento'
 import { luzCegante } from './lvl2/luz-cegante'
 import { maoFantasma } from './lvl2/mao-fantasma'
 import { maosMagicas } from './lvl2/maos-magicas'
@@ -109,7 +115,13 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
         maosMagicas,
         orbeDeRaios,
         misseisMagicos,
-        comandar
+        comandar,
+        curaRadiante,
+        expulsarMortoVivo,
+        escritaIlusoria,
+        escudoDaFé,
+        lufadaDeVento,
+        identificação
       ]
     }
   ]
