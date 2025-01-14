@@ -21,12 +21,15 @@ import { mensagem } from './lvl1/mensagem'
 import { ondaDeForça } from './lvl1/onda-de-força'
 import { proteçãoContraLaminas } from './lvl1/proteção-contra-laminas'
 import { rajadaDeVentos } from './lvl1/rajada-de-ventos'
+import { armaVibratil } from './lvl2/arma-vibratil'
 import { armaduraArcana } from './lvl2/armadura-arcana'
 import { comandar } from './lvl2/comandar'
 import { combustão } from './lvl2/combustão'
 import { curaRadiante } from './lvl2/cura-radiante'
 import { escritaIlusoria } from './lvl2/escrita-ilusoria'
 import { escudoDaFé } from './lvl2/escudo-da-fé'
+import { esferaDaLuzPunidora } from './lvl2/esfera-da-luz-punidora'
+import { esferaFlamejante } from './lvl2/esfera-flamejante'
 import { espiritoAnimal } from './lvl2/espirito-animal'
 import { estacasDeGelo } from './lvl2/estacas-de-gelo'
 import { expulsarMortoVivo } from './lvl2/expulsar-morto-vivo'
@@ -37,7 +40,9 @@ import { maoFantasma } from './lvl2/mao-fantasma'
 import { maosMagicas } from './lvl2/maos-magicas'
 import { misseisMagicos } from './lvl2/misseis-magicos'
 import { nuvemVenenosa } from './lvl2/nuvem-venenosa'
+import { ondaFervente } from './lvl2/onda-fervente'
 import { orbeDeRaios } from './lvl2/orbe-de-raios'
+import { reduzirEfeitoAgressivo } from './lvl2/reduzir-efeito-agressivo'
 import { tentaculosDeAgua } from './lvl2/tentaculos-de-agua'
 
 export const magicGrimoriePageInfo: Collection<Spell> = {
@@ -121,7 +126,12 @@ export const magicGrimoriePageInfo: Collection<Spell> = {
         escritaIlusoria,
         escudoDaFé,
         lufadaDeVento,
-        identificação
+        identificação,
+        esferaFlamejante,
+        esferaDaLuzPunidora,
+        reduzirEfeitoAgressivo,
+        armaVibratil,
+        ondaFervente
       ]
     }
   ]
